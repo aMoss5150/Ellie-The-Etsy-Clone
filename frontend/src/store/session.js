@@ -1,10 +1,16 @@
 import { csrfFetch } from './csrf';
 
+
+//ACTIONS
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
 
+
+//INITIAL STATE
 const initialState = { user: null };
 
+
+//ACTION CREATORS
 const setUser = (user) => {
     return {
         type: SET_USER,
@@ -18,6 +24,9 @@ const removeUser = () => {
     };
 };
 
+
+
+//THUNK ACTION CREATORS
 export const restoreUser = () => async dispatch => {
     const response = await csrfFetch('/api/session');
     const data = await response.json();
@@ -25,6 +34,8 @@ export const restoreUser = () => async dispatch => {
     return response;
 };
 
+
+// DISPATCH THIS THUNK TO LOGIN!!
 export const login = (user) => async (dispatch) => {
     const { credential, password } = user;
     const response = await csrfFetch('/api/session', {
@@ -39,6 +50,8 @@ export const login = (user) => async (dispatch) => {
     return response;
 };
 
+
+//DISPATCH THIS THUNK TO SIGN UP
 export const signup = (user) => async (dispatch) => {
     const { username, email, password } = user;
     const response = await csrfFetch("/api/users", {
@@ -54,6 +67,7 @@ export const signup = (user) => async (dispatch) => {
     return response;
 };
 
+//DISPATCH THIS THUNK TO LOGOUT
 export const logout = () => async (dispatch) => {
     const response = await csrfFetch('/api/session', {
         method: 'DELETE',
@@ -63,7 +77,7 @@ export const logout = () => async (dispatch) => {
 };
 
 
-
+//THIS IS THE SESSION REDUCER
 const sessionReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {

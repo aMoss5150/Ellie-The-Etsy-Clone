@@ -21,7 +21,7 @@ const validateLogin = [
 ];
 
 
-// Log in
+// Log in ROUTE
 router.post(
     '/',
     validateLogin,
@@ -46,7 +46,7 @@ router.post(
     }),
 );
 
-// Log out
+// Log out ROUTE
 router.delete(
     '/',
     (_req, res) => {
@@ -55,7 +55,7 @@ router.delete(
     }
 );
 
-// Restore session user
+// Restore session user ROUTE
 router.get(
     '/',
     restoreUser,
