@@ -1,6 +1,8 @@
 import './Product.css'
 
 export default function Product({ products }) {
-    return null
+    return (
+        <span className='product__container'>product component test</span>
+    )
 
 }

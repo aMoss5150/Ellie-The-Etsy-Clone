@@ -1,10 +1,17 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const cartRouter = require('./cart.js')
+const productsRouter = require('./products.js')
 
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
+
+//cart and products Router CREATED HERE
+// router.use('/cart', cartRouter)
+
+// router.use('/products', productsRouter)
 
 //!TEST ROUTES
 router.post('/test', function (req, res) {

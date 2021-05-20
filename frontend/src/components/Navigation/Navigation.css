@@ -1,0 +1,16 @@
+.nav__bar-parent {
+    /* border: 1px red solid; */
+}
+
+.navigation__bar {
+    display: flex;
+    margin-bottom: 45px;
+    margin-top: 10px;
+    justify-content: center;
+    /* border-bottom: 1px solid blue */
+    /* flex-wrap: nowrap; */
+}
+
+.nav__links {
+    margin-left: 10px;
+}
