@@ -13,7 +13,7 @@
 .category__display-container {
     display: flex;
     justify-content: center;
-    background-color: #3282b8;
+    background-color: #0f4c75;
     height: 250px;
     width: 100vw;
 }
@@ -22,7 +22,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 20px auto;
+    margin: 65px 10px auto;
     justify-content: center;
     /* align-items: center; */
 }

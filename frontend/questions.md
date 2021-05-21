@@ -12,7 +12,10 @@
 {SAME QUESTION AS NUMBER 2}
 
 
-4. in ()--------------
+4. in (generic)--------------
+        for images
+{how am I able to connect up images to be served}
+
 5. in ()--------------
 6. in ()--------------
 7. in ()--------------
