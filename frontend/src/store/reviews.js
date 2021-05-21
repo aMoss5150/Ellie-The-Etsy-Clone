@@ -16,7 +16,7 @@ const add = newReview => ({
 
 
 //!Thunk ACTION CREATORS
-//this will fetch all products to be rendered on homePage
+//this will fetch all reviews to be rendered on product page
 export const getReviews = () => async (dispatch) => {
     const res = await fetch(`/api/reviews`);
     if (res.ok) {
@@ -44,7 +44,7 @@ export const addReview = (newReview) => async (dispatch) => {
 const initialState = {};
 
 
-//PRODUCTS REDUCER
+//REVIEWS REDUCER
 const reviewsReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
@@ -57,6 +57,13 @@ const reviewsReducer = (state = initialState, action) => {
                 ...state
             };
         }
+
+        case ADD: {
+            const newState = { ...state }
+            newState[action.newItem] = action.newItem
+            return newState
+        }
+
         default:
             return state
     }

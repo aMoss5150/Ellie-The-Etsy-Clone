@@ -5,6 +5,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage";
 import ProductDetails from "./components/ProductDetails";
+import ProductTypePage from "./components/ProductTypePage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -24,18 +25,31 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+
           <Route path="/login">
             <LoginFormPage />
           </Route>
+
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact path='/'>
+
+          <Route exact path="/">
             <HomePage products={products} />
           </Route>
-          <Route path={`/products/:productId`}>
+
+          <Route path="/:productType/:productId">
             <ProductDetails products={products} />
           </Route>
+
+          <Route path="/:productType">
+            <ProductTypePage products={products} />
+          </Route>
+
+          <Route>
+            Page Not Found
+          </Route>
+
         </Switch>
       )}
     </>

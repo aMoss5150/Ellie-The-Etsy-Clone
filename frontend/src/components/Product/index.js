@@ -1,6 +1,9 @@
+import { useParams } from 'react-router-dom'
+
 import './Product.css'
 
-export default function Product({ products }) {
+export default function Product({ product }) {
+
     return (
 
         <span className='product__container'>

@@ -9,6 +9,7 @@ export default function ProductDetails({ products }) {
     if (!products) return <h1>No product found</h1>
     return (
         <div className='product__details-container'>
+            <h1>product details test</h1>
             {/* <img src={product.imagelUrl} alt={product.name} />
             <h1>test product details page</h1>
 
