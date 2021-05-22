@@ -4,9 +4,9 @@ export const LOAD = "products/LOAD";
 
 
 //action creators
-const load = list => ({
+const load = (products) => ({
     type: LOAD,
-    list
+    products
 });
 
 
@@ -37,6 +37,7 @@ const productsReducer = (state = initialState, action) => {
                 ...state
             };
         }
+
         default: {
             return state
         }

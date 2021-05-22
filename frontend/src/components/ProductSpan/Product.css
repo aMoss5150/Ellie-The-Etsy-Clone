@@ -3,7 +3,11 @@
     width: 350px;
     overflow: hidden;
     margin: 30px;
-    background-color: #bbe1fa;
+    background-color: #79a3b1;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    /* 79a3b1 */
+    /* 456268 */
 }
 
 @media screen and (max-width: 768px) {

@@ -2,6 +2,8 @@
 //actions
 export const LOAD = "cart/LOAD";
 export const ADD_ITEM = 'cart/ADD_ITEM'
+export const REMOVE_ITEM = 'cart/REMOVE_ITEM'
+export const EMPTY = 'cart/EMPTY'
 
 //action creators
 
@@ -9,6 +11,17 @@ export const addItem = (itemId) => ({
     type: ADD_ITEM,
     itemId
 })
+
+export const removeItem = (itemId) => ({
+    type: REMOVE_ITEM,
+    itemId
+})
+
+export const emptyCart = () => ({
+    type: EMPTY
+})
+
+
 //!Thunk ACTION CREATORS
 //product will be fetched and passed in from 
 // item button to add to cart
@@ -28,11 +41,22 @@ const cartReducer = (state = initialState, action) => {
                     id: action.itemId
                 }
             }  //return state to cart
+
+        case REMOVE_ITEM: {
+            const newState = { ...state }
+            delete newState[action.itemId]
+            return newState
+        }
+
+        case EMPTY: {
+            const newState = {}
+            return newState
+        }
+
         default: {
             return state
         }
     }
-
 }
 
 export default cartReducer;

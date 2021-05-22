@@ -2,6 +2,7 @@
 //actions
 export const LOAD = "reviews/LOAD";
 export const ADD = "reviews/ADD";
+export const EDIT = 'reviews/EDIT';
 
 //action creators
 const load = list => ({
@@ -14,6 +15,11 @@ const add = newReview => ({
     newReview
 })
 
+const edit = updatedReview => ({
+    type: EDIT,
+    updatedReview
+})
+
 
 //!Thunk ACTION CREATORS
 //this will fetch all reviews to be rendered on product page
@@ -22,6 +28,7 @@ export const getReviews = () => async (dispatch) => {
     if (res.ok) {
         const reviews = await res.json();
         dispatch(load(reviews));
+        return reviews
     }
 };
 
@@ -37,6 +44,7 @@ export const addReview = (newReview) => async (dispatch) => {
     if (res.ok) {
         const reviews = await res.json();
         dispatch(load(reviews));
+        return reviews
     }
 };
 
@@ -49,8 +57,8 @@ const reviewsReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
             const allReviews = {};
-            action.list.forEach(product => {
-                allReviews[product.id] = product;
+            action.list.forEach(review => {
+                allReviews[review.id] = review;
             });
             return {
                 ...allReviews,
@@ -60,7 +68,7 @@ const reviewsReducer = (state = initialState, action) => {
 
         case ADD: {
             const newState = { ...state }
-            newState[action.newItem] = action.newItem
+            newState[action.newReview] = action.newReview
             return newState
         }
 

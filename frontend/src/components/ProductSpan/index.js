@@ -10,6 +10,8 @@ export default function Product({ product }) {
             <img src="" alt="" />
             product component test
 
+
+
         </span>
     )
 
