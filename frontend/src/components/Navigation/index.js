@@ -23,12 +23,13 @@ function Navigation({ isLoaded }) {
     }
 
     return (
-        <nav className='nav__bar-parent'>
-            <span className="navigation__bar">
-                <NavLink className='nav__links' exact to="/">Home</NavLink>
-                {isLoaded && sessionLinks}
-            </span>
+
+        <nav className="navigation__bar">
+            <NavLink className='nav__links' exact to="/">Home</NavLink>
+            {isLoaded && sessionLinks}
+
         </nav>
+
     );
 }
 

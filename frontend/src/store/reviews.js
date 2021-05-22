@@ -20,6 +20,7 @@ const edit = updatedReview => ({
     type: EDIT,
     updatedReview
 })
+
 const del = reviewId => ({
     type: DELETE,
     reviewId

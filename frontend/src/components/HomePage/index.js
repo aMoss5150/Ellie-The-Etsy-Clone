@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+
 import Product from '../ProductSpan'
 
 
@@ -7,6 +8,7 @@ import './HomePage.css'
 export default function HomePage() {
     return (
         <div className="home__page">
+
             <h1 className='home__page-tester'>testHomePage</h1>
             <div className='category__display-container'>
                 <span className='display__nav__span'>

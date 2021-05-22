@@ -17,12 +17,15 @@ export default function ProductTypePage({ products }) {
     return (
         <div className='product__types-container'>
             <h1>product type test</h1>
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            <div className='types__product__display-container'>
+
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+            </div>
             {/* {products.map((product) => (
                 <Product key={product.id} product={product}/>
 
