@@ -40,9 +40,9 @@ function ProfileButton({ user }) {
             </button>
             {showMenu && (
                 <ul className="profile-dropdown">
-                    <li>{user.username}</li>
-                    <li>{user.email}</li>
-                    <li>
+                    <li style={{ "list-style-type": "none" }}>{user.username}</li>
+                    <li style={{ "list-style-type": "none" }}>{user.email}</li>
+                    <li style={{ "list-style-type": "none" }}>
                         <button onClick={logout}>Log Out</button>
                     </li>
                 </ul>
