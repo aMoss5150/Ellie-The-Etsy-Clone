@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-const cartRouter = require('./cart.js')
+const reviewsRouter = require('./reviews.js')
 const productsRouter = require('./products.js')
 
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-//!cart and products Router CREATED HERE
+//!cart and products Routers routed here
 
 // router.use('/cart', cartRouter)
 
@@ -23,6 +23,7 @@ router.post('/test', function (req, res) {
 const asyncHandler = require('express-async-handler');
 const { setTokenCookie } = require('../../utils/auth.js');
 const { User } = require('../../db/models');
+
 router.get('/set-token-cookie', asyncHandler(async (req, res) => {
     const user = await User.findOne({
         where: {
@@ -32,6 +33,8 @@ router.get('/set-token-cookie', asyncHandler(async (req, res) => {
     setTokenCookie(res, user);
     return res.json({ user });
 }));
+
+
 // GET /api/restore-user
 const { restoreUser } = require('../../utils/auth.js');
 router.get(
@@ -41,6 +44,8 @@ router.get(
         return res.json(req.user);
     }
 );
+
+
 // GET /api/require-auth
 const { requireAuth } = require('../../utils/auth.js');
 router.get(

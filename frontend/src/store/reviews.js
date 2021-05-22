@@ -3,6 +3,7 @@
 const LOAD = "reviews/LOAD";
 const ADD = "reviews/ADD";
 const EDIT = 'reviews/EDIT';
+const DELETE = 'reviews/DELETE'
 
 //action creators
 const load = list => ({
@@ -19,7 +20,10 @@ const edit = updatedReview => ({
     type: EDIT,
     updatedReview
 })
-
+const del = reviewId => ({
+    type: DELETE,
+    reviewId
+})
 
 //!Thunk ACTION CREATORS
 //this will fetch all reviews to be rendered on product page

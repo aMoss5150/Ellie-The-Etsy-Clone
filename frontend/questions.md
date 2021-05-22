@@ -16,7 +16,13 @@
         for images
 {how am I able to connect up images to be served}
 
-5. in ()--------------
+5. in (backend/routes/api/reviews.js)--------------
+        for req.params
+{will req.params be accessible in express if they are named 
+within React or is this only available assignment purely exist in
+React?}
+
+
 6. in ()--------------
 7. in ()--------------
 8. in ()--------------
