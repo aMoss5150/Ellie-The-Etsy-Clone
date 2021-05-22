@@ -1,9 +1,9 @@
 
 //actions
-export const LOAD = "cart/LOAD";
-export const ADD_ITEM = 'cart/ADD_ITEM'
-export const REMOVE_ITEM = 'cart/REMOVE_ITEM'
-export const EMPTY = 'cart/EMPTY'
+const LOAD = "cart/LOAD";
+const ADD_ITEM = 'cart/ADD_ITEM'
+const REMOVE_ITEM = 'cart/REMOVE_ITEM'
+const EMPTY = 'cart/EMPTY'
 
 //action creators
 
@@ -40,7 +40,7 @@ const cartReducer = (state = initialState, action) => {
                 [action.itemId]: {
                     id: action.itemId
                 }
-            }  //return state to cart
+            }
 
         case REMOVE_ITEM: {
             const newState = { ...state }

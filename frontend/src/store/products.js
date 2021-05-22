@@ -1,6 +1,6 @@
 
 //actions
-export const LOAD = "products/LOAD";
+const LOAD = "products/LOAD";
 
 
 //action creators

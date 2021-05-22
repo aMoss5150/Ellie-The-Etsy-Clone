@@ -11,6 +11,7 @@ body {
 a {
     transition: color .4s;
     color: #265C83;
+    text-decoration: none;
 }
 
 a:link, a:visited {
@@ -24,8 +25,4 @@ a:hover {
 a:active {
     transition: color .3s;
     color: #007BE6;
-}
-
-.link {
-    text-decoration: none;
 }

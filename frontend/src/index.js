@@ -7,15 +7,35 @@ import App from './App';
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from './store/session';
+import { getProducts } from './store/products'
+import { addItem, removeItem, emptyCart } from './store/cart'
+import { getReviews, addReview } from './store/reviews'
 
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
   restoreCSRF();
 
+  //csrf
   window.csrfFetch = csrfFetch;
+
+  //store
   window.store = store;
+
+  //session
   window.sessionActions = sessionActions;
+
+  //products
+  window.getProducts = getProducts
+
+  //cart
+  window.addItem = addItem
+  window.removeItem = removeItem
+  window.emptyCart = emptyCart
+
+  //reviews
+  window.getReviews = getReviews
+  window.addReview = addReview
 }
 
 function Root() {

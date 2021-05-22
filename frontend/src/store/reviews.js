@@ -1,8 +1,8 @@
 
 //actions
-export const LOAD = "reviews/LOAD";
-export const ADD = "reviews/ADD";
-export const EDIT = 'reviews/EDIT';
+const LOAD = "reviews/LOAD";
+const ADD = "reviews/ADD";
+const EDIT = 'reviews/EDIT';
 
 //action creators
 const load = list => ({
