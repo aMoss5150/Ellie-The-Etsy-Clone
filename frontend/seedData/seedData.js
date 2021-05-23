@@ -16,230 +16,253 @@
 */
 
 const exhaust = 'exhaust'
+
+const engine = 'engine'
+
 const wheels = 'wheels'
 const suspension = 'suspension'
 const exterior = 'exterior'
-const engine = 'engine'
-const intake = 'intake'
+
+
 
 const products = [
+    //exhuast
 
+    //headers
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "Stainless Power 1-7/8-Inch Long Tube Headers; Catted",
+        price: 1250,
+        labor_estimate: 500,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/390796-A?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: 'exhaust',
+        product_description: 'Stainless Power Headers are manufactured to Stainless Works exact design specifications. Stainless Power Headers are CNC mandrel bent from 1-7/8" diameter, 304 stainless steel tubing for excellent exhaust flow and long lasting corrosion resistance.These Long Tube Headers feature TIG welded construction, as well as laser cut 3/8" header flanges for additional strength and leak-free performance.',
 
     },
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "Kooks 1-7/8-Inch Long Tube Headers; Green Catted",
+        price: 2000,
+        labor_estimate: 500,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/404497?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "exhaust",
+        product_description: 'For one of the finest exhaust systems on the off-road, look no further than the Kooks 1-7/8 Inch Long Tube Green Catted Headers. These high-flow long tube headers maximize the removal of exhaust gases from your cylinders better than stock with its mandrel-bent 1-7/8 inch diameter primary tubes and 3 inch collector assembly to move gases to your catalytic converters with increased efficiency.',
+
+    },
+    //cat-back
+    {
+        product_name: "Corsa Xtreme Cat-Back Exhaust with Polished Tips",
+        price: 1700,
+        labor_estimate: 100,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/393790?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "exhaust",
+        product_description: "Xtreme Aggressive Sound. Corsa Performance Xtreme Cat-Back systems are acoustically styled and engineered to give your 5.0L Coyote powered S550 Mustang a throaty aggressive sound under acceleration and a deep growl at idle all without annoying interior cabin drone. A Corsa Xtreme Cat-Back will greatly improve your pony's exhaust flow for an increase in overall performance.",
 
     },
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "Ford Performance by Borla Sport Cat-Back Exhaust with Chrome Tips",
+        price: 1300,
+        labor_estimate: 100,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/384388?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "exhaust",
+        product_description: `Aggressive Throaty Sound. Add an aggressive throaty exhaust note to your coyote powered 2015-2017 GT Fastback with a Sport Cat-Back exhaust system that features a pair of Ford Racing straight-through sport mufflers and 4" embossed chrome exhaust tips. This catback not only sounds great, but also improves exhaust flow with the included X-Pipe for an increase in horsepower and torque.`,
+
+    },
+    //axle back
+    {
+        product_name: "Roush Axle-Back Exhaust",
+        price: 700,
+        labor_estimate: 50,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/387039?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "exhaust",
+        product_description: `Aggressive Muscle Car Sound. Let your 5.0L Coyote engine howl with a Roush Axle-Back Exhaust. This innovative new Roush exhaust system features a hollow chambered muffler that results in increased air flow and a unique sound, with no in-cabin "boom" normally found with performance exhaust at cruising speeds.`,
 
     },
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "LTH Muffler Delete Axle-Back Exhaust with Titan Silver Tips",
+        price: 400,
+        labor_estimate: 50,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/390798?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "exhaust",
+        product_description: `Loud Throaty Aggressive Sound. A LTH Muffler Delete Axle-Back Exhaust System is especially for those GT owners that want to be heard before being seen. The mild factory exhaust note of the GT Mustang is okay for the daily driver, but not for the performance extremist that wants to broadcast their approach. This LTH Axle-Back features a muffler delete design that will add an extremely loud, aggressive, throaty exhaust note to your Coyote powered Mustang that will definitely get you noticed.`,
 
     },
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "SR Performance Muffler Delete Axle-Back Exhaust with Polished Tips",
+        price: 200,
+        labor_estimate: 50,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/393685?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "exhaust",
+        product_description: `More Power and an Aggressive Sound. If your looking to wake up the sound of your GT and the entire neighborhood for that matter, the SR Performance Muffler Delete Axle-Back Exhaust is for you. By replacing the factory mufflers with a set of straight pipes you will add an extremely loud and aggressive exhaust note to your V8 powered Pony. This Muffler Delete Axle-Back won't only improve the sound of your Pony, but it will also improve its power as well. By eliminating the restrictive stock mufflers you will increase exhaust flow for a noticeable increase in both power and performance.`,
+
+    },
+    //combo
+    {
+        product_name: "American Racing Headers 1-3/4-Inch Long Tube Catted Headers with X-Pipe and Pure Thunder Cat-Back Exhaust",
+        price: 3200,
+        labor_estimate: 600,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/404140?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "exhaust",
+        product_description: `Unleash the Beast. The latest Mustangs have pushed the envelope on performance and handling, but the restrictive factory exhaust keeps them from their true potential.  With the American Racing Headers 1-3/4 in. Long Tube Catted Headers with X-Pipe & Pure Thunder Cat-Back Exhaust, you can provide the Mustang with the exhaust system it deserves. With the optimized design, the ARH system can unlock tremendous horsepower and torque gains. This full system includes headers, catalytic converters, an X-pipe, and ARH’s Pure Thunder Cat-back exhaust system with tips.`,
+
+    },
+    //engine
+    //intake manifold
+    {
+        product_name: "Ford Performance GT350 5.2L Voodoo Intake Manifold",
+        price: 1100,
+        labor_estimate: 250,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/390664?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Increase Top End Power. Are you a competitive racer on a quest to increase the top end power of your Coyote powered GT Mustang? Then look no further than a genuine Ford Racing GT350 5.2L Intake Manifold. The Shelby GT350 Intake Manifold is tuned for 7500 RPM peak power increases with little or no loss in low end torque. Designed to improve airflow which in turn produces bigger performance gains at higher RPMs, makes this GT350 Intake ideal for the racer looking for that extra boost of top end power. NOTE: requires tune and throttle body upgrade`,
 
     },
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "Edelbrock Victor II Intake Manifold",
+        price: 1300,
+        labor_estimate: 250,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/410861?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Premium Grade Intake Manifold. Superboost your vehicle's performance with the Edelbrock Victor II Intake Manifold. This intake manifold works for nitrous, supercharged, turbo applications, and heavy breathers designed to optimize airflow using long tapered crossover-style runners for an additional 16 horsepower and 27 pound-feet of torque. NOTE: requires tune, throttle body upgrade highly recommended`,
+
+    },
+    //superchargers
+    {
+        product_name: "Whipple W175AX 2.9L Intercooled Supercharger Kit; Black; Stage 1",
+        price: 7400,
+        labor_estimate: 1300,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/384438?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Even More Power! The stock 2015-2017 GT Mustangs come with an awesome 435 Horsepower and 400 lb/ft of Torque from the factory, but after installing a Whipple Stage 1 Supercharger on your Pony, you'll be planting about 750 Horsepower and 620 lb/ft of Torque at the flywheel. NOTE: if stock, no tune required, if not stock tune REQUIRED, if you already have a tuner, tuner will need to create a custom tune, many supporting mods such as half-shaft, driveshaft, injectors, fuel system common to higher power applications HIGHLY recommended`,
+
+    },
+
+    {
+        product_name: "Procharger High Output Stage II Intercooled Supercharger Kit with P-1SC-1; Satin Finish",
+        price: 8400,
+        labor_estimate: 2700,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/388803?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `More Horsepower! The stock Coyote powered GT Mustang came with an awesome 435 Horsepower and 400 lb/ft of Torque from the factory, but after installation a ProCharger-equipped 5.0L S550 Mustang can make 65-70% or more horsepower at the flywheel. Thanks to the industry's coolest charge air temperatures, the unmatched power gains are delivered with maximum reliability and everyday drivability. High Capacity Intercooler. If you have the desire to continue modding your Mustang even after adding a ProCharger Supercharger, then this is the kit for you. The air-to-air intercooler included with the Stage II Kit has a higher capacity than the High Output (HO) Kit. This Stage II kit will accommodate additional modifications as you continue to transform your Mustang into the highest horsepower beast possible. NOTE: Dyno tune required and many supporting mods such as half-shafts, driveshaft, injectors, fuel system HIGHLY recommended, pretty much required`,
+
+    },
+    //turbo chargers
+    {
+        product_name: "Hellion Twin Turbo Complete Kit",
+        price: 9000,
+        labor_estimate: 2500,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/389328?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `More Power! The Coyote powered S550 GT Mustangs came with an awesome 435 Horsepower and 400 lb/ft of Torque from the factory, but after installing a Hellion Twin Turbo Kit, you'll be planting a ground pounding 500 to 1200 Horsepower to the pavement (depending on custom tuning and fuel upgrades). Complete Kit. The Hellion Mustang Twin Turbo Kit comes with (2) Precision 55mm Turbos, (2) Turbosmart 40mm Wastegates, (2) Turbosmart VEE port bypass valves, 47 LB fuel injectors, a large vertical flow dual inlet intercooler, a handheld programmer with base tune installed and all the required parts and hardware needed to upgrade your mild manner pony to a wild snarling beast. NOTE: if not stock, custom tuning HIGHLY recommended`,
+
+    },
+    //throttle body
+    {
+        product_name: "Ford Performance 87mm GT350 Throttle Body",
+        price: 200,
+        labor_estimate: 50,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/390924?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `More Air for More Power. GT owners are always looking for ways to improve the power and performance of their Coyote Mustang. One way to improve both is by replacing the restrictive factory 80mm throttle body with a larger GT350 Throttle Body. Featuring a generous, free flowing 87mm single bore design, this genuine Ford Racing GT350 Throttle Body will increase air flow for an increase in power. This Throttle Body is the same exact one found as original factory equipment on all Shelby GT350's. NOTE: GT350 intake manifold required, this is not a direct replacement for stock GT throttle body`,
+
+    },
+
+    {
+        product_name: "Whipple Billet 132mm Eliptical Throttle Body Upgrade",
+        price: 600,
+        labor_estimate: 50,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/390975?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Better Airflow, More Power. Enhance your Mustang's performance with the Whipple Billet 132mm Elliptical Throttle Body Upgrade Kit. This aftermarket part is one of the finest fly-by-wire elliptical blade throttle bodies out in the market, with gains of up to 40 HP on standard boost levels on Whipple Supercharged Mustangs.Maximum Performance for Modified Motors. If you think this elliptical throttle body upgrade already provides a huge boost on the Whipple Mustang Kit, wait ‘til you install it on a modified motor. When this throttle body is installed in conjunction with heads, cams and exhaust upgrades you can see gains of up to 200hp - depending on tuning and boost levels. NOTE: Whipple supercharger required`,
+
+    },
+    //CAI
+    {
+        product_name: "Roush Cold Air Intake",
+        price: 400,
+        labor_estimate: 50,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/387035?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Increase Horsepower and Torque. The Roush Performance Mustang Cold Air Intake kit replaces your 5.0L GT Mustangs restrictive stock air box and paper filter with a high flow filter assembly and intake tube for an increase in horsepower and torque while improving throttle response and fuel mileage. Power gains of 28 horsepower and 28 torque have been seen with the stock tune and the 85mm MAF/Venturi Insert Tube installed. More power is possible by removing the MAF/Venturi Insert Tube for a 105mm MAF bore and adding a custom tune.`,
 
     },
     {
-        product_name: "",
-        price: 0,
+        product_name: "JLT Cold Air Intake with Red Oiled Filter",
+        price: 350,
+        labor_estimate: 50,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/390000?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `More Usable Horsepower. With a JLT Performance Cold Air Intake and a custom tune installed on your 2015-2017 GT you can expect to see a huge jump in horsepower and torque at the rear wheels. The cold air intake itself is good for 15 RWHP and 12 RWTQ, but when combined with the required tune you can expect to see up to an additional 37 horsepower and 26 ft/lbs. of torque at the rear wheels over stock. In addition to an increase in power you will also see an impressive improvement in driving performance.`,
+
+    },
+    //camshafts
+    {
+        product_name: "Comp Cams Thumpr NSR 220/234 Hydraulic Roller Camshafts",
+        price: 1600,
+        labor_estimate: 1300,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/408670?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Gives the Vehicle a Boost in Horsepower. Further improve your Ford Mustang GT’s mid- to high-performance setup, by replacing its factory camshafts with Comp Cams’ Thumpr NSR 220/234 Camshafts. These camshafts are designed with a 220-degree intake duration and a 234-degree exhaust duration, improving the air and exhaust flow of the vehicle’s engine. What’s more, it’s made out of high-strength material, so it’s able to handle high RPMs for a longer period of time.Tuning Is Required.Although you can install these Thumpr NSR Camshafts without springs or phaser limiters, you’ll still need to reprogram your Mustang’s ECU.This’ll ensure that you’re getting the best performance out of the camshafts.`,
+
+    },
+    //spark plugs
+    {
+        product_name: "NGK Laser Iridium Performance Spark Plugs",
+        price: 100,
+        labor_estimate: 50,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/64062?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Regular Maintenance. Replacing your old weak spark plugs is paramount to keep your engine running smoothly and efficiently, so why replace them with the same old sub-par stock plugs when high performance plugs from NGK will improve fuel efficiency and lower your emissions.`,
+
+    },
+    //air oil separator
+    {
+        product_name: "JLT 3.0 Black Oil Separator; Passenger Side",
+        price: 160,
         labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        image_url: "https://turn5.scene7.com/is/image/Turn5/393754?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Reduces Engine Sludge. Prevent engine sludge from impeding the power and performance of your Mustang. Installing a JLT Version 3.0 Air/Oil Separator will prevent crankcase exhaust, better known as blow-by (an oily vapor), from re-circulated back through your PCV system and intake. If left unchecked this oily vapor can solidify becoming engine sludge. This nasty sludge can coat the inside of your throttle body and intake manifold robbing you of power. A JLT 3.0 Separator is an ideal upgrade for all Mustangs that want to reduce engine sludge in order to maintain power and performance. NOTE: probably the MOST necessary mod for any Mustang GT owner due to the blow-by produced by the Coyote engine`,
+    },
+    //radiator
+    {
+        product_name: "Ford Performance Radiator",
+        price: 450,
+        labor_estimate: 240,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/384706?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Improves Cooling. Keep your GT or GT350 Mustang running nice and cool with a Ford Performance Radiator. This aluminum radiator will drastically improve the cooling power of your 5.0L or 5.2L when compared to the factory production radiator, perfect for street and strip.`,
+
+    },
+    //injectors
+    {
+        product_name: "Ford Performance EV6 High Flow Fuel Injectors; 47 lb",
+        price: 330,
+        labor_estimate: 125,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/50162?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `More Power. Make sure your modded Pony is getting enough fuel for the fire with a set of Ford Racing High Flow Fuel injectors. When you're adding bolt-ons, you have to make sure the air to fuel balance is adjusted correctly to get the most from your mods. These powerful 47 lb injectors will make sure your Mustang is getting the juice it needs so you get your money's worth.`,
 
     },
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "Fuel Injector Clinic High-Z Impedance Fuel Injectors; 1100cc",
+        price: 1050,
+        labor_estimate: 125,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/397630?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Latest Technology. Fuel Injector Clinic's 1100cc Fuel Injector Set is the largest fuel injector available for your 1986 to 2017 Mustang GT. Using the latest technology, these saturated/high impedance ball and seat injectors provide great linearity and short pulse width repeatability for improved performance. All fuel types, including race fuels, E85, and pump gasoline are compatible with these fuel injectors.`,
 
     },
+
+
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "DeatschWerks DW440 Brushless Fuel Pump with PWM Modulated Controller",
+        price: 600,
+        labor_estimate: 150,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/T547017?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "engine",
+        product_description: `Performance Boost. Ensure efficient fuel flow by replacing your Mustang’s stock fuel pump kit with this DeatschWerks DW440 Brushless Fuel Pump with PWM Modulated Controller. This DW440 pump is engineered to deliver fuel at high pressure to optimize your GT’s performance. It flows 440 LPH at 40 PSI to support 1,000 horsepower on gas and 750 horsepower on E85.`,
 
     },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
-    {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
-    },
+    //suspension
     {
         product_name: "",
         price: 0,
