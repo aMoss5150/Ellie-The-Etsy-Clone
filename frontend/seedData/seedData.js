@@ -15,17 +15,16 @@
 
 */
 
-const exhaust = 'exhaust'
 
-const engine = 'engine'
-
+// const exhaust = 'exhaust'
+// const engine = 'engine'
+// const suspension = 'suspension'
 const wheels = 'wheels'
-const suspension = 'suspension'
 const exterior = 'exterior'
 
 
-
 const products = [
+
     //exhuast
 
     //headers
@@ -263,6 +262,181 @@ const products = [
 
     },
     //suspension
+    //coil-overs
+    {
+        product_name: "Pedders eXtreme XA Coil-Over Kit",
+        price: 1200,
+        labor_estimate: 500,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/393835?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Track Inspired Handling. Are you looking to add the handling performance of a track car to your S550 Mustang? If you answered yes, you should replace your original factory shocks and struts with a Pedders Extreme XA Coil Over Kit. Designed to lower your Mustangs center of gravity, these Extreme XA Coil Overs will reduce body roll for flatter cornering and superior control.Height Adjustable. Pedders Extreme XA Coil Overs were designed to be height adjustable. Featuring a high grade steel lower mount these Coil Overs can be adjusted independently of one another to suite your personal taste. You can lower all four corners for a flat level appearance or raise the rear slightly for a classic raked look, the choice is entirely up to you. Adjustable Bump and Rebound. Pedders engineered their Coil Overs to be 30 position adjustable, which allows for adjustment of both bump and rebound. You can increase the stiffness of your Coil Overs for a punishing day at the track, then soften them for a comfortable ride home. Pedders Extreme XA Coil Overs are perfect for Mustangs that pull double duty as a daily commuter and a weekend warrior.`,
+
+    },
+    {
+        product_name: "Roush Single Adjustable Coil-Over Kit",
+        price: 1900,
+        labor_estimate: 500,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/389794?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Race-inspired Handling. Dramatically improve the handling performance of your S550 Mustang with a Roush Single Adjustable Coil Over Kit. This Roush Performance Coil Over Kit is designed to lower the center of gravity and reduce body roll for better handling that results in flat cornering and superior directional control — perfect for track days, autocross or a spirited drive down your favorite back road.Adjustable Ride Height. Lower your S550 Mustang's stance and center of gravity from 0.8" to 1.5" up front and 1.0" to 2.0" in the rear for drastically improved cornering and handling with this Roush Performance Coil Over Kit. The coil overs come set to a 1.5" drop in front and 1.0" drop in the rear, but can be adjusted with the included tools to the desired ride height.`,
+
+    },
+    {
+        product_name: "Vogtland Height Adjustable Coil-Over Kit",
+        price: 1500,
+        labor_estimate: 500,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/390364?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Sporty Handling. Dropping the stance or rake of a Mustang is something most S550 owners desire doing at some point when their pockets will allow. Maintaining a comfortable ride while improving overall handling is also a much sought after change. Make all of those things come to life when you swap out your stock suspension for this Vogtland Coilover Kit. With individual height adjustment and twin tube shocks, your 2015-2021 Mustang will acquire sporty handling and reduced body roll, all while obtaining the look you've been dreaming of for months.Height Only Adjustments. Having the ability to adjust front and rear height independently provides a nice cushion for personal preferences. Using the adjustments at the front and rear axles, your S550 can be lowered between 1.18" to 1.97" up front and 0.79" to 1.58" out back. Getting that perfect stance and ride height has never been so easy!`,
+
+    },
+    //springs
+    {
+        product_name: "SR Performance Sport Lowering Springs",
+        price: 185,
+        labor_estimate: 400,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/404915?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Performance Handling. SR Performance's Sport Lowering Springs are an excellent way to improve the handling performance of your S550 Mustang. These Sport Springs will lower your Mustang's center of gravity, which will reduce squat during acceleration, body roll in the corners, and excessive nose-dive under hard braking. SR Performance Sport Springs are perfectly suited for daily driving, street, and occasional track applications.Aggressive Muscle Car Stance. Not only does a set of SR Performance Sport Springs improve the handling performance of your Mustang, but they also improve its overall appearance by lowering the ride height approximately 1.2-inches front and 1.0-inches (Fastback) or 1.2-inches (Convertible) rear eliminating that huge tire to fender gap, for a more aggressive street stance.`,
+    },
+    {
+        product_name: "Eibach Pro-Kit Performance Lowering Springs",
+        price: 300,
+        labor_estimate: 400,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/408184?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Better Street Performance. Transform your Ford Mustang GT Fastback into the ultimate street machine by installing Eibach’s Pro-Kit Lowering Springs. By lowering your vehicle’s ride height and center of gravity, you’ll get better handling, as well as be able to corner faster, stop quicker, and get better miles per gallon.For That Mean, Lowered, Muscle Car Profile. Aside from enhancing your Mustang’s handling, this spring kit is also designed to give the vehicle a more powerful appeal. The springs are design to lower the car by -1.20 inches in the front and -0.80 inches in the rear, resulting in a meaner muscle car stance.`,
+
+    },
+    {
+        product_name: "Vogtland Sport Lowering Springs",
+        price: 320,
+        labor_estimate: 400,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/387016?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Performance Handling. Installing a set of Vogtland Progressive Rate Springs will lower your 2015-2021 S550 Mustang's center of gravity, which will reduce squat during acceleration, body roll in the corners, and excessive nose-dive under hard braking. Vogtland Sport Springs are ideal for daily driving, street, and even occasional track use.Lowered Muscle Car Stance. Not only does a set of Vogtland Sport Springs improve the handling performance of your Mustang, but they also improve its overall appearance. By lowering the ride height approximately 1.0" in the front and rear, that huge tire to fender gap is eliminated, providing your Mustang with a classic muscular stance.`,
+
+    },
+
+    //air suspension 
+    {
+        product_name: "Air Lift Performance 3H Complete Air Suspension Kit; 1/4-Inch Lines",
+        price: 3900,
+        labor_estimate: 900,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/393340?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Next-Level Suspension. If you're ready to take your vehicle to the next level, this Air Lift Performance 3H Height and Pressure Adjustable Air Suspension System is the kit you need. Improve your vehicle's suspension control with Air Lift Performance's most advanced air suspension kit yet. The installation immediately improves your vehicle's stance, performance, flexibility, and control. It's everything you need to keep your ride in the race.Leading Technology. This advanced air suspension kit gives you the ultimate suspension control thanks to its one-of-a-kind technology. The Air Lift Performance 3H uses 2 tried-and-true air management technologies. 4 height sensors with wiring and mounting hardware match with pressure-based control, and the 3H/3P digital controller is rich in features and engineered with the utmost in design and technology in mind.`,
+
+    },
+    {
+        product_name: "Air Lift Performance 4-Way Manual Complete Air Suspension Kit; 1/4-Inch Lines",
+        price: 2800,
+        labor_estimate: 900,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/389317?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Racetrack Tuned. Countless laps and several competition events have helped the Airlift engineers hone the razor sharp handling and flat cornering nature of this airbag suspension. Adjustable. Airlift suspension kits use 30-way adjustable, monotube struts with a serious range of damping adjustment that have been specially tuned to match their progressive air springs. The 30 clicks of adjustment aren't just for fun, but rather allow the user to dial in his preferred handling feel or desired ride quality from super stiff to really soft.5" Drop; 1" Lift. This Airlift Suspension Kit allows you to drop your S550 Mustang over 5" from the stock height for a killer parked stance and with the push of a button, lift it back up so you can tear around your favorite road course or drag strip. This Airlift Suspension Kit not only allows you to drop your ride height, but it also allows you to raise it up about 1" (25mm) over the stock OEM ride height making it perfect for speed bumps or steeply angled driveways. 4-Way Manual Air Management System. The Air Lift Performance Manual Air Management System features a 4-Way Paddle Control that provides simple, accurate and smooth adjustment to all 4 wheels. Great for use with gauge and pillar pods, this system provides a maximum pressure of 175 psi. Includes an attractive stainless steel switch plate bezel.`,
+
+    },
+
+    {
+        product_name: "Eibach Anti-Roll Front and Rear Sway Bars",
+        price: 500,
+        labor_estimate: 200,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/384459?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Improves Handling. Complete your S550 Mustangs suspension upgrades with an Eibach Anti-Roll Sway Bar kit. Anti Roll Kits, sometimes referred to as Sway Bars, reduce body roll through increased design stiffness over the factory bars. The results are superior handling, flatter cornering and better stability in any driving situation. Three Position Adjustable. This Eibach Sway Bar Kit features three (3) adjustment positions on both the front and rear bars which allows for fine tuning the handling balance of your S550 Pony to suite your driving needs from mild to wild. `,
+
+    },
+    {
+        product_name: "RTR Tactical Performance Adjustable Front and Rear Sway Bars",
+        price: 530,
+        labor_estimate: 200,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/397344?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Superior Handling Performance. Add track car handling performance to your daily driven S550 Mustang by upgrading to a RTR Tactical Performance 3-position adjustable Sway Bar Kit, sometimes referred to as an Anti Roll Kit. By replacing the skinny stock sway bars with much beefier Tactical Performance Sway Bars you will experience a decrease in body roll, flatter cornering and superior handling. These Sway Bars were engineered to work with your original factory suspension. However, in order to experience the maximum performance that this Sway Bar Kit can offer, it should be installed along with RTR's matching Tactical Performance Adjustable Dampers and Lowering Springs. Three-Way Adjustable. RTR engineered both their Front and Rear Tactical Performance Sway Bars with three (3) different mounting positions. These three mounting positions will make your Sway Bars adjustable. This adjustability will allow you to fine tune the handling balance of your S550 Mustang to suite your specific driving needs whether it's on the street, at the track or drifting at an autocross event. `,
+
+    },
+    {
+        product_name: "Ford Strut Tower Brace; Silver",
+        price: 200,
+        labor_estimate: 50,
+        image_url: "https://turn5.scene7.com/is/image/Turn5/386516?wid=810&hei=608&op_usm=0.8,1,10,0",
+        product_type: "suspension",
+        product_description: `Improves Handling, Reduces Flex. Reduce unwanted chassis flex and improve the handling of your S550 GT Mustang by installing a Ford Strut Tower Brace. The parallel beam design of this Strut Tower Brace adds additional strength to make your Mustang handle like it is on rails.`,
+
+    },
+    {
+        product_name: "",
+        price: 0,
+        labor_estimate: 0,
+        image_url: "",
+        product_type: "",
+        product_description: "",
+
+    },
+    {
+        product_name: "",
+        price: 0,
+        labor_estimate: 0,
+        image_url: "",
+        product_type: "",
+        product_description: "",
+
+    },
+    {
+        product_name: "",
+        price: 0,
+        labor_estimate: 0,
+        image_url: "",
+        product_type: "",
+        product_description: "",
+
+    },
+    {
+        product_name: "",
+        price: 0,
+        labor_estimate: 0,
+        image_url: "",
+        product_type: "",
+        product_description: "",
+
+    },
+    {
+        product_name: "",
+        price: 0,
+        labor_estimate: 0,
+        image_url: "",
+        product_type: "",
+        product_description: "",
+
+    },
+    {
+        product_name: "",
+        price: 0,
+        labor_estimate: 0,
+        image_url: "",
+        product_type: "",
+        product_description: "",
+
+    },
+    {
+        product_name: "",
+        price: 0,
+        labor_estimate: 0,
+        image_url: "",
+        product_type: "",
+        product_description: "",
+
+    },
+    {
+        product_name: "",
+        price: 0,
+        labor_estimate: 0,
+        image_url: "",
+        product_type: "",
+        product_description: "",
+
+    },
     {
         product_name: "",
         price: 0,

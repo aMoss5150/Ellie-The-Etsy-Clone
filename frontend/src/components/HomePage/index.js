@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Product from '../ProductSpan'
 
 
+
 import './HomePage.css'
 
 export default function HomePage() {
@@ -40,9 +41,6 @@ export default function HomePage() {
                 <Product />
                 <Product />
             </div>
-
-
-
         </div>
     )
 
