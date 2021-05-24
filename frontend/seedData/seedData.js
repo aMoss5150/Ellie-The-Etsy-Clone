@@ -365,103 +365,362 @@ const products = [
         product_description: `Improves Handling, Reduces Flex. Reduce unwanted chassis flex and improve the handling of your S550 GT Mustang by installing a Ford Strut Tower Brace. The parallel beam design of this Strut Tower Brace adds additional strength to make your Mustang handle like it is on rails.`,
 
     },
+    //wheels
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "Rohana RFX11 20x10 +22",
+        price: 2300,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/rohana/rfx11/rfx11_silver_white.jpg",
+        product_type: "wheels",
+        product_description: `These Rohana RFX11 wheels feature a Silver finish and are sure to make your ride stand out! This particular wheel setup is in 20x10 with a 22 offset. The Rohana RFX11 is a One Piece Rotary Forged wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "Aodhan DS07 19x9.5 +22",
+        price: 900,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/aodhan/ds07/ds07_black_white.jpg",
+        product_type: "wheels",
+        product_description: `These Aodhan DS07 wheels feature a Black finish and are sure to make your ride stand out! This particular wheel setup is in 19x9.5 with a 22 offset. The Aodhan DS07 is a One Piece Alloy wheel that features exposed lugs. These beautiful 10 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "Artisa ArtFormed Titan (Deco Directional) 18x8.5 +35",
+        price: 900,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/artisaartformed/titan/titan_brushedapollosilver_left_white.jpg",
+        product_type: "wheels",
+        product_description: `The Artisa Titan was named after Italian artist Titian Vecellio and was designed to fit the sport-coupe market. Featuring a smaller number of spokes than some of our other models, the Titan is focused on being a strong, lightweight wheel that can accommodate big brakes and keep the directional styling that Artisa is known for.`,
+
+    },
+    {
+        product_name: "F1R F29 18x8.5 +45",
+        price: 820,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/f1r/f29/f29_silver_white.jpg",
+        product_type: "wheels",
+        product_description: `These F1R F29 wheels feature a Silver finish and are sure to make your ride stand out! This particular wheel setup is in 18x8.5 with a 45 offset. The F1R F29 is a One Piece Alloy wheel that features exposed lugs. These beautiful 10 spoke wheels are available in a 5x112 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "Verde Axis V99 20x10.5 +25",
+        price: 1220,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/verde/axis/axis_black_white.jpg",
+        product_type: "wheels",
+        product_description: `These Verde Axis wheels feature a Black finish and are sure to make your ride stand out! This particular wheel setup is in 20x10.5 with a 25 offset. The Verde Axis is a One Piece Alloy wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "Verde Form VFF02 20x10 +45",
+        price: 1600,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/verdeform/vff02/vff02_brushed_white.jpg",
+        product_type: "wheels",
+        product_description: `These Verde Form VFF02 wheels feature a Brushed finish and are sure to make your ride stand out! This particular wheel setup is in 20x10 with a 45 offset. The Verde Form VFF02 is a One Piece Rotary Forged wheel that features exposed lugs. These beautiful 9 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
 
     },
     {
         product_name: "",
         price: 0,
-        labor_estimate: 0,
+        labor_estimate: 200,
         image_url: "",
-        product_type: "",
-        product_description: "",
+        product_type: "wheels",
+        product_description: ``,
+
+    },
+    {
+        product_name: "XXR 521 18x8.5 +25",
+        price: 800,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/xxr/521/521_blackgold_white.jpg",
+        product_type: "wheels",
+        product_description: `These XXR 521 wheels feature a Black Gold finish and are sure to make your ride stand out! This particular wheel setup is in 18x8.5 with a 25 offset. The XXR 521 is a One Piece Alloy wheel that features exposed lugs. These beautiful 10 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "Aodhan DS01 19x9.5 +22",
+        price: 1110,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/aodhan/ds01/ds01_blackchrome_white.jpg",
+        product_type: "wheels",
+        product_description: `These Aodhan DS01 wheels feature a Black Chrome finish and are sure to make your ride stand out! This particular wheel setup is in 19x9.5 with a 22 offset. The Aodhan DS01 is a One Piece Alloy wheel that features exposed lugs. These beautiful 7 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "Ferrada FR4 20x9 +35",
+        price: 2140,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/ferrada/fr4/fr4_bronzeblack_white.jpg",
+        product_type: "wheels",
+        product_description: `These Ferrada FR4 wheels feature a Bronze Black finish and are sure to make your ride stand out! This particular wheel setup is in 20x9 with a 35 offset. The Ferrada FR4 is a One Piece Alloy wheel that features exposed lugs. These beautiful 10 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "Ferrada FR2 20x9 +35",
+        price: 2140,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/ferrada/fr2/fr2_silverchrome_white.jpg",
+        product_type: "wheels",
+        product_description: `These Ferrada FR2 wheels feature a Silver Chrome finish and are sure to make your ride stand out! This particular wheel setup is in 20x9 with a 35 offset. The Ferrada FR2 is a One Piece Alloy wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "ESR CS11 19x10.5 +22",
+        price: 1110,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/esr/cs11/cs11_white_white.jpg",
+        product_type: "wheels",
+        product_description: `These ESR CS11 wheels feature a White finish and are sure to make your ride stand out! This particular wheel setup is in 19x10.5 with a 22 offset. The ESR CS11 is a One Piece Alloy wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "Curva C42 20x10 +38",
+        price: 1000,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/curva/c42/c42_black_white.jpg",
+        product_type: "wheels",
+        product_description: `These Curva C42 wheels feature a Black finish and are sure to make your ride stand out! This particular wheel setup is in 20x10 with a 38 offset. The Curva C42 is a One Piece Alloy wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "American Racing Crossfire AR924 20x9 +35",
+        price: 1110,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/americanracing/crossfire/crossfire_black_white.jpg",
+        product_type: "wheels",
+        product_description: `These American Racing Crossfire wheels feature a Black finish and are sure to make your ride stand out! This particular wheel setup is in 20x9 with a 35 offset. The American Racing Crossfire is a One Piece Alloy wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "HRE FlowForm FF04 20x9 +35",
+        price: 2700,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/hreflowform/ff04/ff04_black_white.jpg",
+        product_type: "wheels",
+        product_description: `These HRE FlowForm FF04 wheels feature a Black finish and are sure to make your ride stand out! This particular wheel setup is in 20x9 with a 35 offset. The HRE FlowForm FF04 is a One Piece Alloy wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
+
+    },
+    {
+        product_name: "Velgen Classic5 20x9 +32",
+        price: 1500,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/velgen/classic5/classic5_silver_white.jpg",
+        product_type: "wheels",
+        product_description: `These Velgen Classic5 wheels feature a Silver finish and are sure to make your ride stand out! This particular wheel setup is in 20x9 with a 32 offset. The Velgen Classic5 is a One Piece Alloy wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
 
     },
     {
         product_name: "",
         price: 0,
-        labor_estimate: 0,
+        labor_estimate: 200,
         image_url: "",
-        product_type: "",
-        product_description: "",
+        product_type: "wheels",
+        product_description: ``,
 
     },
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "Niche Sector M197 19x8.5 +35",
+        price: 1130,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/niche/sector/sector_gray_white.jpg",
+        product_type: "wheels",
+        product_description: `These Niche Sector wheels feature a Gray finish and are sure to make your ride stand out! This particular wheel setup is in 19x8.5 with a 35 offset. The Niche Sector is a One Piece Alloy wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
 
     },
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "XXR 569 20x10.5 +40",
+        price: 1000,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/xxr/569/569_black_white.jpg",
+        product_type: "wheels",
+        product_description: `These XXR 569 wheels feature a Black finish and are sure to make your ride stand out! This particular wheel setup is in 20x10.5 with a 40 offset. The XXR 569 is a One Piece Alloy wheel that features exposed lugs. These beautiful 5 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
 
     },
     {
-        product_name: "",
-        price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
+        product_name: "Work VS XX 19x10.5 +28",
+        price: 3400,
+        labor_estimate: 200,
+        image_url: "https://images.customwheeloffset.com/wheels/work/vsxx/vsxx_silver_white.jpg",
+        product_type: "wheels",
+        product_description: `These Work VS XX wheels feature a Silver finish and are sure to make your ride stand out! This particular wheel setup is in 19x10.5 with a 28 offset. The Work VS XX is a Three Piece Multi Piece wheel that features exposed lugs. These beautiful 10 spoke wheels are available in a 5x4.5 configuration and will be sure to elevate the look of your vehicle build!`,
 
     },
+    //grilles
     {
-        product_name: "",
+        product_name: ``,
         price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
+        labor_estimate: 120,
+        image_url: ``,
+        product_type: `exterior`,
+        product_description: ``
     },
     {
-        product_name: "",
+        product_name: ``,
         price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
+        labor_estimate: 120,
+        image_url: ``,
+        product_type: `exterior`,
+        product_description: ``
     },
     {
-        product_name: "",
+        product_name: ``,
         price: 0,
-        labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
+        labor_estimate: 120,
+        image_url: ``,
+        product_type: `exterior`,
+        product_description: ``
     },
     {
-        product_name: "",
+        product_name: ``,
         price: 0,
         labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
+        image_url: ``,
+        product_type: `exterior`,
+        product_description: ``
     },
     {
-        product_name: "",
+        product_name: ``,
         price: 0,
         labor_estimate: 0,
-        image_url: "",
-        product_type: "",
-        product_description: "",
-
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
+    },
+    {
+        product_name: ``,
+        price: 0,
+        labor_estimate: 0,
+        image_url: ``,
+        product_type: ``,
+        product_description: ``
     },
 ]
