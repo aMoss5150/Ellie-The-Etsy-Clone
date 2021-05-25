@@ -10,12 +10,12 @@ export default function HomePage() {
 
 
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getProducts())
-    }, [dispatch])
     const selProducts = useSelector(state => state.products)
     const prodArray = Object.values(selProducts)
 
+    useEffect(() => {
+        dispatch(getProducts())
+    }, [dispatch])
     return (
         <div className="home__page">
 
@@ -45,17 +45,7 @@ export default function HomePage() {
                     </Product>
 
                 ))}
-                {/* <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product /> */}
+
             </div>
         </div>
     )

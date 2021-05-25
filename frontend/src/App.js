@@ -8,6 +8,7 @@ import ProductDetails from "./components/ProductDetails";
 import ProductTypePage from "./components/ProductTypePage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import { getProducts } from '../src/store/products'
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function App() {
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(getProducts())
   }, [dispatch]);
 
   return (

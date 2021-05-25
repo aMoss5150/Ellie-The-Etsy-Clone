@@ -9,7 +9,7 @@ export default function Product({ product }) {
         <span className='product__container' >
             <img className='product__image-container' style={{ 'max-height': "120px", 'max-width': "200px" }} src={`${product.image_url}`} alt="product" />
             <div className='product__name-container'>
-                <Link to={`/products/${product.product_type}/${product.id}`}>
+                <Link to={`/${product.product_type}/${product.id}`}>
                     {product.product_name}
                 </Link>
             </div>
