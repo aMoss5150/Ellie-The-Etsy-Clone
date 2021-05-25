@@ -1,6 +1,8 @@
 
+
 //actions
 const LOAD = "products/LOAD";
+
 
 
 //action creators
@@ -13,7 +15,7 @@ const load = (products) => ({
 //!Thunk ACTION CREATORS
 //this will fetch all products to be rendered on homePage
 export const getProducts = () => async (dispatch) => {
-    const res = await fetch(`/api/products`);
+    const res = await fetch('/api/products');
     if (res.ok) {
         const products = await res.json();
         dispatch(load(products));
@@ -29,9 +31,11 @@ const productsReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
             const allProducts = {};
-            action.list.forEach(product => {
+            // console.log('action.product.products', action.products.products)
+            action.products.products.forEach(product => {
                 allProducts[product.id] = product;
             });
+
             return {
                 ...allProducts,
                 ...state

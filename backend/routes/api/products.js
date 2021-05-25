@@ -15,3 +15,5 @@ router.get('/', asyncHandler(async (req, res) => {
     // return the parsed response to the client
     return res.json({ products });
 }));
+
+module.exports = router

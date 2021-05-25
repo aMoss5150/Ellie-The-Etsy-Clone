@@ -7,12 +7,12 @@ const productsRouter = require('./products.js')
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
+router.use('/products', productsRouter)
 
 //!cart and products Routers routed here
 
 // router.use('/cart', cartRouter)
 
-// router.use('/products', productsRouter)
 
 //!TEST ROUTES
 router.post('/test', function (req, res) {

@@ -23,6 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
   //store
   window.store = store;
 
+
   //session
   window.sessionActions = sessionActions;
 
