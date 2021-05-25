@@ -1,4 +1,4 @@
-
+import { csrfFetch } from './csrf';
 
 //actions
 const LOAD = "products/LOAD";
@@ -15,7 +15,7 @@ const load = (products) => ({
 //!Thunk ACTION CREATORS
 //this will fetch all products to be rendered on homePage
 export const getProducts = () => async (dispatch) => {
-    const res = await fetch('/api/products');
+    const res = await csrfFetch('/api/products');
     if (res.ok) {
         const products = await res.json();
         dispatch(load(products));

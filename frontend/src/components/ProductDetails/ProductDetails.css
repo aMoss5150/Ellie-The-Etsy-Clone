@@ -1,5 +1,26 @@
-/* .product__details-container {
-    height: 100px;
-    width: 100px;
-    border: 100px red solid;
-} */
+.product__details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details {
+    max-width: 900px;
+}
+
+#details__price1 #details__price2 {
+    align-self: flex-end;
+}
+
+.product__details__name-container {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.product__description-container {}

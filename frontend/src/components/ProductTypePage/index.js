@@ -1,32 +1,55 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-// import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
-// import { getProducts } from '../../store/products'
+import { getProducts } from '../../store/products'
 import Product from '../ProductSpan'
-
 import './ProductTypePage.css'
 
 
-export default function ProductTypePage({ products }) {
-    console.log('products:', products)
-    const productsArr = Object.values(products)
+
+export default function ProductTypePage() {
+    //!LOGIC BLOCK FOR CONTROLLING REFRESH    
     const { productType } = useParams()
-    const foundProds = productsArr.filter((product) => (
+    const dispatch = useDispatch();
+    let products = useSelector(state => state.products)
+
+
+    useEffect(() => {
+        dispatch(getProducts())
+    }, [dispatch])
+
+    // useEffect(() => {
+
+    // }, [])
+
+    if (!products) return null
+    //!
+
+    products = Object.values(products)
+    let foundProds = products.filter((product) => (
         product.product_type === productType
     ))
-
+    // foundProds = foundProds.sort((a, b) => { //!sort by price
+    //     return a.price - b.price
+    // })
+    foundProds = foundProds.sort((a, b) => { //!sort alphabetically
+        if (a.product_name < b.product_name) {
+            return -1
+        }
+        if (a.product_name > b.product_name) {
+            return 1
+        }
+        return 0
+    })
     return (
         <div className='product__types-container'>
-            <h1 className='product__type__text-container'>{productType}</h1>
+            <div className='product__type__text-container'>{productType}</div>
             <div className='types__product__display-container'>
                 {foundProds.map((product) => (
                     <Product key={product.product_name} product={product} />
                 ))}
             </div>
-
         </div>
-
     )
-
 }

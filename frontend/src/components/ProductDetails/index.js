@@ -1,45 +1,61 @@
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
+import { getProducts } from '../../store/products'
 import ReviewsDisplay from '../ReviewsDisplayDiv'
 
 import './ProductDetails.css'
 
-export default function ProductDetails() {
-    const products = useSelector(state => state.products)
+export default function ProductDetails({ products }) {
+    const dispatch = useDispatch();
+    const { productId, productType } = useParams()
+    // console.log('productId:', productId)
 
-    // const [prods, setProds] = useState('')
-    // const [isLoaded, setIsLoaded] = useState(false)
-    const { productId } = useParams()
-    const product = products[productId]
+    //!LOGIC BLOCK FOR CONTROLLING REFRESH    
+    const selProducts = useSelector(state => state.products)
+
+    useEffect(() => {
+        dispatch(getProducts())
+    }, [dispatch])
+
+    let data = products ? products : selProducts
+    const product = data[productId]
+
+    //! SUBNOTE--- need to figure out logic to find product based on product
+    //! SUBNOTE---ID and product_type match up
+    // data = Object.values(data)
+
+    // let productsTypeArr = data.filter((product) => {
+    //     return product.product_type === productType
+    // })
+
+    // let product
+    // console.log('productsTypeArr:', productsTypeArr)
+    // productsTypeArr.forEach(p => p = p.id === productId)
     // console.log('product:', product)
-    // console.log('should be selected product:-----------------', products[productId])
 
-    // useEffect(() => {
-    //     setProds(products)
-    // }, [])
+    if (!product) return null
+    //!
 
     return (
-
         <div className='product__details-container'>
+            <div className='details__card'>
 
-
-
-            {/* <h1>{prods ? 'yes' : 'false'}</h1> */}
-            <img style={{ maxHeight: '600px', maxWidth: '600px' }} src={product.image_url} alt={product.product_name} />
-            <h2 className='product__name'>{product.product_name}</h2>
-            <p className='product__details'>
-                {product.product_description}
-            </p>
-            <p>
-                {product.price}
-            </p>
-            <p>
-                {product.labor_estimate}
-            </p>
-
-            <ReviewsDisplay product={'test product'} />
+                <div className='product__details__name-container'>{product.product_name}</div>
+                <img style={{ maxHeight: '600px', maxWidth: '600px' }} src={product.image_url} alt={product.product_name} />
+                <h2 className='details product__name'>{product.product_name}</h2>
+                <p className='details product__description-container'>
+                    {product.product_description}
+                </p>
+                <p id='details__price1' className='details product__price-container'>
+                    ${product.price}
+                </p>
+                <p id='details__price2' className='details product__labor-container'>
+                    ${product.labor_estimate}
+                </p>
+                <ReviewsDisplay product={'test product'} />
+            </div>
         </div>
 
     )

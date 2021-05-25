@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector, connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
@@ -10,16 +10,17 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import { getProducts } from '../src/store/products'
 
-function App() {
+function App({ products }) {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  //IMPORT THE PRODUCTS FROM THE STORE
-  const products = useSelector(state => state.products)
+  //! DONT useSelector PRODUCTS HERE OR IT
+  //! WILL RUN EVERY TIME SOMETHING HAPPENS
+  //! SLOW, only useSelector on pages that need products
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-    dispatch(getProducts())
+    // dispatch(getProducts())
   }, [dispatch]);
 
   return (
@@ -40,16 +41,16 @@ function App() {
             <HomePage products={products} />
           </Route>
 
-          <Route path="/:productType/:productId">
+          <Route path="/products/:productType/:productId">
             <ProductDetails products={products} />
           </Route>
 
-          <Route path="/:productType">
+          <Route path="/products/:productType">
             <ProductTypePage products={products} />
           </Route>
 
           <Route>
-            Page Not Found
+            <h1>Page Not Found</h1>
           </Route>
 
         </Switch>
@@ -58,11 +59,14 @@ function App() {
   );
 }
 
-const mapStateToProps = state => ({
-  products: state.products,
-  cart: state.cart,
-  reviews: state.reviews,
-  session: state.session
-})
+//! MAPSTATETOPROPS reFACTORING----vvvvvvvvv
+//! OLD WAY OF USING REACT.... NO LONGER NECESSARY
+// const mapStateToProps = state => ({
+//   session: state.session,
+//   products: state.products,
+//   reviews: state.reviews,
+//   cart: state.cart
+// })
+//!------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-export default connect()()App;
+export default App;

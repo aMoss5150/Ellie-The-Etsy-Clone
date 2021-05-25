@@ -31,3 +31,24 @@ React?}
 11. in ()--------------
 12. in ()--------------
 13. in ()--------------
+
+
+
+
+1. UTILIZE MIDDLEWARE requireauth... on the routes that require auth
+--such as
+----POSTING, EDITING, CREATING a new review
+
+
+2. use csrfFetch for all fetches from within my redux thunks
+
+
+
+3. !!THIS MUST BE ACCOUNTED FOR ALL REFRESH INSTANCES
+logic for the conditional rendering is in the ProductDetails page
+this is for when the products is not in the store such as a on a refresh
+
+
+4. NotFound page, could send a redirect page to do for there
+could use history.push('/not-found')
+
