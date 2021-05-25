@@ -3,24 +3,32 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 import { getProducts } from '../../store/products'
+import { getReviews } from '../../store/reviews'
 import ReviewsDisplay from '../ReviewsDisplayDiv'
 
 import './ProductDetails.css'
 
 export default function ProductDetails({ products }) {
     const dispatch = useDispatch();
-    const { productId, productType } = useParams()
+    const { productId } = useParams()
     // console.log('productId:', productId)
 
     //!LOGIC BLOCK FOR CONTROLLING REFRESH    
     const selProducts = useSelector(state => state.products)
+    let reviews = useSelector(state => state.reviews)
+
 
     useEffect(() => {
         dispatch(getProducts())
+        dispatch(getReviews())
     }, [dispatch])
 
-    let data = products ? products : selProducts
-    const product = data[productId]
+    let prodData = products ? products : selProducts
+    const product = prodData[productId]
+
+
+
+
 
     //! SUBNOTE--- need to figure out logic to find product based on product
     //! SUBNOTE---ID and product_type match up
@@ -35,8 +43,13 @@ export default function ProductDetails({ products }) {
     // productsTypeArr.forEach(p => p = p.id === productId)
     // console.log('product:', product)
 
-    if (!product) return null
-    //!
+    if (!product || !reviews) return null
+
+    reviews = Object.values(reviews)
+    reviews = reviews.filter((review) => (
+        review.product_id === product.id
+    ))
+    // console.log('reviews:', reviews)
 
     return (
         <div className='product__details-container'>
@@ -54,7 +67,7 @@ export default function ProductDetails({ products }) {
                 <p id='details__price2' className='details product__labor-container'>
                     ${product.labor_estimate}
                 </p>
-                <ReviewsDisplay product={'test product'} />
+                <ReviewsDisplay reviews={reviews} />
             </div>
         </div>
 

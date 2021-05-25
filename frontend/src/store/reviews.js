@@ -1,3 +1,4 @@
+import { csrfFetch } from './csrf';
 
 //actions
 const LOAD = "reviews/LOAD";
@@ -29,7 +30,7 @@ const del = reviewId => ({
 //!Thunk ACTION CREATORS
 //this will fetch all reviews to be rendered on product page
 export const getReviews = () => async (dispatch) => {
-    const res = await fetch(`/api/reviews`);
+    const res = await csrfFetch(`/api/reviews`);
     if (res.ok) {
         const reviews = await res.json();
         dispatch(load(reviews));
@@ -39,7 +40,7 @@ export const getReviews = () => async (dispatch) => {
 
 export const addReview = (newReview) => async (dispatch) => {
     newReview = JSON.stringify(newReview)
-    const res = await fetch(`/api/reviews`, {
+    const res = await csrfFetch(`/api/reviews`, {
         method: "POST",
         body: newReview,
         headers: {

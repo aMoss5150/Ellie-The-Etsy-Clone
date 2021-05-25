@@ -1,13 +1,15 @@
 
 
+
 import './Review.css'
 
-export default function Review({ product }) {
-    if (!product) return <h3>no product found on REVIEW test</h3>
+export default function ReviewDetails({ review }) {
+    if (!review) return <h3>No reviews for this product yet...</h3>
     return (
         <div className='review__container'>
-            REVIEW-DETAILS COMPONENT TEST, this will be a single review
-            div
+            <p>
+                {review.description}
+            </p>
         </div>
     )
 }

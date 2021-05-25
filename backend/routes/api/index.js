@@ -8,6 +8,7 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 router.use('/products', productsRouter)
+router.use('/reviews', reviewsRouter);
 
 //!cart and products Routers routed here
 

@@ -35,3 +35,10 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+
+// npx sequelize dotenv --- needs to be prefixed to
+//  any DB action, to tell what DB to use
+//  if not a DB action such as model:generate,
+//  will not be necessary because it is not referencing a DB
+//  it is only targeting folders within PWD in the terminal

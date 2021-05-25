@@ -1,7 +1,7 @@
 
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { requireAuth } = require('../../utils/auth')
+const { requireAuth, restoreUser } = require('../../utils/auth')
 
 const router = express.Router();
 
@@ -16,12 +16,12 @@ router.get('/', asyncHandler(async (req, res) => {
     const reviews = await Review.findAll()
 
     // return the reviews to the client
-    return res.json({ reviews });
+    return res.json(reviews);
 }));
 
 // =================__PROTECTED
 //create new review
-router.post('/', requireAuth, asyncHandler(async (req, res) => {
+router.post('/', restoreUser, asyncHandler(async (req, res) => {
     // destructure the body of the request for easy access
     const { description, user_id, product_id } = req.body;
 
@@ -30,15 +30,15 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
     const newReview = await Review.create({ description, user_id, product_id });
 
     // return the reponse after parsing to show the newly created review
-    return res.json({
+    return res.json(
         newReview
-    });
+    );
 }))
 
 
 // ===============__PROTECTED
 //edit existing review
-router.put('/', requireAuth, asyncHandler(async (req, res) => {
+router.put('/', restoreUser, asyncHandler(async (req, res) => {
     //  const { productId } = req.params ?? //!Can I do this?
 
     //  need to ensure that this review is created by user...
@@ -69,9 +69,10 @@ router.put('/', requireAuth, asyncHandler(async (req, res) => {
 
 // ==============__PROTECTED
 //delete existing review
-router.delete('/', requireAuth, asyncHandler(async (req, res) => {
+router.delete('/', restoreUser, asyncHandler(async (req, res) => {
     if (req.user.id === req.body.user_id) {
         await Review.destroy({ where: { id: req.body.id } })
     }
 }))
 
+module.exports = router
