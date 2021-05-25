@@ -13,7 +13,7 @@ router.get('/', asyncHandler(async (req, res) => {
     const products = await Product.findAll()
 
     // return the parsed response to the client
-    return res.json({ products });
+    return res.json(products);
 }));
 
 module.exports = router

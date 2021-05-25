@@ -32,7 +32,7 @@ const productsReducer = (state = initialState, action) => {
         case LOAD: {
             const allProducts = {};
             // console.log('action.product.products', action.products.products)
-            action.products.products.forEach(product => {
+            action.products.forEach(product => {
                 allProducts[product.id] = product;
             });
 

@@ -1,26 +1,20 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+// import { useSelector, useDispatch } from 'react-redux'
 
-import { getProducts } from '../../store/products'
+// import { getProducts } from '../../store/products'
 import Product from '../ProductSpan'
 
 import './ProductTypePage.css'
 
 
-export default function ProductTypePage() {
-    const dispatch = useDispatch();
+export default function ProductTypePage({ products }) {
+    console.log('products:', products)
+    const productsArr = Object.values(products)
     const { productType } = useParams()
-    const selProducts = useSelector(state => state.products)
-
-    const productsArr = Object.values(selProducts)
     const foundProds = productsArr.filter((product) => (
         product.product_type === productType
     ))
-
-    useEffect(() => {
-        dispatch(getProducts())
-    }, [dispatch])
 
     return (
         <div className='product__types-container'>
@@ -29,7 +23,6 @@ export default function ProductTypePage() {
                 {foundProds.map((product) => (
                     <Product key={product.product_name} product={product} />
                 ))}
-
             </div>
 
         </div>

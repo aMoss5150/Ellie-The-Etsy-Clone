@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from '../../store/products'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { getProducts } from '../../store/products'
 
 
 import './HomePage.css'
 import Product from '../ProductSpan'
 
-export default function HomePage() {
+export default function HomePage({ products }) {
+    console.log(products)
 
+    // const dispatch = useDispatch();
+    // const selProducts = useSelector(state => state.products)
+    // const prodArray = Object.values(selProducts)
 
-    const dispatch = useDispatch();
-    const selProducts = useSelector(state => state.products)
-    const prodArray = Object.values(selProducts)
-
-    useEffect(() => {
-        dispatch(getProducts())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(getProducts())
+    // }, [dispatch])
     return (
         <div className="home__page">
 
@@ -39,7 +39,7 @@ export default function HomePage() {
             </div>
 
             <div className='product__display-container'>
-                {prodArray.map(product => (
+                {Object.values(products).map(product => (
                     <Product key={product.id} product={product}>
                         {product.product_name}
                     </Product>

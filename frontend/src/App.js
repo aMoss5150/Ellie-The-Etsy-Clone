@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, connect } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
@@ -58,4 +58,11 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  products: state.products,
+  cart: state.cart,
+  reviews: state.reviews,
+  session: state.session
+})
+
+export default connect()()App;
