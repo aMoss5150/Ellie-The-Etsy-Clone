@@ -8,6 +8,9 @@ export default function ReviewDetails({ review }) {
     return (
         <div className='review__container'>
             <p>
+                {review.username}
+            </p>
+            <p>
                 {review.description}
             </p>
         </div>

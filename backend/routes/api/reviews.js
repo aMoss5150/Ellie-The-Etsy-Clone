@@ -6,6 +6,7 @@ const { requireAuth, restoreUser } = require('../../utils/auth')
 const router = express.Router();
 
 const { Review } = require('../../db/models')
+const { User } = require('../../db/models')
 
 //reviews router
 
@@ -25,10 +26,12 @@ router.post('/', restoreUser, asyncHandler(async (req, res) => {
     // destructure the body of the request for easy access
     const { description, productId } = req.body;
     const userId = req.user.id
+    const name = (await User.findByPk(req.user.id)).username
+    console.log('name:', name)
 
     // create a new review and await promise return of creating new review
     // with the properties that are not auto-created by sequelize
-    const newReview = await Review.create({ description, user_id: userId, product_id: productId });
+    const newReview = await Review.create({ description, user_id: userId, product_id: productId, username: name });
     const reviews = await Review.findAll()
 
     // return the reponse after parsing to show the newly created review
