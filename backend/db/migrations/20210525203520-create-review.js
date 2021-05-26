@@ -22,6 +22,9 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Users' }
       },
+      username: {
+
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
