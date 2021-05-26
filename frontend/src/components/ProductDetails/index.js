@@ -75,13 +75,13 @@ export default function ProductDetails({ products }) {
                     {product.product_description}
                 </p>
                 <p id='details__price1' className='details product__price-container'>
-                    ${product.price}
+                    Price: ${product.price}
                 </p>
                 <p id='details__price2' className='details product__labor-container'>
-                    ${product.labor_estimate}
+                    Labor average: ${product.labor_estimate}
                 </p>
-                <p id='total__price'>
-                    Total Price w/ labor: ${product.price + product.labor_estimate}
+                <p id='details__totalprice'>
+                    Total Price: ${product.price + product.labor_estimate}
                 </p>
             </div>
 

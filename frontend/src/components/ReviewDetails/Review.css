@@ -1,0 +1,22 @@
+.review__container {
+    /* background-color: lightblue; */
+    /* box-shadow: 3px 3px 5px 6px #ccc; */
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+#review__description {
+    position: relative;
+    left: 28px;
+}
+
+#review__user {
+    font-weight: bold;
+}
+
+#review__date {
+    position: relative;
+    /* left: 327px; */
+    margin-bottom: 22px;
+    font-size: 13px;
+}
