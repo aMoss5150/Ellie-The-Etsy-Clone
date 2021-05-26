@@ -1,0 +1,24 @@
+.review__form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review__form {
+    display: flex;
+    flex-direction: column;
+}
+
+#submit__button {
+    /* align-self: center; */
+    margin-top: 5px;
+    width: 175px;
+}
+
+@media screen and (max-width: 1024px) {
+    .review__form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

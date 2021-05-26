@@ -56,7 +56,9 @@ export default function ProductDetails({ products }) {
     return (
         <div className='product__details-container'>
             {/* product image */}
-            <img className='product__picture' style={{ maxHeight: '600px', maxWidth: '600px' }} src={product.image_url} alt={product.product_name} />
+            <div className='product__picture-container'>
+                <img className='product__picture' style={{ maxHeight: '700px', maxWidth: '700px', marginLeft: '30px' }} src={product.image_url} alt={product.product_name} />
+            </div>
 
 
             {/* product card */}
@@ -72,7 +74,10 @@ export default function ProductDetails({ products }) {
                 <p id='details__price2' className='details product__labor-container'>
                     ${product.labor_estimate}
                 </p>
-                <ReviewForm />
+                <p id='total__price'>
+                    Total Price w/ labor: ${product.price + product.labor_estimate}
+                </p>
+                <ReviewForm product={product} />
             </div>
 
 

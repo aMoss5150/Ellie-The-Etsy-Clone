@@ -14,6 +14,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* background-color: #859989; */
+    /* background-color: #d8e6ec; */
+    /* background-color: #79a3b1; */
     background-color: #d0e8f2;
     height: 340px;
     width: 100vw;
