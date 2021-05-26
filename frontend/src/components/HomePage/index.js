@@ -14,13 +14,22 @@ export default function HomePage() {
     //! DONE IN APP!!!!   MUST REFACTOR
 
     //!LOGIC BLOCK FOR CONTROLLING REFRESH    
-    const products = useSelector(state => state.products)
+    let products = useSelector(state => state.products)
 
     useEffect(() => {
         dispatch(getProducts())
     }, [dispatch])
 
     if (!products) return null
+    products = Object.values(products).sort((a, b) => {
+        if (a.product_name < b.product_name) {
+            return -1
+        }
+        if (a.product_name > b.product_name) {
+            return 1
+        }
+        return 0
+    })
 
     //!
 
@@ -31,35 +40,35 @@ export default function HomePage() {
             <div className='category__display-container'>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '150px', maxHeight: '150px' }} src='https://turn5.scene7.com/is/image/Turn5/388803?wid=810&hei=608&op_usm=0.8,1,10,0' alt="" />
+                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/388803?wid=810&hei=608&op_usm=0.8,1,10,0' alt="engine" />
                     <NavLink to='/products/engine'>
                         Engine
                     </NavLink>
                 </span>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '150px', maxHeight: '150px' }} src='https://turn5.scene7.com/is/image/Turn5/404140?wid=810&hei=608&op_usm=0.8,1,10,0' alt="" />
+                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/404140?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exhaust" />
                     <NavLink to='/products/exhaust'>
                         Exhaust
                     </NavLink>
                 </span>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '150px', maxHeight: '150px' }} src='https://images.customwheeloffset.com/wheels/ferrada/fr4/fr4_bronzeblack_white.jpg' alt="" />
+                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://images.customwheeloffset.com/wheels/ferrada/fr4/fr4_bronzeblack_white.jpg' alt="wheels" />
                     <NavLink to='/products/wheels'>
                         Wheels
                     </NavLink>
                 </span>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '150px', maxHeight: '150px' }} src='https://turn5.scene7.com/is/image/Turn5/390364?wid=810&hei=608&op_usm=0.8,1,10,0' alt="" />
+                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/390364?wid=810&hei=608&op_usm=0.8,1,10,0' alt="suspension" />
                     <NavLink to='/products/suspension'>
                         Suspension
                     </NavLink>
                 </span>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '150px', maxHeight: '150px' }} src='https://turn5.scene7.com/is/image/Turn5/405870?wid=810&hei=608&op_usm=0.8,1,10,0' alt="" />
+                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/405870?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exterior" />
                     <NavLink to='/products/exterior'>
                         Exterior
                     </NavLink>
@@ -68,7 +77,7 @@ export default function HomePage() {
             </div>
 
             <div className='product__display-container'>
-                {Object.values(products).map(product => (
+                {products.map(product => (
                     <Product key={product.id} product={product}>
                         {product.product_name}
                     </Product>
