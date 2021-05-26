@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { getProducts } from '../../store/products'
 import { getReviews } from '../../store/reviews'
 import ReviewsDisplay from '../ReviewsDisplayDiv'
+import ReviewForm from '../ReviewForm'
 
 import './ProductDetails.css'
 
@@ -43,6 +44,7 @@ export default function ProductDetails({ products }) {
     // productsTypeArr.forEach(p => p = p.id === productId)
     // console.log('product:', product)
 
+
     if (!product || !reviews) return null
 
     reviews = Object.values(reviews)
@@ -53,10 +55,13 @@ export default function ProductDetails({ products }) {
 
     return (
         <div className='product__details-container'>
-            <div className='details__card'>
+            {/* product image */}
+            <img className='product__picture' style={{ maxHeight: '600px', maxWidth: '600px' }} src={product.image_url} alt={product.product_name} />
 
+
+            {/* product card */}
+            <div className='details__card'>
                 <div className='product__details__name-container'>{product.product_name}</div>
-                <img style={{ maxHeight: '600px', maxWidth: '600px' }} src={product.image_url} alt={product.product_name} />
                 <h2 className='details product__name'>{product.product_name}</h2>
                 <p className='details product__description-container'>
                     {product.product_description}
@@ -67,8 +72,12 @@ export default function ProductDetails({ products }) {
                 <p id='details__price2' className='details product__labor-container'>
                     ${product.labor_estimate}
                 </p>
-                <ReviewsDisplay reviews={reviews} />
+                <ReviewForm />
             </div>
+
+
+            {/* review display */}
+            <ReviewsDisplay reviews={reviews} />
         </div>
 
     )

@@ -41,7 +41,7 @@ function App({ products }) {
             <HomePage products={products} />
           </Route>
 
-          <Route path="/products/:productType/:productId">
+          <Route path="/all-products/:productId">
             <ProductDetails products={products} />
           </Route>
 

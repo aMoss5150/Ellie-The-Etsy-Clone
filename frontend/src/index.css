@@ -6,7 +6,10 @@ body {
     background-color: #fcf8ec;
     /* d8e3e7 */
     /* #1b262c */
+    font-family: Times, "Helvetica Neue",
 }
+
+.root {}
 
 a {
     transition: color .4s;

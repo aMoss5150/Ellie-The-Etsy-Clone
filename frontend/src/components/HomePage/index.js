@@ -8,6 +8,7 @@ import './HomePage.css'
 import Product from '../ProductSpan'
 
 export default function HomePage() {
+
     const dispatch = useDispatch();
 
     //! DISPATCH WHEREVER I NEED TO FIND PRODUCTS... will be slower if
@@ -30,7 +31,17 @@ export default function HomePage() {
         }
         return 0
     })
+    // console.log('products:', products)
+    // let selectProducts = []
 
+    // for (let i = 0; i <= 12; i++) {
+    //     let product = products[i];
+    //     console.log('product:', product)
+
+    //     if (product.price > 300) { selectProducts.push(product) }
+    //     else
+    //         i++
+    // }
     //!
 
     return (
@@ -78,6 +89,7 @@ export default function HomePage() {
 
             <div className='product__display-container'>
                 {products.map(product => (
+                    product.price > 1000 && product.price < 2000 &&
                     <Product key={product.id} product={product}>
                         {product.product_name}
                     </Product>
