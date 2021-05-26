@@ -23,15 +23,17 @@ router.get('/', asyncHandler(async (req, res) => {
 //create new review
 router.post('/', restoreUser, asyncHandler(async (req, res) => {
     // destructure the body of the request for easy access
-    const { description, user_id, product_id } = req.body;
+    const { description, productId } = req.body;
+    const userId = req.user.id
 
     // create a new review and await promise return of creating new review
     // with the properties that are not auto-created by sequelize
-    const newReview = await Review.create({ description, user_id, product_id });
+    const newReview = await Review.create({ description, user_id: userId, product_id: productId });
+    const reviews = await Review.findAll()
 
     // return the reponse after parsing to show the newly created review
     return res.json(
-        newReview
+        reviews
     );
 }))
 
@@ -48,6 +50,7 @@ router.put('/', restoreUser, asyncHandler(async (req, res) => {
     if (req.user.id === req.body.user_id) {
         //maybe this serves as a double check??
         const { newDescription } = req.body
+        const { userId } = req.user.id
 
         //find the review to update, match possibly of the req.params
         //which will contain the product_id in the params
