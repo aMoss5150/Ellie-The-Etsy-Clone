@@ -58,8 +58,14 @@ export default function ProductDetails({ products }) {
             {/* product image */}
             <div className='product__picture-container'>
                 <img className='product__picture' style={{ maxHeight: '700px', maxWidth: '700px', marginLeft: '30px' }} src={product.image_url} alt={product.product_name} />
+
+
             </div>
 
+            <div className='product__reviews-container'>
+                {/* review display */}
+                <ReviewsDisplay reviews={reviews} />
+            </div>
 
             {/* product card */}
             <div className='details__card'>
@@ -77,12 +83,12 @@ export default function ProductDetails({ products }) {
                 <p id='total__price'>
                     Total Price w/ labor: ${product.price + product.labor_estimate}
                 </p>
+            </div>
+
+            <div className='product__reviews-template'>
                 <ReviewForm product={product} />
             </div>
 
-
-            {/* review display */}
-            <ReviewsDisplay reviews={reviews} />
         </div>
 
     )

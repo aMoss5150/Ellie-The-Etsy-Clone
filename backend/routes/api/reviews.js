@@ -26,8 +26,7 @@ router.post('/', restoreUser, asyncHandler(async (req, res) => {
     // destructure the body of the request for easy access
     const { description, productId } = req.body;
     const userId = req.user.id
-    const name = (await User.findByPk(req.user.id)).username
-    console.log('name:', name)
+    const name = req.user.username
 
     // create a new review and await promise return of creating new review
     // with the properties that are not auto-created by sequelize
@@ -57,7 +56,7 @@ router.put('/', restoreUser, asyncHandler(async (req, res) => {
 
         //find the review to update, match possibly of the req.params
         //which will contain the product_id in the params
-        const reviewToUpdate = await Review.findOne({ where: { product_id: productId } })
+        const reviewToUpdate = await Review.findByPk()
 
         // vanilla JS, update the old description to the new one
         reviewToUpdate.description = newDescription
