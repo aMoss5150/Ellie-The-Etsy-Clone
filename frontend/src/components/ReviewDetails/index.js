@@ -7,7 +7,7 @@ const dateFormat = require('dateformat')
 
 export default function ReviewDetails({ review }) {
     const dispatch = useDispatch();
-    const [reviewState, setReviewState] = useState('')
+    // const [reviewState, setReviewState] = useState('')
     const [disabled, setDisabled] = useState(true)
 
     const userId = useSelector(state => state.session).user?.id
@@ -20,12 +20,12 @@ export default function ReviewDetails({ review }) {
     }
     // const handleUpdate = () => {
 
-    //     // dispatch(updateReview(reviewState))
+    // dispatch(updateReview(reviewState))
     // }
 
-    useEffect(() => {
-        setReviewState(review)
-    }, [reviewState])
+    // useEffect(() => {
+    // setReviewState(review)
+    // }, [reviewState])
 
     useEffect(() => {
         if (userId === review.user_id) {

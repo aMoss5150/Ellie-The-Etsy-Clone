@@ -2,26 +2,64 @@
     /* border: 1px red solid; */
 }
 
+.logo__span {
+    /* overflow: hidden; */
+    position: relative;
+    /* right: px; */
+    /* bottom: 60px; */
+    /* align-self: flex-start; */
+}
+
+.logo__1 {
+    /* max-width: 100px; */
+    max-height: 150px;
+    position: relative;
+    bottom: 35px;
+}
+
 .navigation__bar {
-    display: flex;
-    margin-bottom: 45px;
+    /* display: flex; */
+    margin-bottom: -58px;
     margin-top: 20px;
-    justify-content: center;
+    justify-content: space-between;
     width: 100vw;
     /* border-bottom: 1px solid blue */
     /* flex-wrap: nowrap; */
 }
 
 .nav__links {
-    margin-left: 10px;
+    /* margin-left: 10px; */
+}
+
+.nav__home-link {
+    position: relative;
+    right: 100px;
+    bottom: 46px;
+    font-size: 17px;
+}
+
+.nav__signup-link {
+    position: relative;
+    bottom: 64px;
+    font-size: 17px;
+}
+
+.nav__login-link {
+    position: relative;
+    left: 50px;
+    bottom: 90px;
+    font-size: 17px;
 }
 
 #profile {
-    position: sticky;
-    left: 1100px;
+    position: relative;
+    left: 56px;
+    bottom: 95px;
+    /* margin-right: 55px; */
 }
 
 .profile-dropdown {
     position: relative;
-    left: -65px;
+    right: 51px;
+    bottom: 10px;
 }

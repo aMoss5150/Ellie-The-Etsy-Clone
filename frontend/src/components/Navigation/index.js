@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import SearchBar from '../SearchBar';
+import logo1 from '../../images/mustang-burnout-logo.png'
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
@@ -16,8 +17,8 @@ function Navigation({ isLoaded }) {
     } else {
         sessionLinks = (
             <>
-                <NavLink className='nav__links' to="/login">Log In</NavLink>
-                <NavLink className='nav__links' to="/signup">Sign Up</NavLink>
+                <NavLink className='nav__login-link' to="/login">Log In</NavLink>
+                <NavLink className='nav__signup-link' to="/signup">Sign Up</NavLink>
 
             </>
         );
@@ -26,7 +27,8 @@ function Navigation({ isLoaded }) {
     return (
 
         <nav className="navigation__bar">
-            <NavLink className='nav__links' exact to="/">Home</NavLink>
+            <span className='logo__span'><img className='logo__1' src={logo1} alt="" /></span>
+            <NavLink className='nav__home-link' exact to="/">Home</NavLink>
             <SearchBar />
             {isLoaded && sessionLinks}
 

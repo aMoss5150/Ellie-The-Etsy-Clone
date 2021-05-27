@@ -9,6 +9,7 @@ import Product from '../ProductSpan'
 
 export default function HomePage() {
 
+
     const dispatch = useDispatch();
 
     //! DISPATCH WHEREVER I NEED TO FIND PRODUCTS... will be slower if
@@ -47,7 +48,7 @@ export default function HomePage() {
     return (
         <div className="home__page">
 
-            <h1 className='home__page-tester'>Ellie</h1>
+            {/* <h1 className='home__page-tester'>Ellie</h1> */}
             <div className='category__display-container'>
 
                 <span className='display__nav__span'>

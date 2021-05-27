@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
@@ -9,7 +9,7 @@ import ProductTypePage from "./components/ProductTypePage";
 import CartDisplay from "./components/CartDisplay";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import { getProducts } from '../src/store/products'
+
 
 function App({ products }) {
   const dispatch = useDispatch();
@@ -22,7 +22,6 @@ function App({ products }) {
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-    // dispatch(getProducts())
   }, [dispatch]);
 
   return (

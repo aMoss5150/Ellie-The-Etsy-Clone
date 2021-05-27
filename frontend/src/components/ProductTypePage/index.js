@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getProducts } from '../../store/products'
 import Product from '../ProductSpan'
 import './ProductTypePage.css'
+import { Link } from 'react-router-dom'
 
 
 
@@ -44,7 +45,26 @@ export default function ProductTypePage() {
     })
     return (
         <div className='product__types-container'>
-            <div className='product__type__text-container'>{productType}</div>
+            <div className='types__nav'>
+                <Link className='product__types-links' to='/products/engine'>
+                    Engine
+                </Link>
+
+                <Link className='product__types-links' to='/products/exhaust'>
+                    Exhaust
+                </Link>
+                <Link className='product__types-links' to='/products/wheels'>
+                    Wheels
+                </Link>
+                <Link className='product__types-links' to='/products/suspension'>
+                    Suspension
+                </Link>
+                <Link className='product__types-links' to='/products/exterior'>
+                    Exterior
+                </Link>
+
+            </div>
+            {/* <div className='product__type__text-container'>{productType.toUpperCase()}</div> */}
             <div className='types__product__display-container'>
                 {foundProds.map((product) => (
                     <Product key={product.product_name} product={product} />

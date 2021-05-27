@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 import { getProducts } from '../../store/products'
 import { getReviews } from '../../store/reviews'
-import { addItem } from '../../store/cart'
+import { addItemLS } from '../../store/cart'
 import ReviewsDisplay from '../ReviewsDisplayDiv'
 import ReviewForm from '../ReviewForm'
 
@@ -20,7 +20,7 @@ export default function ProductDetails({ products }) {
     let reviews = useSelector(state => state.reviews)
 
     const handleAddToCart = (id) => {
-        dispatch(addItem(id))
+        dispatch(addItemLS(id))
     }
 
 
@@ -60,6 +60,27 @@ export default function ProductDetails({ products }) {
 
     return (
         <div className='product__details-container'>
+
+
+            <div id='idtypes__nav' className='types__nav'>
+                <Link className='product__types-links' to='/products/engine'>
+                    Engine
+                </Link>
+
+                <Link className='product__types-links' to='/products/exhaust'>
+                    Exhaust
+                </Link>
+                <Link className='product__types-links' to='/products/wheels'>
+                    Wheels
+                </Link>
+                <Link className='product__types-links' to='/products/suspension'>
+                    Suspension
+                </Link>
+                <Link className='product__types-links' to='/products/exterior'>
+                    Exterior
+                </Link>
+
+            </div>
             {/* product image */}
             <div className='product__picture-container'>
                 <img className='product__picture' style={{ maxHeight: '700px', maxWidth: '700px', marginLeft: '30px' }} src={product.image_url} alt={product.product_name} />
@@ -88,9 +109,9 @@ export default function ProductDetails({ products }) {
                 <p id='details__totalprice'>
                     Total Price: ${product.price + product.labor_estimate}
                 </p>
-                <button onClick={() => handleAddToCart(product.id)}>
+                {/* <button onClick={() => handleAddToCart(product.id)}>
                     Add To Cart
-                </button>
+                </button> */}
             </div>
 
             <div className='product__reviews-template'>

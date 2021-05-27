@@ -9,7 +9,11 @@
     position: relative;
     /* left: 500px; */
     margin-bottom: 10px;
-    font-size: 3.5em;
+    font-size: 1.5em;
+}
+
+.product__types-links {
+    margin: 15px;
 }
 
 .types__product__display-container {
@@ -19,6 +23,19 @@
     margin: 65px 10px auto;
     justify-content: center;
     /* align-items: center; */
+}
+
+.types__nav {
+    display: flex;
+    /* border: 1px solid red; */
+    background-color: #d0e8f2;
+    /* width: 500px; */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace
 }
 
 @media screen and (max-width: 768px) {
