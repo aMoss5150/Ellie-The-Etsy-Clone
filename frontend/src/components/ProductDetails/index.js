@@ -19,9 +19,9 @@ export default function ProductDetails({ products }) {
     const selProducts = useSelector(state => state.products)
     let reviews = useSelector(state => state.reviews)
 
-    const handleAddToCart = (id) => {
-        dispatch(addItemLS(id))
-    }
+    // const handleAddToCart = (id) => {
+    //     dispatch(addItemLS(id))
+    // }
 
 
     useEffect(() => {
@@ -91,6 +91,7 @@ export default function ProductDetails({ products }) {
             <div className='product__reviews-container'>
                 {/* review display */}
                 <ReviewsDisplay reviews={reviews} />
+
             </div>
 
             {/* product card */}

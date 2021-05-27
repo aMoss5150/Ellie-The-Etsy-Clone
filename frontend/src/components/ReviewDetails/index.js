@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { delReview } from '../../store/reviews'
+import ModalEditReview from '../ModalEditReview'
 import './Review.css'
 
 const dateFormat = require('dateformat')
@@ -51,6 +52,7 @@ export default function ReviewDetails({ review }) {
             <button className={disabled === true ? 'hidden' : ''} onClick={() => (handleDelete())} id="delete__review-button">
                 Delete
             </button>
+            <ModalEditReview review={review} />
             {/* <button onClick={() => (handleUpdate())} id="update__review-button">
                 Update my review
             </button> */}
