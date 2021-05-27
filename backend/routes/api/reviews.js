@@ -43,19 +43,11 @@ router.post('/', restoreUser, asyncHandler(async (req, res) => {
 // ===============__PROTECTED
 //edit existing review
 router.put('/', restoreUser, asyncHandler(async (req, res) => {
-    //  const { productId } = req.params ?? //!Can I do this?
 
-    //  need to ensure that this review is created by user...
-    //  OR I could only make the update/delete button available in the React 
-    //  component where the user's ID is equal to the Reviews.user_id
-    //  this is probably the proper way to do this
     if (req.user.id === req.body.user_id) {
         //maybe this serves as a double check??
         const { newDescription } = req.body
-        const { userId } = req.user.id
 
-        //find the review to update, match possibly of the req.params
-        //which will contain the product_id in the params
         const reviewToUpdate = await Review.findByPk()
 
         // vanilla JS, update the old description to the new one
@@ -65,19 +57,24 @@ router.put('/', restoreUser, asyncHandler(async (req, res) => {
         await reviewToUpdate.save()
 
         // return to view the newly edited review
-        return res.json({
-            reviewToUpdate
-        })
     }
 
+    const reviews = await Review.findAll()
+    return res.json(reviews)
 }))
 
 // ==============__PROTECTED
 //delete existing review
 router.delete('/', restoreUser, asyncHandler(async (req, res) => {
+    // console.log(req, req.body)
     if (req.user.id === req.body.user_id) {
-        await Review.destroy({ where: { id: req.body.id } })
+        const reviewToDestroy = await Review.findByPk(req.body.id)
+        await reviewToDestroy.destroy()
     }
+    // return console.log('success')
+
+    const reviews = await Review.findAll()
+    return res.json(reviews)
 }))
 
 module.exports = router

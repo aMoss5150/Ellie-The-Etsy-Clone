@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addReview } from '../../store/reviews'
 
 import './ReviewForm.css'
 export default function ReviewForm({ product }) {
     const dispatch = useDispatch();
+
+    const userId = useSelector(state => state.session).user?.id
 
     const [description, setDescription] = useState('')
     const [productId, setProductId] = useState('')
@@ -24,6 +26,8 @@ export default function ReviewForm({ product }) {
     useEffect(() => {
         setProductId(product.id)
     }, [product])
+
+    if (!userId) return null
 
     return (
         <div className='review__form-container'>

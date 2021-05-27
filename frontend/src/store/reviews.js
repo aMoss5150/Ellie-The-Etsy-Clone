@@ -54,6 +54,44 @@ export const addReview = (newReview) => async (dispatch) => {
     }
 };
 
+export const delReview = (review) => async (dispatch) => {
+    const { id } = review
+    review = JSON.stringify(review)
+    const res = await csrfFetch(`/api/reviews/`, {
+        method: "DELETE",
+        body: review,
+        headers: {
+            'Content-Type': "application/json"
+        }
+    })
+    if (res.ok) {
+        const reviews = await res.json();
+        dispatch(load(reviews));
+        return reviews
+    }
+
+}
+
+
+export const updateReview = (newReview) => async (dispatch) => {
+    newReview = JSON.stringify(newReview)
+    const res = await csrfFetch(`/api/reviews`, {
+        method: "PUT",
+        body: newReview,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    if (res.ok) {
+        const reviews = await res.json();
+        dispatch(load(reviews));
+        return reviews
+    }
+};
+
+
+
+
 //initial state variables
 const initialState = {};
 
@@ -75,6 +113,12 @@ const reviewsReducer = (state = initialState, action) => {
         case ADD: {
             const newState = { ...state }
             newState[action.newReview] = action.newReview
+            return newState
+        }
+
+        case DELETE: {
+            const newState = { ...state }
+            delete newState[action.reviewId]
             return newState
         }
 
