@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux'
 
 //actions
 const LOAD = "cart/LOAD";
@@ -6,6 +7,11 @@ const REMOVE_ITEM = 'cart/REMOVE_ITEM'
 const EMPTY = 'cart/EMPTY'
 
 //action creators
+
+export const getCart = (products) => ({
+    type: LOAD,
+    products
+})
 
 export const addItem = (itemId) => ({
     type: ADD_ITEM,
@@ -27,6 +33,14 @@ export const emptyCart = () => ({
 //product will be fetched and passed in from 
 // item button to add to cart
 
+export const getCartLS = () => async (dispatch) => {
+    const cartLS = localStorage.getItem('cartObj')
+    const products = await JSON.parse(cartLS)
+
+    dispatch(getCart(products));
+
+};
+
 
 //initial state variables
 const initialState = {};
@@ -35,6 +49,11 @@ const initialState = {};
 //CART REDUCER
 const cartReducer = (state = initialState, action) => {
     switch (action.type) {
+        case LOAD: {
+            const newState = { ...state, ...action.products }
+            return newState
+        }
+
         case ADD_ITEM:
             return {
                 ...state,

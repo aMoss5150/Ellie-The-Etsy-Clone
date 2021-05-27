@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage";
 import ProductDetails from "./components/ProductDetails";
 import ProductTypePage from "./components/ProductTypePage";
+import CartDisplay from "./components/CartDisplay";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import { getProducts } from '../src/store/products'
@@ -15,8 +16,9 @@ function App({ products }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   //! DONT useSelector PRODUCTS HERE OR IT
-  //! WILL RUN EVERY TIME SOMETHING HAPPENS
-  //! SLOW, only useSelector on pages that need products
+  //! WILL RUN EVERY TIME SOMETHING HAPPENS SLOW, 
+  //! only useSelector on pages that need products
+
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -49,6 +51,10 @@ function App({ products }) {
             <ProductTypePage products={products} />
           </Route>
 
+          <Route path='/cart'>
+            <CartDisplay />
+          </Route>
+
           <Route>
             <h1>Page Not Found</h1>
           </Route>
@@ -59,14 +65,5 @@ function App({ products }) {
   );
 }
 
-//! MAPSTATETOPROPS reFACTORING----vvvvvvvvv
-//! OLD WAY OF USING REACT.... NO LONGER NECESSARY
-// const mapStateToProps = state => ({
-//   session: state.session,
-//   products: state.products,
-//   reviews: state.reviews,
-//   cart: state.cart
-// })
-//!------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 export default App;

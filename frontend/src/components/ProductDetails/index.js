@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 
 import { getProducts } from '../../store/products'
 import { getReviews } from '../../store/reviews'
+import { addItem } from '../../store/cart'
 import ReviewsDisplay from '../ReviewsDisplayDiv'
 import ReviewForm from '../ReviewForm'
 
@@ -17,6 +18,10 @@ export default function ProductDetails({ products }) {
     //!LOGIC BLOCK FOR CONTROLLING REFRESH    
     const selProducts = useSelector(state => state.products)
     let reviews = useSelector(state => state.reviews)
+
+    const handleAddToCart = (id) => {
+        dispatch(addItem(id))
+    }
 
 
     useEffect(() => {
@@ -83,6 +88,9 @@ export default function ProductDetails({ products }) {
                 <p id='details__totalprice'>
                     Total Price: ${product.price + product.labor_estimate}
                 </p>
+                <button onClick={() => handleAddToCart(product.id)}>
+                    Add To Cart
+                </button>
             </div>
 
             <div className='product__reviews-template'>
