@@ -25,7 +25,7 @@ export default function SearchBar() {
             </span>
             <form className='test-form' action="">
                 <input placeholder="search..." className='test-input' type="search" />
-                <i class="fa fa-search"></i>
+                <i className="fa fa-search"></i>
             </form>
 
 

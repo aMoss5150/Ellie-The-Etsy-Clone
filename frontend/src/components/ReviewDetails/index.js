@@ -46,8 +46,8 @@ export default function ReviewDetails({ review }) {
             <p id='review__date'>
                 -{dateFormat([...review.createdAt].slice(0, 10).join(''), "dddd, mmmm dS, yyyy")}
             </p>
-            <p>
-                {review.createdAt !== review.updatedAt ? "edited" : ''}
+            <p id='edited__p'>
+                {review.createdAt !== review.updatedAt ? "-edited" : ''}
             </p>
             <button className={disabled === true ? 'hidden' : ''} onClick={() => (handleDelete())} id="delete__review-button">
                 Delete

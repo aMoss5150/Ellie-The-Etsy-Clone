@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { updateReview } from '../../store/reviews'
+import { updateReview, getReviews } from '../../store/reviews'
 
 import './ModalEditReview.css'
 
@@ -18,11 +18,14 @@ export default function ModalEditReview({ review }) {
         let updateObj = { ...review, newReviewDes: newReviewDesc }
         dispatch(updateReview(updateObj))
         setModalOpen(false)
+        dispatch(getReviews())
+        setNewReviewDesc('')
     }
 
     const handleModalClose = (e) => {
         e.preventDefault()
         setModalOpen(false)
+        setNewReviewDesc('')
     }
 
     useEffect(() => {
