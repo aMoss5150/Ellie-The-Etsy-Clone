@@ -17,6 +17,28 @@
     bottom: 35px;
 }
 
+#currency__selector {
+    position: relative;
+    bottom: 63px;
+    left: 13px;
+    opacity: 0.6
+    /* border: 1px solid red */
+}
+
+.currency__selectors {
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgb(201, 209, 221, 0.1);
+    transition: color .4s;
+    /* opacity: 0.6; */
+    /* transition: opacity .4s; */
+}
+
+.currency__selectors:hover {
+    color: #007BE6;
+    /* opacity: 1 */
+    /* border: 1px solid rgba(0, 0, 0, 0.2) */
+}
+
 .navigation__bar {
     /* display: flex; */
     margin-bottom: -58px;

@@ -15,10 +15,15 @@ button {
     border: none;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgb(201, 209, 221);
+    transition: color .2s;
 }
 
 button:hover {
     color: #007BE6;
+}
+
+img:hover {
+    border-radius: 0%;
 }
 
 .root {
@@ -28,7 +33,9 @@ button:hover {
 
 a {
     transition: color .4s;
+    /* transition: opacity .4s; */
     color: #265C83;
+    /* opacity: 0.8; */
     text-decoration: none;
 }
 
@@ -38,6 +45,7 @@ a:link, a:visited {
 
 a:hover {
     color: #7FDBFF;
+    /* opacity: 0.9 */
 }
 
 a:active {

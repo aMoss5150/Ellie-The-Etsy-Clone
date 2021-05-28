@@ -31,7 +31,6 @@ const productsReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
             const allProducts = {};
-            // console.log('action.product.products', action.products.products)
             action.products.forEach(product => {
                 allProducts[product.id] = product;
             });

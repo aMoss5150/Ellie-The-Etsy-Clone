@@ -10,6 +10,7 @@ import * as sessionActions from './store/session';
 import { getProducts } from './store/products'
 import { addItem, removeItem, emptyCart } from './store/cart'
 import { getReviews, addReview } from './store/reviews'
+import { CurrencyProvider } from './context/CurrencyContext'
 
 const store = configureStore();
 
@@ -43,9 +44,11 @@ if (process.env.NODE_ENV !== 'production') {
 function Root() {
   return (
     <ReduxProvider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <CurrencyProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CurrencyProvider >
     </ReduxProvider>
   );
 }

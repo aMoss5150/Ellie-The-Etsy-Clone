@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import SearchBar from '../SearchBar';
+import { useCurrency } from '../../context/CurrencyContext'
 import logo1 from '../../images/mustang-burnout-logo.png'
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
+    const { setCurrency } = useCurrency()
     const sessionUser = useSelector(state => state.session.user);
 
     let sessionLinks;
@@ -31,6 +33,18 @@ function Navigation({ isLoaded }) {
             <NavLink className='nav__home-link' exact to="/">Home</NavLink>
             <SearchBar />
             {isLoaded && sessionLinks}
+            <span id="currency__selector">
+
+                <span id="usd" className='currency__selectors' onClick={() => setCurrency('usd')}>
+                    USD
+                </span>
+                |
+                <span id='gbr' className='currency__selectors' onClick={() => setCurrency('gbp')}>
+                    GBR
+                </span>
+
+            </span>
+
 
         </nav>
 

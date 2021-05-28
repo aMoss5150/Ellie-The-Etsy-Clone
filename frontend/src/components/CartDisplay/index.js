@@ -10,7 +10,7 @@ import './CartDisplay.css'
 
 export default function CartDisplay() {
     const dispatch = useDispatch();
-    // const [flag, setFlag] = (0)
+
 
     const cart = useSelector(state => state.cart)
 
@@ -27,7 +27,7 @@ export default function CartDisplay() {
 
 
     const cartArray = Object.values(cart)
-    console.log('cartArray:', cartArray)
+
 
     return (
         <div className="cart__container">

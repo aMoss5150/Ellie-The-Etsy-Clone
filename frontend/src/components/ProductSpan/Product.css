@@ -16,6 +16,11 @@
     /* 456268 */
 }
 
+.product__container:hover {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 #product__name-container {
     /* display: flex; */
     /* flex-direction: row; */

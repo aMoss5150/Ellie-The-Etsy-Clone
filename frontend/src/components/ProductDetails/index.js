@@ -5,15 +5,19 @@ import { useParams, Link } from 'react-router-dom'
 import { getProducts } from '../../store/products'
 import { getReviews } from '../../store/reviews'
 import { addItemLS } from '../../store/cart'
+import { useCurrency, usdFormat, gbpFormat } from '../../context/CurrencyContext'
 import ReviewsDisplay from '../ReviewsDisplayDiv'
 import ReviewForm from '../ReviewForm'
 
 import './ProductDetails.css'
 
 export default function ProductDetails({ products }) {
+    const { currency } = useCurrency()
+
+    // const [curr, setCurr] = useState('usd')
     const dispatch = useDispatch();
     const { productId } = useParams()
-    // console.log('productId:', productId)
+
 
     //!LOGIC BLOCK FOR CONTROLLING REFRESH    
     const selProducts = useSelector(state => state.products)
@@ -29,25 +33,9 @@ export default function ProductDetails({ products }) {
         dispatch(getReviews())
     }, [dispatch])
 
+    let format = currency === 'usd' ? usdFormat : gbpFormat
     let prodData = products ? products : selProducts
     const product = prodData[productId]
-
-
-
-
-
-    //! SUBNOTE--- need to figure out logic to find product based on product
-    //! SUBNOTE---ID and product_type match up
-    // data = Object.values(data)
-
-    // let productsTypeArr = data.filter((product) => {
-    //     return product.product_type === productType
-    // })
-
-    // let product
-    // console.log('productsTypeArr:', productsTypeArr)
-    // productsTypeArr.forEach(p => p = p.id === productId)
-    // console.log('product:', product)
 
 
     if (!product || !reviews) return null
@@ -56,11 +44,10 @@ export default function ProductDetails({ products }) {
     reviews = reviews.filter((review) => (
         review.product_id === product.id
     ))
-    // console.log('reviews:', reviews)
+
 
     return (
         <div className='product__details-container'>
-
 
             <div id='idtypes__nav' className='types__nav'>
                 <Link className='product__types-links' to='/products/engine'>
@@ -102,13 +89,13 @@ export default function ProductDetails({ products }) {
                     {product.product_description}
                 </p>
                 <p id='details__price1' className='details product__price-container'>
-                    Price: ${product.price}
+                    Price: {format(product.price)}
                 </p>
                 <p id='details__price2' className='details product__labor-container'>
-                    Labor average: ${product.labor_estimate}
+                    Labor average: {format(product.labor_estimate)}
                 </p>
                 <p id='details__totalprice'>
-                    Total Price: ${product.price + product.labor_estimate}
+                    Total Price: {format(product.price + product.labor_estimate)}
                 </p>
                 {/* <button onClick={() => handleAddToCart(product.id)}>
                     Add To Cart

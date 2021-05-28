@@ -1,0 +1,11 @@
+#footer {
+    /* background-color: rgb(223, 233, 248); */
+    width: 100vw;
+    display: flex;
+    /* height: 10vh */
+    /* border: 1px solid blue; */
+    margin-top: 20px;
+    /* position: relative; */
+    /* left: 1150px */
+    justify-content: center;
+}

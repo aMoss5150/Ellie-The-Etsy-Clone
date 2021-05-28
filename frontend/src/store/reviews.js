@@ -69,7 +69,6 @@ export const delReview = (review) => async (dispatch) => {
         dispatch(load(reviews));
         return reviews
     }
-
 }
 
 

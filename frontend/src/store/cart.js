@@ -42,10 +42,10 @@ export const getCartLS = (itemId) => async (dispatch) => {
     }
     else {
 
-        console.log('cart doesnt exist in ls')
+
         return
     }
-    console.log('success')
+
     return
 };
 
@@ -60,7 +60,7 @@ export const addItemLS = (itemId) => async (dispatch) => {
     // }
     // let products
 
-    // console.log(typeof cartLS)
+
     // // if (cartLS) {
     // //pull cart
     // products = await cartLS.json()
@@ -75,21 +75,21 @@ export const addItemLS = (itemId) => async (dispatch) => {
     // dispatch(addItem(itemId))
     // dispatch(getCart(products))
     // // } else {
-    // //     console.log('cart does not exist in ls')
+
     // //     return
     // // }
-    // console.log('success')
+
     // return
 
     const fakeCart = { 1: { 1: 1 } }
     //!TESTING
     itemId = JSON.stringify(itemId)
     localStorage.setItem("fakeCart", { fakeCart: fakeCart })
-    console.log('set success')
+
     let returnCart = localStorage.getItem('fakeCart')
-    console.log('returnCart preparse:', returnCart, typeof returnCart)
+
     let parsedCart = JSON.parse(returnCart)
-    console.log('returnCart postparse:', parsedCart, typeof parsedCart)
+
 
 
 }

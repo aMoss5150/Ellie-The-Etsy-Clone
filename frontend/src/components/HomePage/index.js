@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../../store/products'
 
@@ -9,7 +9,7 @@ import Product from '../ProductSpan'
 
 export default function HomePage() {
 
-
+    const history = useHistory()
     const dispatch = useDispatch();
 
     //! DISPATCH WHEREVER I NEED TO FIND PRODUCTS... will be slower if
@@ -32,23 +32,12 @@ export default function HomePage() {
         }
         return 0
     })
-    // console.log('products:', products)
-    // let selectProducts = []
 
-    // for (let i = 0; i <= 12; i++) {
-    //     let product = products[i];
-    //     console.log('product:', product)
-
-    //     if (product.price > 300) { selectProducts.push(product) }
-    //     else
-    //         i++
-    // }
-    //!
 
     return (
         <div className="home__page">
 
-            {/* <h1 className='home__page-tester'>Ellie</h1> */}
+
             <div className='category__display-container'>
 
                 <span className='display__nav__span'>

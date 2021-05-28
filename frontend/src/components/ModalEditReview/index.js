@@ -20,6 +20,7 @@ export default function ModalEditReview({ review }) {
         setModalOpen(false)
         dispatch(getReviews())
         setNewReviewDesc('')
+        window.location.reload()
     }
 
     const handleModalClose = (e) => {

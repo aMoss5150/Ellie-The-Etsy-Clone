@@ -27,7 +27,7 @@ const removeUser = () => {
 
 
 //THUNK ACTION CREATORS
-//!DO I NEED TO CALL THIS IN A USEEFFECT FOR WHEN THE PAGE IS RENDERED??
+
 export const restoreUser = () => async dispatch => {
     const response = await csrfFetch('/api/session');
     const data = await response.json();
@@ -37,7 +37,7 @@ export const restoreUser = () => async dispatch => {
 
 
 // DISPATCH THIS THUNK TO LOGIN!!
-//! will this validate user, so I can just dispatch this when login for is submit?
+
 export const login = (user) => async (dispatch) => {
     const { credential, password } = user;
     const response = await csrfFetch('/api/session', {

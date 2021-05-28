@@ -20,9 +20,6 @@ export default function ProductTypePage() {
         dispatch(getProducts())
     }, [dispatch])
 
-    // useEffect(() => {
-
-    // }, [])
 
     if (!products) return null
     //!

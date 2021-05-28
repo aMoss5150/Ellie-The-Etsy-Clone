@@ -19,14 +19,7 @@ export default function ReviewDetails({ review }) {
         //dont want this to update if you dont trigger an update
         window.location.reload()
     }
-    // const handleUpdate = () => {
 
-    // dispatch(updateReview(reviewState))
-    // }
-
-    // useEffect(() => {
-    // setReviewState(review)
-    // }, [reviewState])
 
     useEffect(() => {
         if (userId === review.user_id) {
@@ -54,9 +47,7 @@ export default function ReviewDetails({ review }) {
             </button
             >
             <ModalEditReview review={review} />
-            {/* <button onClick={() => (handleUpdate())} id="update__review-button">
-                Update my review
-            </button> */}
+
         </div >
     )
 }

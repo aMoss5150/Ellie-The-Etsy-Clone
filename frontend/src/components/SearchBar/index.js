@@ -17,12 +17,7 @@ export default function SearchBar() {
     return (
         <div className='search__bar-parent'>
 
-            <span className="search__bar-container">
-                {/* <input placeholder="Search..." className='search-bar' type="text" value={inputVal} onChange={(e) => setInputVal(e.target.value)} /> */}
-                {/* <option value="hello"></option> */}
 
-
-            </span>
             <form className='test-form' action="">
                 <input placeholder="search..." className='test-input' type="search" />
                 <i className="fa fa-search"></i>

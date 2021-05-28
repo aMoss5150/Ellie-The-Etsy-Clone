@@ -44,8 +44,8 @@ router.post('/', restoreUser, asyncHandler(async (req, res) => {
 //edit existing review
 router.put('/', restoreUser, asyncHandler(async (req, res) => {
 
-    console.log("REQUEST BODY", req.body)
-    console.log(req.body.user_id)
+
+
     if (req.user.id === req.body.user_id) {
         //maybe this serves as a double check??
         const { newReviewDes, id } = req.body
@@ -68,12 +68,12 @@ router.put('/', restoreUser, asyncHandler(async (req, res) => {
 // ==============__PROTECTED
 //delete existing review
 router.delete('/', restoreUser, asyncHandler(async (req, res) => {
-    // console.log(req, req.body)
+
     if (req.user.id === req.body.user_id) {
         const reviewToDestroy = await Review.findByPk(req.body.id)
         await reviewToDestroy.destroy()
     }
-    // return console.log('success')
+
 
     const reviews = await Review.findAll()
     return res.json(reviews)

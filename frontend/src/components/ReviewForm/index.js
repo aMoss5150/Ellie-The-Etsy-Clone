@@ -10,8 +10,7 @@ export default function ReviewForm({ product }) {
 
     const [description, setDescription] = useState('')
     const [productId, setProductId] = useState('')
-    //get session user out of the request on the back end
-    // const [userId, setUserId] = useState('')
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
