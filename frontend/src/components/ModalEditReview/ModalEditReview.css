@@ -2,10 +2,6 @@
      box-sizing: border-box;
  } */
 
- body {
-     background-color: #edeef6;
- }
-
  .reviewedit__modal-container {
      background-color: rgba(0, 0, 0, 0.3);
      display: flex;
@@ -22,17 +18,29 @@
      display: none;
  }
 
- #review__edit-close {
-     position: fixed;
-     left: 424px;
-     bottom: 345px;
+ #review__edit-update {
+     position: relative;
+     right: 424px;
+     top: 15px;
+     color: rgba(0, 0, 0, 0.7);
+     box-shadow: 0px 3px 1px 1px rgba(0, 0, 0, 0.2)
+ }
+
+ #review__edit-cancel {
+     position: relative;
+     right: 424px;
+     top: 15px;
+     margin-left: 5px;
+     color: rgba(0, 0, 0, 0.7);
+     box-shadow: 0px 3px 1px 1px rgba(0, 0, 0, 0.2)
  }
 
  #new__review-input {
-     padding: 10px 20px;
-     border-radius: 4px;
+     padding: 7px 11px;
+     border-radius: 3px;
      background-color: #fff;
      width: 400px;
      height: 150px;
      max-width: 100%;
+     box-shadow: 0px 3px 1px 1px rgba(0, 0, 0, 0.2)
  }

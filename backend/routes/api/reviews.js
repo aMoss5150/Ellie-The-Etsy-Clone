@@ -44,14 +44,16 @@ router.post('/', restoreUser, asyncHandler(async (req, res) => {
 //edit existing review
 router.put('/', restoreUser, asyncHandler(async (req, res) => {
 
+    console.log("REQUEST BODY", req.body)
+    console.log(req.body.user_id)
     if (req.user.id === req.body.user_id) {
         //maybe this serves as a double check??
-        const { newDescription } = req.body
+        const { newReviewDes, id } = req.body
 
-        const reviewToUpdate = await Review.findByPk()
+        const reviewToUpdate = await Review.findByPk(id)
 
         // vanilla JS, update the old description to the new one
-        reviewToUpdate.description = newDescription
+        reviewToUpdate.description = newReviewDes
 
         // allow it to save to the DB through sequelize...
         await reviewToUpdate.save()

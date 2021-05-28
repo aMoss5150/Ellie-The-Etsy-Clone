@@ -6,6 +6,7 @@ import { updateReview } from '../../store/reviews'
 import './ModalEditReview.css'
 
 export default function ModalEditReview({ review }) {
+    const dispatch = useDispatch();
     const [newReviewDesc, setNewReviewDesc] = useState('')
     const [disabled, setDisabled] = useState(true)
     const [modalOpen, setModalOpen] = useState(false)
@@ -14,7 +15,8 @@ export default function ModalEditReview({ review }) {
     const handleReviewUpdate = (e) => {
         e.preventDefault()
 
-        updateReview(newReviewDesc)
+        let updateObj = { ...review, newReviewDes: newReviewDesc }
+        dispatch(updateReview(updateObj))
         setModalOpen(false)
     }
 
@@ -39,6 +41,7 @@ export default function ModalEditReview({ review }) {
                 id='review__edit-open'
                 className={disabled === true ? 'hidden' : ''}
                 onClick={() => setModalOpen(true)}
+                style={{ marginLeft: '2px' }}
             >
                 Edit review
             </button>
@@ -56,7 +59,7 @@ export default function ModalEditReview({ review }) {
 
                     <button
                         type='submit'
-                        id='review__edit-close'
+                        id='review__edit-update'
                         onClick={(e) => handleReviewUpdate(e)}
                     >
                         Update review
@@ -66,13 +69,13 @@ export default function ModalEditReview({ review }) {
                         id='review__edit-cancel'
                         onClick={(e) => handleModalClose(e)}
                     >
-                        Cancel
+                        Close
                     </button>
 
                 </form>
 
             </div>
 
-        </span>
+        </span >
     )
 }

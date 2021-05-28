@@ -83,7 +83,7 @@ export default function ProductDetails({ products }) {
             </div>
             {/* product image */}
             <div className='product__picture-container'>
-                <img className='product__picture' style={{ maxHeight: '700px', maxWidth: '700px', marginLeft: '30px' }} src={product.image_url} alt={product.product_name} />
+                <img className='product__picture' style={{ maxHeight: '650px', maxWidth: '700px', marginLeft: '30px' }} src={product.image_url} alt={product.product_name} />
 
 
             </div>

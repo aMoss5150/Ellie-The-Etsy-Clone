@@ -38,11 +38,11 @@ export const getReviews = () => async (dispatch) => {
     }
 };
 
-export const addReview = (newReview) => async (dispatch) => {
-    newReview = JSON.stringify(newReview)
+export const addReview = (updateObj) => async (dispatch) => {
+    updateObj = JSON.stringify(updateObj)
     const res = await csrfFetch(`/api/reviews`, {
         method: "POST",
-        body: newReview,
+        body: updateObj,
         headers: {
             "Content-Type": "application/json"
         }

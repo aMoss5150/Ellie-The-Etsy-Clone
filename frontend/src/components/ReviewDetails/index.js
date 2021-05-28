@@ -51,7 +51,8 @@ export default function ReviewDetails({ review }) {
             </p>
             <button className={disabled === true ? 'hidden' : ''} onClick={() => (handleDelete())} id="delete__review-button">
                 Delete
-            </button>
+            </button
+            >
             <ModalEditReview review={review} />
             {/* <button onClick={() => (handleUpdate())} id="update__review-button">
                 Update my review
