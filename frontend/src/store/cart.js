@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 
 //actions
 const LOAD = "cart/LOAD";
@@ -8,9 +8,9 @@ const EMPTY = 'cart/EMPTY'
 
 //action creators
 
-export const getCart = (products) => ({
+export const getCart = (cart) => ({
     type: LOAD,
-    products
+    cart
 })
 
 export const addItem = (itemId) => ({
@@ -33,16 +33,17 @@ export const emptyCart = () => ({
 // product will be fetched and passed in from 
 // item button to add to cart
 
-export const getCartLS = (itemId) => async (dispatch) => {
-    const cartLS = localStorage.getItem('cartObj')
-    let products
-    if (cartLS) {
-        products = await JSON.parse(cartLS)
-        dispatch(getCart(products));
+export const getCartLS = () => async (dispatch) => {
+    const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
+    if (cartLS) { // if cart exists... get it
+        let cart = await JSON.parse(cartLS)
+        dispatch(getCart(cart));
     }
-    else {
-
-
+    else { // if cart doesnt exist... create it
+        let cart = {"items": []}
+        JSON.stringify(cart)
+        localStorage.setItem('cart',cart)
+        dispatch(getCart(cart))
         return
     }
 
@@ -51,78 +52,54 @@ export const getCartLS = (itemId) => async (dispatch) => {
 
 
 export const addItemLS = (itemId) => async (dispatch) => {
-    // const cartLS = localStorage.getItem('cartObj')
-    // if (!cartLS) {
-    //     const cartObj = {}
-    //     cartObj[itemId] = itemId
+    const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
+    // if (!cartLS) { //if the cart is empty
+    //     const cartObj = {"items": []}
+    //     cartObj["items"].push(itemId)
     //     JSON.stringify(cartObj)
-    //     localStorage.setItem('cartObj', cartObj)
-    // }
-    // let products
-
-
-    // // if (cartLS) {
-    // //pull cart
-    // products = await cartLS.json()
-    // //add new item
-    // if (products[itemId]) {
-    //     products[itemId].count++
+    //     localStorage.setItem('cart',cartObj) // does it need a key or can I imply?
+    //     dispatch(addItem(itemId))
     // } else {
-    //     products[itemId] = itemId
-    // }
-    // products = JSON.stringify(products)
-    // localStorage.setItem({ 'cartObj': products })
-    // dispatch(addItem(itemId))
-    // dispatch(getCart(products))
-    // // } else {
-
-    // //     return
-    // // }
-
-    // return
-
-    const fakeCart = { 1: { 1: 1 } }
-    //!TESTING
-    itemId = JSON.stringify(itemId)
-    localStorage.setItem("fakeCart", { fakeCart: fakeCart })
-
-    let returnCart = localStorage.getItem('fakeCart')
-
-    let parsedCart = JSON.parse(returnCart)
-
-
-
+        if (cartLS) {
+        let parsedCart = JSON.parse(cartLS)
+        parsedCart['items'].push(itemId)
+        let stringedCart = JSON.stringify(parsedCart)
+        localStorage.setItem('cart', stringedCart )
+        dispatch(addItem(itemId))
+    } else
+        return "error in cart from addItemLS in store/cart"
 }
 
 
 //initial state variables
-const initialState = {};
+const fakeCart = { "items": [1,4,7,35] }
+const initialState = {...fakeCart};
 
 
 //CART REDUCER
 const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
-            const newState = { ...state, ...action.products }
+            const newState = { ...state }
+            action.cart["items"].forEach((productId)=> {
+                newState['items'].push(productId)
+            })
             return newState
         }
-
-        case ADD_ITEM:
-            return {
-                ...state,
-                [action.itemId]: {
-                    id: action.itemId
-                }
-            }
-
+        case ADD_ITEM: {
+            const newState = { ...state }
+            newState["items"].push(action.itemId)
+            return newState
+        }
         case REMOVE_ITEM: {
             const newState = { ...state }
-            delete newState[action.itemId]
+            let spliceIndex = newState["items"].indexOf(action.itemId)
+            newState["items"].splice(spliceIndex, 1)
             return newState
         }
 
         case EMPTY: {
-            const newState = {}
+            const newState = {"items": []}
             return newState
         }
 
