@@ -12,16 +12,15 @@ export default function HomePage() {
     const history = useHistory()
     const dispatch = useDispatch();
 
-    //! DISPATCH WHEREVER I NEED TO FIND PRODUCTS... will be slower if
-    //! DONE IN APP!!!!   MUST REFACTOR
-
-    //!LOGIC BLOCK FOR CONTROLLING REFRESH    
+    // DISPATCH WHEREVER I NEED TO FIND PRODUCTS... will be slower if
+    // DONE IN APP
     let products = useSelector(state => state.products)
 
     useEffect(() => {
         dispatch(getProducts())
     }, [dispatch])
 
+    //LOGIC BLOCK FOR CONTROLLING REFRESH    
     if (!products) return null
     products = Object.values(products).sort((a, b) => {
         if (a.product_name < b.product_name) {

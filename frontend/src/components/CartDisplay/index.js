@@ -10,10 +10,7 @@ import './CartDisplay.css'
 
 export default function CartDisplay() {
     const dispatch = useDispatch();
-
-
     const cart = useSelector(state => state.cart)
-
 
     useEffect(() => {
         dispatch(getCart())
@@ -24,20 +21,13 @@ export default function CartDisplay() {
             <h1> no cart found</h1>
         )
     }
-
-
     const cartArray = Object.values(cart)
-
-
     return (
         <div className="cart__container">
-
             <h1>cart test</h1>
-
             {cartArray.map((item) => (
                 <CartItem itemId={item.id} />
             ))}
-
             <CartSummary />
         </div >
     )

@@ -1,16 +1,17 @@
 'use strict';
 
-module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Reviews', [{
       description: 'Test Review 1',
       user_id: 1,
-      product_id: 1
+      product_id: 1,
+      username: 'Valentino Balboni'
     },
     {
       description: 'Test Review 2',
       user_id: 1,
-      product_id: 1
+      product_id: 1,
+      username: 'Stirling Moss'
     }
     ], {});
     /*

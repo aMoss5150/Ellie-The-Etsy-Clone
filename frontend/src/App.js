@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage";
 import ProductDetails from "./components/ProductDetails";
 import ProductTypePage from "./components/ProductTypePage";
+import CartDisplay from "./components/CartDisplay";
 
 import Footer from "./components/Footer";
 import * as sessionActions from "./store/session";
@@ -50,7 +51,10 @@ function App({ products }) {
           <Route path="/products/:productType">
             <ProductTypePage products={products} />
           </Route>
-
+          <Route path="/cart">
+            <CartDisplay />
+          </Route>
+        
           <Route>
             <h1>Page Not Found</h1>
           </Route>
