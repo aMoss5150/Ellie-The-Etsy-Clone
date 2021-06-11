@@ -36,8 +36,8 @@ export const emptyCart = () => ({
 export const getCartLS = () => async (dispatch) => {
     const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
     if (cartLS) { // if cart exists... get it
-        let cart = await JSON.parse(cartLS)
-        dispatch(getCart(cart));
+        let cart = JSON.parse(cartLS)
+        dispatch(getCart(cartLS));
     }
     else { // if cart doesnt exist... create it
         let cart = {"items": []}
@@ -46,7 +46,6 @@ export const getCartLS = () => async (dispatch) => {
         dispatch(getCart(cart))
         return
     }
-
     return
 };
 
@@ -72,7 +71,7 @@ export const addItemLS = (itemId) => async (dispatch) => {
 
 
 //initial state variables
-const fakeCart = { "items": [1,4,7,35] }
+const fakeCart = { "items": [1,4,7,35,22,25,34] }
 const initialState = {...fakeCart};
 
 

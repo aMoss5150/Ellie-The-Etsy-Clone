@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getCart } from '../../store/cart'
+import { getCartLS } from '../../store/cart'
 
 import CartSummary from '../CartSummary'
 import CartItem from '../CartItem'
@@ -13,7 +13,7 @@ export default function CartDisplay() {
     const cart = useSelector(state => state.cart)
 
     useEffect(() => {
-        dispatch(getCart())
+        dispatch(getCartLS())
     }, [dispatch])
 
     if (!cart) {
@@ -21,12 +21,12 @@ export default function CartDisplay() {
             <h1> no cart found</h1>
         )
     }
-    const cartArray = Object.values(cart)
+    const cartArray = cart['items']
     return (
         <div className="cart__container">
             <h1>cart test</h1>
             {cartArray.map((item) => (
-                <CartItem itemId={item.id} />
+                <CartItem key={item} itemId={item} />
             ))}
             <CartSummary />
         </div >
