@@ -37,12 +37,13 @@ export const getCartLS = () => async (dispatch) => {
     const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
     if (cartLS) { // if cart exists... get it
         let cart = JSON.parse(cartLS)
-        dispatch(getCart(cartLS));
+        console.log(cart)
+        dispatch(getCart(cart));
     }
     else { // if cart doesnt exist... create it
-        let cart = {"items": []}
-        JSON.stringify(cart)
-        localStorage.setItem('cart',cart)
+        let cart = []
+        let stringedCart = JSON.stringify(cart)
+        localStorage.setItem('cart',stringedCart)
         dispatch(getCart(cart))
         return
     }
@@ -60,45 +61,47 @@ export const addItemLS = (itemId) => async (dispatch) => {
     //     dispatch(addItem(itemId))
     // } else {
         if (cartLS) {
+        console.log(cartLS);
         let parsedCart = JSON.parse(cartLS)
-        parsedCart['items'].push(itemId)
+        console.log(parsedCart);
+        parsedCart.push(itemId)
         let stringedCart = JSON.stringify(parsedCart)
         localStorage.setItem('cart', stringedCart )
         dispatch(addItem(itemId))
-    } else
-        return "error in cart from addItemLS in store/cart"
+    } else if (!cartLS)
+        console.log("error in cart from addItemLS in store/cart");
 }
 
 
 //initial state variables
-const fakeCart = { "items": [1,4,7,35,22,25,34] }
-const initialState = {...fakeCart};
+let initCart = []
+const initialState = [23,6,35,7,3,2];
 
 
 //CART REDUCER
 const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
-            const newState = { ...state }
-            action.cart["items"].forEach((productId)=> {
-                newState['items'].push(productId)
+            const newState = [...state]
+            action.cart.forEach((productId)=> {
+                newState.push(productId)
             })
             return newState
         }
         case ADD_ITEM: {
-            const newState = { ...state }
-            newState["items"].push(action.itemId)
+            const newState = [...state]
+            newState.push(action.itemId)
             return newState
         }
         case REMOVE_ITEM: {
-            const newState = { ...state }
-            let spliceIndex = newState["items"].indexOf(action.itemId)
-            newState["items"].splice(spliceIndex, 1)
+            const newState = [ ...state ]
+            let spliceIndex = newState.indexOf(action.itemId)
+            newState.splice(spliceIndex, 1)
             return newState
         }
 
         case EMPTY: {
-            const newState = {"items": []}
+            const newState = []
             return newState
         }
 

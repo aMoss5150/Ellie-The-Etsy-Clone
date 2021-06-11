@@ -21,7 +21,7 @@ export default function CartDisplay() {
             <h1> no cart found</h1>
         )
     }
-    const cartArray = cart['items']
+    const cartArray = cart
     return (
         <div className="cart__container">
             <h1>cart test</h1>

@@ -97,6 +97,7 @@ export default function ProductDetails({ products }) {
                 <p id='details__totalprice'>
                     Total Price: {format(product.price + product.labor_estimate)}
                 </p>
+                <p><button onClick={() => dispatch(addItemLS(product.id))}>Add to cart</button></p>
                 {/* <button onClick={() => handleAddToCart(product.id)}>
                     Add To Cart
                 </button> */}
