@@ -9,23 +9,21 @@ export default function SearchBar() {
 
     const products = useSelector(state => state.products)
 
+    const handleSearch=()=> {
+        
+    }
+
     useEffect(() => {
         setSearchVal(inputVal)
     }, [inputVal])
 
     if (!products) return null
-    return (
+    else return (
         <div className='search__bar-parent'>
-
-
-            <form className='test-form' action="">
-                <input placeholder="search..." className='test-input' type="search" />
+            <form className='test-form' action="" onSubmit={handleSearch}>
+                <input placeholder="search..." className='test-input' type="search" value={inputVal} onChange={(e => setSearchVal(e.target.value))} />
                 <i className="fa fa-search"></i>
             </form>
-
-
-
-
         </div>
     )
 

@@ -37,10 +37,9 @@ export const getCartLS = () => async (dispatch) => {
     const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
     if (cartLS) { // if cart exists... get it
         let cart = JSON.parse(cartLS)
-        console.log(cart)
         dispatch(getCart(cart));
     }
-    else { // if cart doesnt exist... create it
+    else if(!cartLS) { // if cart doesnt exist... create it
         let cart = []
         let stringedCart = JSON.stringify(cart)
         localStorage.setItem('cart',stringedCart)
@@ -53,29 +52,26 @@ export const getCartLS = () => async (dispatch) => {
 
 export const addItemLS = (itemId) => async (dispatch) => {
     const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
-    // if (!cartLS) { //if the cart is empty
-    //     const cartObj = {"items": []}
-    //     cartObj["items"].push(itemId)
-    //     JSON.stringify(cartObj)
-    //     localStorage.setItem('cart',cartObj) // does it need a key or can I imply?
-    //     dispatch(addItem(itemId))
-    // } else {
         if (cartLS) {
-        console.log(cartLS);
         let parsedCart = JSON.parse(cartLS)
-        console.log(parsedCart);
         parsedCart.push(itemId)
         let stringedCart = JSON.stringify(parsedCart)
         localStorage.setItem('cart', stringedCart )
         dispatch(addItem(itemId))
-    } else if (!cartLS)
-        console.log("error in cart from addItemLS in store/cart");
+    }  else  if(!cartLS) { // if cart doesnt exist... create it
+        let cart = []
+        cart.push(itemId)
+        let stringedCart = JSON.stringify(cart)
+        localStorage.setItem('cart',stringedCart)
+        dispatch(getCart(cart))
+        return
+    }
 }
 
 
 //initial state variables
-let initCart = []
-const initialState = [23,6,35,7,3,2];
+
+const initialState = [];
 
 
 //CART REDUCER
@@ -110,5 +106,4 @@ const cartReducer = (state = initialState, action) => {
         }
     }
 }
-
 export default cartReducer;

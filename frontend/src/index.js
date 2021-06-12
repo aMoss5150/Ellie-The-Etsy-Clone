@@ -48,7 +48,7 @@ function Root() {
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </CurrencyProvider >
+      </CurrencyProvider>
     </ReduxProvider>
   );
 }

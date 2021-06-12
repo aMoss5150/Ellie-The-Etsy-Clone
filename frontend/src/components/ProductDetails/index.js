@@ -23,9 +23,29 @@ export default function ProductDetails({ products }) {
     const selProducts = useSelector(state => state.products)
     let reviews = useSelector(state => state.reviews)
 
-    // const handleAddToCart = (id) => {
-    //     dispatch(addItemLS(id))
-    // }
+    const handleAddItem = () => {
+        dispatch(addItemLS(product.id))
+     
+        alert(`${product.product_name} was added to your cart...`)
+        // function message(msg){
+        //     if (window.webkitNotifications) {
+        //         if (window.webkitNotifications.checkPermission() === 0) {
+        //             let notification = window.webkitNotifications.createNotification(
+        //                 'picture.png', 'Title', msg);
+        //                     notification.onshow = function() { // when message shows up
+        //                         setTimeout(function() {
+        //                             notification.close();
+        //                         }, 1000); // close message after one second...
+        //                     };
+        //         notification.show();
+        //         } else {
+        //             window.webkitNotifications.requestPermission(); // ask for permissions
+        //         }   
+        //     }
+        //         // else alert(msg);// fallback for people who does not have notification API; show alert box instead
+        // }
+        // message(`${product.product_name} was added to your cart...`)
+    }
 
 
     useEffect(() => {
@@ -97,7 +117,7 @@ export default function ProductDetails({ products }) {
                 <p id='details__totalprice'>
                     Total Price: {format(product.price + product.labor_estimate)}
                 </p>
-                <p><button onClick={() => dispatch(addItemLS(product.id))}>Add to cart</button></p>
+                <p><button onClick={() => handleAddItem()}>Add to cart</button></p>
                 {/* <button onClick={() => handleAddToCart(product.id)}>
                     Add To Cart
                 </button> */}

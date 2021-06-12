@@ -108,19 +108,16 @@ const reviewsReducer = (state = initialState, action) => {
                 ...state
             };
         }
-
         case ADD: {
             const newState = { ...state }
             newState[action.newReview] = action.newReview
             return newState
         }
-
         case DELETE: {
             const newState = { ...state }
             delete newState[action.reviewId]
             return newState
         }
-
         default:
             return state
     }

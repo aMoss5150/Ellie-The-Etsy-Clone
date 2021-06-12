@@ -21,10 +21,8 @@ export const getProducts = () => async (dispatch) => {
         dispatch(load(products));
     }
 };
-
 //initial state variables
 const initialState = {};
-
 
 //PRODUCTS REDUCER
 const productsReducer = (state = initialState, action) => {
