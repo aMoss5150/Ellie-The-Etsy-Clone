@@ -3,11 +3,13 @@
 body {
     height: 100%;
     width: 100%;
-    background-color: #edeef6;
+    background-color: #212121;
+    /* background-color: #edeef6; */
     /* background-color: #fcf8ec; */
     /* d8e3e7 */
     /* #1b262c */
-    font-family: Times, "Helvetica Neue",
+    font-family: Times, "Helvetica Neue",;
+    color: white
 }
 
 button {
