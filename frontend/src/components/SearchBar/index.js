@@ -6,24 +6,17 @@ import './SearchBar.css'
 export default function SearchBar() {
     const [inputVal, setInputVal] = useState('')
     const [matches, setMatches] = useState([])
-    const [prodsArr, setProdsArr] = useState([])
-    
-    
+
     const products = useSelector(state => state.products)
-    
     
     const handleSearch=()=> {
         let possibles = []
         Object.values(products).forEach((product)=> {
-            let lengthOfSrch = inputVal.length
-            let possMatch = product.product_name.split('').slice(0,lengthOfSrch).join('')
-            console.log(possMatch)
-
+            let possMatch = product.product_name.split('').slice(0,inputVal.length).join('')
             if (possMatch.toLowerCase() === inputVal.toLowerCase() && inputVal.length > 0) {
                 possibles.push(product.product_name)
             }
         })
-
         setMatches(possibles)
         console.log(possibles);
     }

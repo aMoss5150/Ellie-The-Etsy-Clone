@@ -44,8 +44,6 @@ function Navigation({ isLoaded }) {
                 </span>
 
             </span>
-
-
         </nav>
 
     );
