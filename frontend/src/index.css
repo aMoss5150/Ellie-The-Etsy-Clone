@@ -1,5 +1,11 @@
 /* TODO Add site wide styles */
 
+/* 
+html {
+    width: 100vw;
+    height: 100vh;
+} */
+
 body {
     height: 100%;
     width: 100%;
@@ -8,7 +14,7 @@ body {
     /* background-color: #fcf8ec; */
     /* d8e3e7 */
     /* #1b262c */
-    font-family: Times, "Helvetica Neue",;
+    font-family: Times, "Helvetica Neue", ;
     color: white
 }
 

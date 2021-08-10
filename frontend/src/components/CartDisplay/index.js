@@ -24,7 +24,6 @@ export default function CartDisplay() {
     const cartArray = cart
     return (
         <div className="cart__container">
-            <h1>cart test</h1>
             {cartArray.map((item) => (
                 <CartItem key={item} itemId={item} />
             ))}

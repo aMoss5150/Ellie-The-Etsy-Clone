@@ -1,2 +1,14 @@
+.cart__item-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-top: 1px solid rgb(0, 153, 255);
+    margin: 10px;
+    width: 700px;
+    height: 300px;
+}
 
-
+.prod__name-label {
+    font-size: 23px;
+}
