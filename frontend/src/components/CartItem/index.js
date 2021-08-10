@@ -23,7 +23,9 @@ export default function CartItem({ itemId }) {
 
     return (
         <div className='cart__item-container'>
+
             <p className="prod__name-label">{product.product_name}</p>
+            <img className="cart__item-picture" src={product.image_url} alt="" />
             <p className="prod__label">Price: {format(product.price)}</p>
             <p className="prod__label">Labor: {format(product.labor_estimate)}</p>
             <p className="prod__label">Total: {format(product.price + product.labor_estimate)}</p>

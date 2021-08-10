@@ -23,7 +23,7 @@ export default function Product({ product }) {
                     {product.product_name}
                 </Link>
             </div>
-            <img className='product__image-container' style={{ maxHeight: "220px", maxWidth: "220px", borderRadius: '1px' }} src={`${product.image_url}`} alt="product" />
+            <img className='product__image-container' style={{ maxHeight: "210px", maxWidth: "210px", borderRadius: '1px' }} src={`${product.image_url}`} alt="product" />
             <div className='prices__class' id='product__price-container'>
                 Price: {format(product.price)}
             </div>

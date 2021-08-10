@@ -12,3 +12,7 @@
 .prod__name-label {
     font-size: 23px;
 }
+
+.cart__item-picture {
+    height: 100px;
+}

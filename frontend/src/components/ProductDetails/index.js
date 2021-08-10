@@ -25,26 +25,7 @@ export default function ProductDetails({ products }) {
 
     const handleAddItem = () => {
         dispatch(addItemLS(product.id))
-     
         alert(`${product.product_name} was added to your cart...`)
-        // function message(msg){
-        //     if (window.webkitNotifications) {
-        //         if (window.webkitNotifications.checkPermission() === 0) {
-        //             let notification = window.webkitNotifications.createNotification(
-        //                 'picture.png', 'Title', msg);
-        //                     notification.onshow = function() { // when message shows up
-        //                         setTimeout(function() {
-        //                             notification.close();
-        //                         }, 1000); // close message after one second...
-        //                     };
-        //         notification.show();
-        //         } else {
-        //             window.webkitNotifications.requestPermission(); // ask for permissions
-        //         }   
-        //     }
-        //         // else alert(msg);// fallback for people who does not have notification API; show alert box instead
-        // }
-        // message(`${product.product_name} was added to your cart...`)
     }
 
 
@@ -57,14 +38,12 @@ export default function ProductDetails({ products }) {
     let prodData = products ? products : selProducts
     const product = prodData[productId]
 
-
     if (!product || !reviews) return null
 
     reviews = Object.values(reviews)
     reviews = reviews.filter((review) => (
         review.product_id === product.id
     ))
-
 
     return (
         <div className='product__details-container'>
@@ -77,12 +56,15 @@ export default function ProductDetails({ products }) {
                 <Link className='product__types-links' to='/products/exhaust'>
                     Exhaust
                 </Link>
+
                 <Link className='product__types-links' to='/products/wheels'>
                     Wheels
                 </Link>
+
                 <Link className='product__types-links' to='/products/suspension'>
                     Suspension
                 </Link>
+
                 <Link className='product__types-links' to='/products/exterior'>
                     Exterior
                 </Link>
