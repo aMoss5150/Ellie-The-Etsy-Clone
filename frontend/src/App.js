@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage";
 import ProductDetails from "./components/ProductDetails";
 import ProductTypePage from "./components/ProductTypePage";
 import CartDisplay from "./components/CartDisplay";
-import {getCartLS} from './store/cart'
+
 
 import Footer from "./components/Footer";
 import * as sessionActions from "./store/session";

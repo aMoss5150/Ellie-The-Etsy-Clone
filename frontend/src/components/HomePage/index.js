@@ -40,35 +40,35 @@ export default function HomePage() {
             <div className='category__display-container'>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/388803?wid=810&hei=608&op_usm=0.8,1,10,0' alt="engine" />
+                    <img style={{ borderRadius: '13%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/388803?wid=810&hei=608&op_usm=0.8,1,10,0' alt="engine" />
                     <NavLink to='/products/engine'>
                         Engine
                     </NavLink>
                 </span>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/404140?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exhaust" />
+                    <img style={{ borderRadius: '13%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/404140?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exhaust" />
                     <NavLink to='/products/exhaust'>
                         Exhaust
                     </NavLink>
                 </span>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://images.customwheeloffset.com/wheels/ferrada/fr4/fr4_bronzeblack_white.jpg' alt="wheels" />
+                    <img style={{ borderRadius: '13%', maxWidth: '170px', maxHeight: '170px' }} src='https://images.customwheeloffset.com/wheels/ferrada/fr4/fr4_bronzeblack_white.jpg' alt="wheels" />
                     <NavLink to='/products/wheels'>
                         Wheels
                     </NavLink>
                 </span>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/390364?wid=810&hei=608&op_usm=0.8,1,10,0' alt="suspension" />
+                    <img style={{ borderRadius: '13%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/390364?wid=810&hei=608&op_usm=0.8,1,10,0' alt="suspension" />
                     <NavLink to='/products/suspension'>
                         Suspension
                     </NavLink>
                 </span>
 
                 <span className='display__nav__span'>
-                    <img style={{ borderRadius: '50%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/405870?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exterior" />
+                    <img style={{ borderRadius: '13%', maxWidth: '170px', maxHeight: '170px' }} src='https://turn5.scene7.com/is/image/Turn5/405870?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exterior" />
                     <NavLink to='/products/exterior'>
                         Exterior
                     </NavLink>
