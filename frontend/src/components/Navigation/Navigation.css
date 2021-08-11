@@ -5,6 +5,7 @@
 .logo__span {
     /* overflow: hidden; */
     position: relative;
+    cursor: pointer;
     /* right: px; */
     /* bottom: 60px; */
     /* align-self: flex-start; */

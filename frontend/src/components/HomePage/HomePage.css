@@ -6,7 +6,6 @@
 
 .home__page-tester {
     margin: 0 auto;
-    /* position: relative; */
     margin-bottom: 20px;
 }
 
@@ -33,7 +32,6 @@
     flex-direction: row;
     margin: 65px 10px auto;
     justify-content: center;
-    /* align-items: center; */
 }
 
 .display__nav__span {

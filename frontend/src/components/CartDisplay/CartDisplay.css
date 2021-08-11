@@ -1,7 +1,25 @@
+.cart__page {
+    display: grid;
+    grid-template-columns: 7fr 6fr;
+    grid-template-rows: auto;
+    grid-template-areas: "container breakdown"
+}
+
 .cart__container {
+    grid-area: container;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.cart__breakdown {
+    grid-area: breakdown;
+    position: fixed;
+    right: 61px;
+    border: 1px solid red;
+    width: 600px;
+    height: 50vh;
 }

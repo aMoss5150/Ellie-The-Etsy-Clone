@@ -13,7 +13,7 @@ export default function HomePage() {
     const dispatch = useDispatch();
 
     // DISPATCH WHEREVER I NEED TO FIND PRODUCTS... will be slower if
-    // DONE IN APP
+    // DONE IN APP.js
     let products = useSelector(state => state.products)
 
     const handleClick = (dest) => {
@@ -83,7 +83,6 @@ export default function HomePage() {
                     <Product key={product.id} product={product}>
                         {product.product_name}
                     </Product>
-
                 ))}
 
             </div>

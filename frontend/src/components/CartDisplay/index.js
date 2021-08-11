@@ -23,11 +23,14 @@ export default function CartDisplay() {
     }
     const cartArray = cart
     return (
-        <div className="cart__container">
-            {cartArray.map((item) => (
-                <CartItem key={item} itemId={item} />
-            ))}
-            <CartSummary />
-        </div >
+        <div className="cart__page">
+            <div className="cart__breakdown">breakdown</div>
+            <div className="cart__container">
+                {cartArray.map((item) => (
+                    <CartItem key={item} itemId={item} />
+                ))}
+                <CartSummary />
+            </div >
+        </div>
     )
 }

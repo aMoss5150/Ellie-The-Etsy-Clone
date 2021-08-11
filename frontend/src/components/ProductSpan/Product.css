@@ -22,12 +22,7 @@
 }
 
 #product__name-container {
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* justify-content: center; */
     margin: 10px;
-    /* font-family: courier; */
-    /* font-family: courier; */
     font-size: 17px;
     font-weight: bold;
     text-align: center;
