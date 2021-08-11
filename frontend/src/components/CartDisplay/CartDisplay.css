@@ -23,3 +23,27 @@
     width: 600px;
     height: 50vh;
 }
+
+@media screen and (max-width: 1424px) {
+    .cart__page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cart__breakdown {
+        position: relative;
+        right: 0px;
+        border: 1px solid red;
+        width: 600px;
+        height: 50vh;
+    }
+    .cart__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        border: 1px solid black;
+    }
+}
