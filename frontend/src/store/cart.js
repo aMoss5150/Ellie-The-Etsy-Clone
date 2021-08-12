@@ -39,10 +39,10 @@ export const getCartLS = () => async (dispatch) => {
         let cart = JSON.parse(cartLS)
         dispatch(getCart(cart));
     }
-    else if(!cartLS) { // if cart doesnt exist... create it
+    else if (!cartLS) { // if cart doesnt exist... create it
         let cart = []
         let stringedCart = JSON.stringify(cart)
-        localStorage.setItem('cart',stringedCart)
+        localStorage.setItem('cart', stringedCart)
         dispatch(getCart(cart))
         return
     }
@@ -52,23 +52,34 @@ export const getCartLS = () => async (dispatch) => {
 
 export const addItemLS = (itemId) => async (dispatch) => {
     const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
-        if (cartLS) {
+    if (cartLS) {
         let parsedCart = JSON.parse(cartLS)
         parsedCart.push(itemId)
         let stringedCart = JSON.stringify(parsedCart)
-        localStorage.setItem('cart', stringedCart )
+        localStorage.setItem('cart', stringedCart)
         dispatch(addItem(itemId))
-    }  else  if(!cartLS) { // if cart doesnt exist... create it
+    } else if (!cartLS) { // if cart doesnt exist... create it
         let cart = []
         cart.push(itemId)
         let stringedCart = JSON.stringify(cart)
-        localStorage.setItem('cart',stringedCart)
+        localStorage.setItem('cart', stringedCart)
         dispatch(getCart(cart))
         return
     }
 }
 
-
+export const removeItemLS = (itemId) => async (dispatch) => {
+    const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
+    if (cartLS) {
+        let parsedCart = JSON.parse(cartLS)
+        let spliceIndex = parsedCart.indexOf(itemId)
+        parsedCart.splice(spliceIndex, 1)
+        let stringedCart = JSON.stringify(parsedCart)
+        localStorage.setItem('cart', stringedCart)
+        dispatch(removeItem(itemId))
+        return
+    }
+}
 //initial state variables
 
 const initialState = [];
@@ -79,7 +90,7 @@ const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
             const newState = [...state]
-            action.cart.forEach((productId)=> {
+            action.cart.forEach((productId) => {
                 newState.push(productId)
             })
             return newState
@@ -90,7 +101,7 @@ const cartReducer = (state = initialState, action) => {
             return newState
         }
         case REMOVE_ITEM: {
-            const newState = [ ...state ]
+            const newState = [...state]
             let spliceIndex = newState.indexOf(action.itemId)
             newState.splice(spliceIndex, 1)
             return newState
