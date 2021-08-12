@@ -5,6 +5,7 @@ import { getProducts } from '../../store/products'
 
 import CartSummary from '../CartSummary'
 import CartItem from '../CartItem'
+import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
 
 import './CartDisplay.css'
 
@@ -13,6 +14,7 @@ export default function CartDisplay() {
     const cart = useSelector(state => state.cart)
     const products = Object.values(useSelector(state => state.products))
     // const product = products.filter((product) => product.id === +itemId)
+    const { currency } = useCurrency()
 
     let allCartItems = []
     console.log(cart)
@@ -25,6 +27,7 @@ export default function CartDisplay() {
 
     }
 
+    let format = currency === 'usd' ? usdFormat : gbpFormat
 
     useEffect(() => {
         dispatch(getCartLS())
@@ -41,21 +44,31 @@ export default function CartDisplay() {
     return (
         <div className="cart__page">
             <div className="cart__breakdown">breakdown
-                parts total: {
-                    allCartItems.reduce((acc, el) => {
-                        return el.price + acc
-                    }, 0)
-                }
-                labor total estimate: {
-                    allCartItems.reduce((acc, el) => {
-                        return el.labor_estimate + acc
-                    }, 0)
-                }
-                build estimate: {
-                    allCartItems.reduce((acc, el) => {
-                        return el.price + el.labor_estimate + acc
-                    }, 0)
-                }
+
+                <div className='parts__total'>
+                    parts total: {format(
+                        allCartItems.reduce((acc, el) => {
+                            return el.price + acc
+                        }, 0))
+                    }
+                </div>
+
+                <div className="labor__est-total">
+                    labor total estimate: {format(
+                        allCartItems.reduce((acc, el) => {
+                            return el.labor_estimate + acc
+                        }, 0))
+                    }
+                </div>
+
+                <div className="build__estimate">
+                    build estimate: {format(
+                        allCartItems.reduce((acc, el) => {
+                            return el.price + el.labor_estimate + acc
+                        }, 0))
+                    }
+                </div>
+
             </div>
             <div className="cart__container">
                 {cartArray.map((item) => (
