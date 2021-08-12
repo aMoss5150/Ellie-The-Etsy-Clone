@@ -9,8 +9,8 @@ export default function SearchBar() {
 
     const products = useSelector(state => state.products)
 
-    const handleSearch=()=> {
-        
+    const handleSearch = () => {
+
     }
 
     useEffect(() => {

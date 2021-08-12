@@ -5,7 +5,6 @@ import { getCartLS } from '../../store/cart'
 import CartSummary from '../CartSummary'
 import CartItem from '../CartItem'
 
-
 import './CartDisplay.css'
 
 export default function CartDisplay() {
