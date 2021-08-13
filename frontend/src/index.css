@@ -21,6 +21,7 @@ button {
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgb(201, 209, 221);
     transition: color .2s;
+    cursor: pointer;
 }
 
 button:hover {

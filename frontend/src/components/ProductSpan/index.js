@@ -18,21 +18,25 @@ export default function Product({ product }) {
     return (
 
         <span className='product__container' onClick={handleClick} >
-            <div id='product__name-container'>
-                <Link to={`/all-products/${product.id}`}>
-                    {product.product_name}
-                </Link>
-            </div>
-            <img className='product__image-container' style={{ maxHeight: "210px", maxWidth: "210px", borderRadius: '1px' }} src={`${product.image_url}`} alt="product" />
-            <div className='prices__class' id='product__price-container'>
-                Price: {format(product.price)}
-            </div>
-            <div className='prices__class' id='product__labor-container'>
-                Labor: {format(product.labor_estimate)}
-            </div>
+            <img className='product__image-container' style={{ maxHeight: "320px", maxWidth: "320px", borderRadius: '1px' }} src={`${product.image_url}`} alt="product" />
+            <div className='product__info-container'>
 
-            <div className='prices__class' id='product__total-container'>
-                Total: {format(product.labor_estimate + product.price)}
+                <div id='product__name-container'>
+                    <Link to={`/all-products/${product.id}`}>
+                        {product.product_name}
+                    </Link>
+                </div>
+                <div className='prices__class' id='product__price-container'>
+                    Price: {format(product.price)}
+                </div>
+                <div className='prices__class' id='product__labor-container'>
+                    Labor: {format(product.labor_estimate)}
+                </div>
+
+                <div className='prices__class' id='product__total-container'>
+                    Total: {format(product.labor_estimate + product.price)}
+                </div>
+
             </div>
         </span>
     )
