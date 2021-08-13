@@ -20,6 +20,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #48484A;
+    box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, .5);
     align-items: center;
     grid-area: breakdown;
     position: fixed;
