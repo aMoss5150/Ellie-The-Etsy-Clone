@@ -11,6 +11,7 @@
 
 .prod__name-label {
     font-size: 23px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 

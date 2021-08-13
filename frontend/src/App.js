@@ -44,25 +44,33 @@ function App({ products }) {
 
           <Route exact path="/">
             <HomePage products={products} />
+            <Footer />
           </Route>
 
           <Route path="/all-products/:productId">
             <ProductDetails products={products} />
+            <Footer />
           </Route>
 
           <Route path="/products/:productType">
             <ProductTypePage products={products} />
+            <Footer />
           </Route>
+
           <Route path="/cart">
             <CartDisplay />
+            <Footer />
           </Route>
 
           <Route>
             <h1>Page Not Found</h1>
+            <Footer />
           </Route>
         </Switch>
       )}
-      {isLoaded && <Footer />}
+
+
+
     </>
   );
 }

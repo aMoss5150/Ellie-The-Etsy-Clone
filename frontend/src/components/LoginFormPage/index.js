@@ -23,10 +23,12 @@ function LoginFormPage() {
 
             .catch(async (res) => {
                 const data = await res.json();
-                if (data && data.errors) setErrors(data.errors);
+                if (data && data.errors) setErrors(data.errors)
             }).then(() => {
                 //ADDED DOT THEN TO CHAIN A REDIRECT TO PREVIOUS PAGE!!
-                history.goBack();
+                if (!errors) {
+                    history.goBack();
+                }
             });
 
     }
@@ -38,7 +40,7 @@ function LoginFormPage() {
             </ul>
             <label>
                 Username or Email
-        <input className="email__field input"
+                <input className="email__field input"
                     type="text"
                     value={credential}
                     onChange={(e) => setCredential(e.target.value)}
@@ -47,7 +49,7 @@ function LoginFormPage() {
             </label>
             <label>
                 Password
-        <input className="password__field input"
+                <input className="password__field input"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
