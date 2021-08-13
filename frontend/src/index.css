@@ -10,11 +10,7 @@ html {
 body {
     height: 100%;
     width: 100%;
-    background-color: #212121;
-    /* background-color: #edeef6; */
-    /* background-color: #fcf8ec; */
-    /* d8e3e7 */
-    /* #1b262c */
+    background-color: #1C1C1E;
     /* font-family: Times, "Helvetica Neue", ; */
     color: white
 }
@@ -28,7 +24,7 @@ button {
 }
 
 button:hover {
-    color: #007BE6;
+    color: #D96741;
 }
 
 img:hover {
@@ -43,21 +39,21 @@ img:hover {
 a {
     transition: color .4s;
     /* transition: opacity .4s; */
-    color: #265C83;
+    color: #FFFFFF;
     /* opacity: 0.8; */
     text-decoration: none;
 }
 
 a:link, a:visited {
-    color: #265C83;
+    color: #FFFFFF;
 }
 
 a:hover {
-    color: #7FDBFF;
+    color: #D96741;
     /* opacity: 0.9 */
 }
 
 a:active {
     transition: color .3s;
-    color: #007BE6;
+    color: #D96741;
 }
