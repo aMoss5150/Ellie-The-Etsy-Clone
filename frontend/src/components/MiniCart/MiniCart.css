@@ -1,0 +1,9 @@
+.mini__cart-div {
+    position: fixed;
+    width: 8vw;
+    height: 100vh;
+    background-color: #48484A;
+    right: 0px;
+    top: 0px;
+    /* border: 1px solid red; */
+}

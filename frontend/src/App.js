@@ -7,6 +7,8 @@ import HomePage from "./components/HomePage";
 import ProductDetails from "./components/ProductDetails";
 import ProductTypePage from "./components/ProductTypePage";
 import CartDisplay from "./components/CartDisplay";
+import MiniCart from './components/MiniCart';
+
 
 
 import Footer from "./components/Footer";
@@ -40,20 +42,24 @@ function App({ products }) {
 
           <Route path="/signup">
             <SignupFormPage />
+            <MiniCart />
           </Route>
 
           <Route exact path="/">
             <HomePage products={products} />
+            <MiniCart />
             <Footer />
           </Route>
 
           <Route path="/all-products/:productId">
             <ProductDetails products={products} />
+            <MiniCart />
             <Footer />
           </Route>
 
           <Route path="/products/:productType">
             <ProductTypePage products={products} />
+            <MiniCart />
             <Footer />
           </Route>
 
