@@ -41,35 +41,35 @@ export default function HomePage() {
             <div className='category__display-container'>
 
                 <span onClick={() => handleClick("engine")} className='display__nav__span'>
-                    <img style={{ borderRadius: '51%', maxWidth: '169px', maxHeight: '169px' }} src='https://turn5.scene7.com/is/image/Turn5/388803?wid=810&hei=608&op_usm=0.8,1,10,0' alt="engine" />
+                    <img style={{ borderRadius: '100%', maxWidth: '169px', maxHeight: '200px' }} src='https://turn5.scene7.com/is/image/Turn5/388803?wid=810&hei=608&op_usm=0.8,1,10,0' alt="engine" />
                     <NavLink to='/products/engine'>
                         Engine
                     </NavLink>
                 </span>
 
                 <span onClick={() => handleClick("exhaust")} className='display__nav__span'>
-                    <img style={{ borderRadius: '51%', maxWidth: '169px', maxHeight: '169px' }} src='https://turn5.scene7.com/is/image/Turn5/404140?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exhaust" />
+                    <img style={{ borderRadius: '100%', maxWidth: '169px', maxHeight: '200px' }} src='https://turn5.scene7.com/is/image/Turn5/404140?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exhaust" />
                     <NavLink to='/products/exhaust'>
                         Exhaust
                     </NavLink>
                 </span>
 
                 <span onClick={() => handleClick("wheels")} className='display__nav__span'>
-                    <img style={{ borderRadius: '51%', maxWidth: '169px', maxHeight: '169px' }} src='https://images.customwheeloffset.com/wheels/ferrada/fr4/fr4_bronzeblack_white.jpg' alt="wheels" />
+                    <img style={{ borderRadius: '100%', maxWidth: '169px', maxHeight: '200px' }} src='https://images.customwheeloffset.com/wheels/ferrada/fr4/fr4_bronzeblack_white.jpg' alt="wheels" />
                     <NavLink to='/products/wheels'>
                         Wheels
                     </NavLink>
                 </span>
 
                 <span onClick={() => handleClick("suspension")} className='display__nav__span'>
-                    <img style={{ borderRadius: '51%', maxWidth: '169px', maxHeight: '169px' }} src='https://turn5.scene7.com/is/image/Turn5/390364?wid=810&hei=608&op_usm=0.8,1,10,0' alt="suspension" />
+                    <img style={{ borderRadius: '100%', maxWidth: '169px', maxHeight: '200px' }} src='https://turn5.scene7.com/is/image/Turn5/390364?wid=810&hei=608&op_usm=0.8,1,10,0' alt="suspension" />
                     <NavLink to='/products/suspension'>
                         Suspension
                     </NavLink>
                 </span>
 
                 <span onClick={() => handleClick("exterior")} className='display__nav__span'>
-                    <img style={{ borderRadius: '51%', maxWidth: '169px', maxHeight: '169px' }} src='https://turn5.scene7.com/is/image/Turn5/405870?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exterior" />
+                    <img style={{ borderRadius: '100%', maxWidth: '169px', maxHeight: '200px' }} src='https://turn5.scene7.com/is/image/Turn5/405870?wid=810&hei=608&op_usm=0.8,1,10,0' alt="exterior" />
                     <NavLink to='/products/exterior'>
                         Exterior
                     </NavLink>

@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    font-family: 'Courier New', Courier, monospace
+    /* font-family: 'Courier New', Courier, monospace */
 }
 
 @media screen and (max-width: 768px) {
