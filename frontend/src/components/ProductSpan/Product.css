@@ -37,7 +37,9 @@
     min-height: 145px;
 }
 
-.prices {}
+.prices__class {
+    /* justify-self: end; */
+}
 
 #product__price-container {
     /* position: relative;
