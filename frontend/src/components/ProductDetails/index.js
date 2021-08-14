@@ -86,7 +86,6 @@ export default function ProductDetails({ products }) {
             {/* product card */}
             <div className='details__card'>
                 <div className='product__details__name-container'>{product.product_name}</div>
-                <h2 className='details product__name'>{product.product_name}</h2>
                 <p className='details product__description-container'>
                     {product.product_description}
                 </p>

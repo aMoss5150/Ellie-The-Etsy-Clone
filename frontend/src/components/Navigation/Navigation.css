@@ -86,3 +86,10 @@
     right: 51px;
     bottom: 10px;
 }
+
+.mini__cart-open {
+    position: fixed;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+}
