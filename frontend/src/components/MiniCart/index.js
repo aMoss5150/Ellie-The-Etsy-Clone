@@ -8,7 +8,7 @@ function MiniCart() {
     if (!cartOpen) return null
     return (
         <div className='mini__cart-div'>
-            MiniCart
+            Build
             <button onClick={() => setCartOpen(false)}>
                 close
             </button>

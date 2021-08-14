@@ -1,6 +1,9 @@
 .mini__cart-div {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
     position: fixed;
-    width: 5vw;
+    width: 74px;
     height: 100vh;
     background-color: #48484A;
     right: 0px;
