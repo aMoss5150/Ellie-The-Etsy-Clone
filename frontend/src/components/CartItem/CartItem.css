@@ -8,7 +8,7 @@
     /* margin: 2px; */
     margin: 10px;
     width: 700px;
-    height: 340px;
+    height: 500px;
 }
 
 .prod__name-label {
@@ -17,17 +17,25 @@
     cursor: pointer;
 }
 
+#prod__desc {
+    /* display: inline-block; */
+    overflow: auto;
+    min-height: 80px;
+    font-size: 12px;
+    /* border: 1px solid red; */
+}
+
 .cart__item-picture {
-    height: 100px;
+    height: 160px;
     cursor: pointer;
     position: relative;
-    right: 65px;
-    top: 75px;
+    right: 85px;
+    top: 107px;
 }
 
 .prod__label {
     font-size: 14px;
     position: relative;
-    left: 65px;
+    left: 95px;
     bottom: 50px;
 }

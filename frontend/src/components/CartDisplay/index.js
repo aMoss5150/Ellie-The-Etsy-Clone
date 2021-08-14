@@ -13,18 +13,15 @@ export default function CartDisplay() {
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart)
     const products = Object.values(useSelector(state => state.products))
-    // const product = products.filter((product) => product.id === +itemId)
     const { currency } = useCurrency()
 
     let allCartItems = []
-    console.log(cart)
+
+
     for (let i = 0; i <= cart.length; i++) {
         let itemNum = cart[i]
         let selected = products.find(prod => prod.id === itemNum)
         selected && allCartItems.push(selected)
-
-        console.log(allCartItems)
-
     }
 
     let format = currency === 'usd' ? usdFormat : gbpFormat
@@ -46,7 +43,7 @@ export default function CartDisplay() {
             <div className="cart__breakdown">YOUR BUILD BREAKDOWN
 
                 <div className='parts__total'>
-                    parts total: {format(
+                    Parts total: {format(
                         allCartItems.reduce((acc, el) => {
                             return el.price + acc
                         }, 0))
@@ -54,7 +51,7 @@ export default function CartDisplay() {
                 </div>
 
                 <div className="labor__est-total">
-                    labor total estimate: {format(
+                    Labor total estimate: {format(
                         allCartItems.reduce((acc, el) => {
                             return el.labor_estimate + acc
                         }, 0))
@@ -62,7 +59,7 @@ export default function CartDisplay() {
                 </div>
 
                 <div className="build__estimate">
-                    build estimate: {format(
+                    Build estimate: {format(
                         allCartItems.reduce((acc, el) => {
                             return el.price + el.labor_estimate + acc
                         }, 0))

@@ -36,6 +36,7 @@ export default function CartItem({ itemId }) {
             <p className="prod__label">Price: {format(product.price)}</p>
             <p className="prod__label">Labor: {format(product.labor_estimate)}</p>
             <p className="prod__label">Total: {format(product.price + product.labor_estimate)}</p>
+            <p id="prod__desc">{product.product_description}</p>
             <button onClick={() => handleRemove(itemId)}>Remove</button>
         </div>
     )
