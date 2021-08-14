@@ -51,22 +51,22 @@
 }
 
 #details__price1 {
-    font-weight: bold;
-    font-family: courier;
+    /* font-weight: bold; */
+    /* font-family: courier; */
     font-size: 17px;
     align-self: center;
 }
 
 #details__price2 {
-    font-family: courier;
+    /* font-family: courier; */
     align-self: center;
     font-size: 17px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 #details__totalprice {
-    font-family: courier;
-    font-weight: bold;
+    /* font-family: courier; */
+    /* font-weight: bold; */
     font-size: 24px;
     align-self: center;
 }
