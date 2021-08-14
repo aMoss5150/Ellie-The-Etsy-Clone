@@ -43,7 +43,7 @@ export default function CartDisplay() {
     const cartArray = cart
     return (
         <div className="cart__page">
-            <div className="cart__breakdown">BUILD BREAKDOWN
+            <div className="cart__breakdown">YOUR BUILD BREAKDOWN
 
                 <div className='parts__total'>
                     parts total: {format(

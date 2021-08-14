@@ -20,4 +20,14 @@
 .cart__item-picture {
     height: 100px;
     cursor: pointer;
+    position: relative;
+    right: 65px;
+    top: 75px;
+}
+
+.prod__label {
+    font-size: 14px;
+    position: relative;
+    left: 65px;
+    bottom: 50px;
 }
