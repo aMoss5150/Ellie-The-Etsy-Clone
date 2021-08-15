@@ -14,9 +14,9 @@ export default function CartDisplay() {
     const cart = useSelector(state => state.cart)
     const products = Object.values(useSelector(state => state.products))
     const { currency } = useCurrency()
+    // const [allCartItems, setAllCartItems] = useState([])
 
     let allCartItems = []
-
 
     for (let i = 0; i <= cart.length; i++) {
         let itemNum = cart[i]
@@ -24,12 +24,12 @@ export default function CartDisplay() {
         selected && allCartItems.push(selected)
     }
 
+    console.log(allCartItems)
     let format = currency === 'usd' ? usdFormat : gbpFormat
 
     useEffect(() => {
         dispatch(getCartLS())
         dispatch(getProducts())
-        return () => allCartItems = []
     }, [dispatch])
 
     if (!cart) {
