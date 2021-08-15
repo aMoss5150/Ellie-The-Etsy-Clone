@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
 
 import { getProducts } from '../../store/products'
-import { removeItemLS } from '../../store/cart'
+import { removeItemLS, getCartLS } from '../../store/cart'
 import './CartItem.css'
 
 export default function CartItem({ itemId }) {
@@ -21,6 +21,7 @@ export default function CartItem({ itemId }) {
 
     const handleRemove = (itemId) => {
         dispatch(removeItemLS(itemId))
+        dispatch(getCartLS())
     }
 
     useEffect(() => {

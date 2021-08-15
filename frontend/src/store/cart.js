@@ -89,7 +89,7 @@ const initialState = [];
 const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
-            const newState = [...state]
+            const newState = []
             action.cart.forEach((productId) => {
                 newState.push(productId)
             })
