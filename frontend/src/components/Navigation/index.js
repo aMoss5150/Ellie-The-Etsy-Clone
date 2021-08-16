@@ -1,15 +1,19 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import SearchBar from '../SearchBar';
 import { useCurrency } from '../../context/CurrencyContext'
+import { useView } from '../../context/ViewCartContext'
+
 import logo1 from '../../images/mustang-burnout-logo.png'
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
+    const { setCartOpen } = useView()
     const { setCurrency } = useCurrency()
     const sessionUser = useSelector(state => state.session.user);
+    const history = useHistory()
 
     let sessionLinks;
     if (sessionUser) {
@@ -21,17 +25,21 @@ function Navigation({ isLoaded }) {
             <>
                 <NavLink className='nav__login-link' to="/login">Log In</NavLink>
                 <NavLink className='nav__signup-link' to="/signup">Sign Up</NavLink>
-
             </>
         );
+    }
+
+
+    const handleHome = () => {
+        history.push('/')
     }
 
     return (
 
         <nav className="navigation__bar">
-            <span className='logo__span'><img className='logo__1' src={logo1} alt="" /></span>
-            <NavLink className='nav__home-link' exact to="/">Home</NavLink>
+            <span onClick={handleHome} className='logo__span'><img className='logo__1' src={logo1} alt="" /></span>
             <SearchBar />
+            <span onClick={() => setCartOpen(true)} className="mini__cart-open">{`<<`}</span>
             {isLoaded && sessionLinks}
             <span id="currency__selector">
 

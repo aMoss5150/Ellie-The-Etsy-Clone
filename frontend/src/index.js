@@ -11,6 +11,7 @@ import { getProducts } from './store/products'
 import { addItem, removeItem, emptyCart } from './store/cart'
 import { getReviews, addReview } from './store/reviews'
 import { CurrencyProvider } from './context/CurrencyContext'
+import { ViewProvider } from './context/ViewCartContext'
 
 const store = configureStore();
 
@@ -44,11 +45,13 @@ if (process.env.NODE_ENV !== 'production') {
 function Root() {
   return (
     <ReduxProvider store={store}>
-      <CurrencyProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </CurrencyProvider>
+      <ViewProvider>
+        <CurrencyProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </CurrencyProvider>
+      </ViewProvider>
     </ReduxProvider>
   );
 }

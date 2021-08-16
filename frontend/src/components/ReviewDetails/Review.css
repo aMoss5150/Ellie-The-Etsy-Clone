@@ -1,7 +1,7 @@
 .review__container {
     /* background-color: lightblue; */
     /* box-shadow: 3px 3px 5px 6px #ccc; */
-    border-bottom: 1px solid #ccc;
+    border-bottom: .5px solid #ccc;
     width: 100%;
 }
 
@@ -22,7 +22,7 @@
 }
 
 #edited__p {
-    color: rgba(0, 0, 0, 0.3);
+    color: #48484A;
     font-size: 14px;
 }
 

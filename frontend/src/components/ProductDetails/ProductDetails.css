@@ -51,30 +51,24 @@
 }
 
 #details__price1 {
-    font-weight: bold;
-    font-family: courier;
-    color: rgba(102, 89, 89, 0.7);
-    font-size: 13px;
     /* font-weight: bold; */
+    /* font-family: courier; */
+    font-size: 17px;
     align-self: center;
 }
 
 #details__price2 {
-    font-family: courier;
+    /* font-family: courier; */
     align-self: center;
-    font-size: 13px;
-    font-weight: bold;
-    color: rgba(102, 89, 89, 0.7);
-    /* align-self: flex-end; */
+    font-size: 17px;
+    /* font-weight: bold; */
 }
 
 #details__totalprice {
-    font-family: courier;
-    font-weight: bold;
+    /* font-family: courier; */
+    /* font-weight: bold; */
     font-size: 24px;
     align-self: center;
-    color: rgba(83, 71, 71, 0.7);
-    border-bottom: 2px solid rgba(45, 15, 15, 0.2);
 }
 
 .product__reviews-template {

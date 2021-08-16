@@ -7,7 +7,9 @@ import HomePage from "./components/HomePage";
 import ProductDetails from "./components/ProductDetails";
 import ProductTypePage from "./components/ProductTypePage";
 import CartDisplay from "./components/CartDisplay";
-import {getCartLS} from './store/cart'
+import MiniCart from './components/MiniCart';
+
+
 
 import Footer from "./components/Footer";
 import * as sessionActions from "./store/session";
@@ -40,29 +42,41 @@ function App({ products }) {
 
           <Route path="/signup">
             <SignupFormPage />
+            <MiniCart />
           </Route>
 
           <Route exact path="/">
             <HomePage products={products} />
+            <MiniCart />
+            <Footer />
           </Route>
 
           <Route path="/all-products/:productId">
             <ProductDetails products={products} />
+            <MiniCart />
+            <Footer />
           </Route>
 
           <Route path="/products/:productType">
             <ProductTypePage products={products} />
+            <MiniCart />
+            <Footer />
           </Route>
+
           <Route path="/cart">
             <CartDisplay />
+            <Footer />
           </Route>
-        
+
           <Route>
             <h1>Page Not Found</h1>
+            <Footer />
           </Route>
         </Switch>
       )}
-      <Footer />
+
+
+
     </>
   );
 }

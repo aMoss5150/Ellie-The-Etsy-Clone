@@ -5,6 +5,9 @@
     /* height: 10vh */
     /* border: 1px solid blue; */
     margin-top: 20px;
+    font-size: 12px;
+    /* position: absolute; */
+    bottom: 10px;
     /* position: relative; */
     /* left: 1150px */
     justify-content: center;

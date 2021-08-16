@@ -5,6 +5,7 @@
 .logo__span {
     /* overflow: hidden; */
     position: relative;
+    cursor: pointer;
     /* right: px; */
     /* bottom: 60px; */
     /* align-self: flex-start; */
@@ -12,9 +13,10 @@
 
 .logo__1 {
     /* max-width: 100px; */
-    max-height: 150px;
+    max-height: 168px;
     position: relative;
     bottom: 35px;
+    left: 10px;
 }
 
 #currency__selector {
@@ -34,7 +36,7 @@
 }
 
 .currency__selectors:hover {
-    color: #007BE6;
+    color: #D96741;
     /* opacity: 1 */
     /* border: 1px solid rgba(0, 0, 0, 0.2) */
 }
@@ -74,10 +76,19 @@
 }
 
 #profile {
-    position: relative;
-    left: 56px;
-    bottom: 95px;
+    position: absolute;
+    /* left: 56px; */
+    /* bottom: 95px; */
+    right: 10px;
+    top: 20px;
     /* margin-right: 55px; */
+}
+
+.mini__cart-open {
+    position: fixed;
+    right: 17px;
+    top: 58px;
+    cursor: pointer;
 }
 
 .profile-dropdown {

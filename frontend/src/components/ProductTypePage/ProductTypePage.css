@@ -28,14 +28,14 @@
 .types__nav {
     display: flex;
     /* border: 1px solid red; */
-    background-color: #d0e8f2;
+    background-color: #232628;
     /* width: 500px; */
     height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    font-family: 'Courier New', Courier, monospace
+    /* font-family: 'Courier New', Courier, monospace */
 }
 
 @media screen and (max-width: 768px) {
