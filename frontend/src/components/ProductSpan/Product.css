@@ -44,8 +44,8 @@
 #product__price-container {
     /* position: relative;
     right: 70px; */
-    /* font-weight: bold; */
-    font-size: 13px;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 #product__labor-container {
