@@ -76,21 +76,23 @@
 }
 
 #profile {
-    position: relative;
-    left: 56px;
-    bottom: 95px;
+    position: absolute;
+    /* left: 56px; */
+    /* bottom: 95px; */
+    right: 10px;
+    top: 20px;
     /* margin-right: 55px; */
+}
+
+.mini__cart-open {
+    position: fixed;
+    right: 17px;
+    top: 58px;
+    cursor: pointer;
 }
 
 .profile-dropdown {
     position: relative;
     right: 51px;
     bottom: 10px;
-}
-
-.mini__cart-open {
-    position: fixed;
-    right: 13px;
-    top: 20px;
-    cursor: pointer;
 }
