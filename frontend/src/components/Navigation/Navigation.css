@@ -13,9 +13,10 @@
 
 .logo__1 {
     /* max-width: 100px; */
-    max-height: 150px;
+    max-height: 168px;
     position: relative;
     bottom: 35px;
+    left: 10px;
 }
 
 #currency__selector {
@@ -35,7 +36,7 @@
 }
 
 .currency__selectors:hover {
-    color: #48484A;
+    color: #D96741;
     /* opacity: 1 */
     /* border: 1px solid rgba(0, 0, 0, 0.2) */
 }
