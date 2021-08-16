@@ -24,7 +24,15 @@ export default function SearchBar() {
                 possibles.push(product)
             }
         })
-
+        possibles = possibles.sort((a, b) => { //!sort alphabetically
+            if (a.product_name < b.product_name) {
+                return -1
+            }
+            if (a.product_name > b.product_name) {
+                return 1
+            }
+            return 0
+        })
         setMatches(possibles)
     }
     // const searchSubmit = (e) => {
