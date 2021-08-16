@@ -18,7 +18,7 @@ export default function Product({ product }) {
     return (
 
         <span className='product__container' onClick={handleClick} >
-            <img className='product__image-container' style={{ maxHeight: "320px", maxWidth: "320px", borderRadius: '1px' }} src={`${product.image_url}`} alt="product" />
+            <img className='product__image-container' style={{ maxHeight: "300px", borderRadius: '1px' }} src={`${product.image_url}`} alt="product" />
             <div className='product__info-container'>
 
                 <div id='product__name-container'>
