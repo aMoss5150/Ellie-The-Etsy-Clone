@@ -20,6 +20,9 @@ export default function SearchBar() {
             if (possMatch.toLowerCase() === inputVal.toLowerCase() && inputVal.length > 0) {
                 possibles.push(product)
             }
+            else if (product.product_name.toLowerCase().includes(inputVal.toLowerCase()) && inputVal.length) {
+                possibles.push(product)
+            }
         })
 
         setMatches(possibles)
