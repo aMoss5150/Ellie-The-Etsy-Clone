@@ -4,8 +4,6 @@ _By [Andrew Moss](https://github.com/aMoss5150)
 
 Get an idea what your dream Mustang GT S550 build will cost at [Auralfy](https://auralfy.herokuapp.com/)
 
-Ellie is the start of an ongoing app and tool inspired by Etsy and a love for custom car culture. The goal: create an easy way to get pricing for your (only Mustang GT sS550 at the moment) build with parts and labor estimates all in one place.
-
 
 ## Index
 
@@ -28,15 +26,16 @@ PERN Stack utilized for this build
 - Sequelize
 - PostgreSQL
 
-## Home
+## Overview
 
-The home page is where the user will be directed whether logged in or not. 
+Ellie is the start of an ongoing app and tool inspired by Etsy and a love for custom car culture and my own car build. The goal: create an easy way to get pricing for your (only Mustang GT sS550 at the moment) build with parts and labor estimates all in one place. 
+
 
 ![](assets/sXc1.jpg)
 
-## Unique (for me) Approach
+## Simple Minimalist Approach
 
-At the start of this project I wanted to take a unique approach as my previous projects have a standard web page feel. I wanted to utilize more context to create an app/jukebox feel that renders components based off contexts that act like switches, rather than existing on a seperate route. This lead to having to plan a little bit more about how everything is going to work together due to mutual exclusivity of many separate conditions. It was an overall enjoyable experience and gives a really clean and pure feel to the user experience simulating the user is interacting with a jukebox screen and all the action so to speak, happens in one place. However, it did take me more time due to unfamiliarity of this approach and required me to think a few steps ahead and to be dynamic in my implementation. Through this project, the most important thing I learned was that planning is very important, but having an understanding of the fundamentals/system that you are using allows you the leniency required to be dynamic and approach new problems without worrying about hitting a brick wall.
+The goal for this project was to focus on what sort of functionality a consumer would find attractive. I went with a simple elegant dark theme, greys and black with orange accents. The colors as well as the matching logo serve to hint at a modern luxury, trying to steer away from car sites that, "get the job done", rather than having a cohesive style. 
 
 ## Home Page and Navigation
 
