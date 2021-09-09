@@ -33,9 +33,27 @@ Ellie is the start of an ongoing app and tool inspired by Etsy and a love for cu
 
 ![](assets/sXc1.jpg)
 
+
+
 ## Simple Minimalist Approach
 
-The goal for this project was to focus on what sort of functionality a consumer would find attractive. I went with a simple elegant dark theme, greys and black with orange accents. The colors as well as the matching logo serve to hint at a modern luxury, trying to steer away from car sites that, "get the job done", rather than having a cohesive style. 
+The goal for this project was to focus on what sort of functionality a consumer would find attractive. I went with a simple elegant dark theme, greys and black with orange accents. The colors as well as the matching logo serve to hint at modern luxury, trying to steer away from car sites that, "get the job done", rather than having a cohesive style. The site is a simple layout consisting of: a home page, product category pages, product details page, mini-cart, build breakdown/cart.
+
+## Mobile first design and responsiveness
+
+A large focus for this page was the app, grid display was the most powerful tool in this sense. Grid was utilized at break points to allow changes to the outer level layout of components. If grid was my right hand man, then flex was the left for this project. 
+
+## Local storage
+
+My reasoning behind using JS Local Storage for the cart storage was simple. This app is going to be used to help people find prices for their selected build. With this is mind, it unreasonable to think that someone would have thousands of parts in their build breakdown. Knowing this, local storage is implemented as simply an array of product ids, with an O(n) complexity, the cart is then built and held in the Redux store, this instead holds all product objects and their full information, keeping local client side storage to a minimum. 
+
+## Mini Cart
+
+The mini cart viewer on the right hand side of the page was a feature that I would appreciate as user. It allows you to see the product image of each product in your build breakdown/cart at a glance as well as click the image to go straight to the product details page as well. Essentially acting like a shortcut to being able to review your products at a glance.
+
+## Build Breakdown
+
+The build breakdown is the hub of where you can go to see your build. I decided to keep full product descriptions and conform each product to a smaller product preview, rather than just a picture and a name. The mentality is that this is not as much a cart, as it is more an informational tool allowing you to make informed decisions about your overall build on the spot. 
 
 ## Home Page and Navigation
 
