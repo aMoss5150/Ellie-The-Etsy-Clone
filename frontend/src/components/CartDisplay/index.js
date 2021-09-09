@@ -24,7 +24,6 @@ export default function CartDisplay() {
         selected && allCartItems.push(selected)
     }
 
-    console.log(allCartItems)
     let format = currency === 'usd' ? usdFormat : gbpFormat
 
     useEffect(() => {

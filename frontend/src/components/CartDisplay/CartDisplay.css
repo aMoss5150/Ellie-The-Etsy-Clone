@@ -10,8 +10,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    align-items: center;
+    /* flex-wrap: wrap; */
     width: 100%;
     /* border: 1px solid black; */
 }
@@ -54,7 +54,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         width: 70vw;
         /* border: 1px solid black; */
     }

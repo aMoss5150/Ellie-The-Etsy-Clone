@@ -28,7 +28,7 @@ PERN Stack utilized for this build
 
 ## Overview
 
-Ellie is the start of an ongoing app and tool inspired by Etsy and a love for custom car culture and my own car build. The goal: create an easy way to get pricing for your (only Mustang GT sS550 at the moment) build with parts and labor estimates all in one place. 
+Ellie is the start of an ongoing app and tool inspired by Etsy and a love for custom car culture and what could have been helpful while making decisions in my own build. The goal: create an easy way to get pricing for your (only Mustang GT S550 at the moment) build with parts and labor estimates all in one place. 
 
 
 ![](assets/sXc1.jpg)
@@ -45,7 +45,7 @@ A large focus for this page was the app, grid display was the most powerful tool
 
 ## Local storage
 
-My reasoning behind using JS Local Storage for the cart storage was simple. This app is going to be used to help people find prices for their selected build. With this is mind, it unreasonable to think that someone would have thousands of parts in their build breakdown. Knowing this, local storage is implemented as simply an array of product ids, with an O(n) complexity, the cart is then built and held in the Redux store, this instead holds all product objects and their full information, keeping local client side storage to a minimum. 
+My reasoning behind using JS Local Storage for the cart storage was simple. This app is going to be used to help people find prices for their selected build. With this is mind, it is unreasonable to think that someone would have thousands of parts in their build breakdown. Knowing this, local storage is implemented as simply an array of product ids, with an O(n) complexity, the cart is then built and held in the Redux store, this instead holds all product objects and their full information, keeping local client side storage to a minimum. 
 
 ## Mini Cart
 

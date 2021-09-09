@@ -28,8 +28,6 @@ export const emptyCart = () => ({
 })
 
 
-
-//! thunks unnecessary as ONLY products and reviews will be in the DB
 // product will be fetched and passed in from 
 // item button to add to cart
 
