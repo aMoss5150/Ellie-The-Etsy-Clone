@@ -14,6 +14,7 @@
 
 .product__types-links {
     margin: 15px;
+    /* box-shadow: 1px 1px 2px 2px rgb(222, 153, 43); */
 }
 
 .types__product__display-container {
@@ -28,7 +29,8 @@
 .types__nav {
     display: flex;
     /* border: 1px solid red; */
-    background-color: #232628;
+    background-color: #2C2C2E;
+    /* #232628 */
     /* width: 500px; */
     height: 200px;
     display: flex;

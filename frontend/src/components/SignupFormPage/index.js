@@ -28,6 +28,7 @@ function SignupFormPage() {
         return setErrors(['Confirm Password field must be the same as the Password field']);
     };
 
+
     return (
         <form onSubmit={handleSubmit}>
             <ul>
@@ -36,6 +37,7 @@ function SignupFormPage() {
             <label>
                 Email
                 <input
+                    className="email__field input"
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -45,6 +47,7 @@ function SignupFormPage() {
             <label>
                 Username
                 <input
+                    className="email__field input"
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -54,6 +57,7 @@ function SignupFormPage() {
             <label>
                 Password
                 <input
+                    className="password__field input"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -63,13 +67,14 @@ function SignupFormPage() {
             <label>
                 Confirm Password
                 <input
+                    className="password__field input"
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                 />
             </label>
-            <button type="submit">Sign Up</button>
+            <button className="submit__button button" type="submit">Sign Up</button>
         </form>
     );
 }

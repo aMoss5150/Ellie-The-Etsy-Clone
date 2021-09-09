@@ -15,11 +15,9 @@ export default function ProductTypePage() {
     const dispatch = useDispatch();
     let products = useSelector(state => state.products)
 
-
     useEffect(() => {
         dispatch(getProducts())
     }, [dispatch])
-
 
     if (!products) return null
     //!
@@ -28,9 +26,7 @@ export default function ProductTypePage() {
     let foundProds = products.filter((product) => (
         product.product_type === productType
     ))
-    // foundProds = foundProds.sort((a, b) => { //!sort by price
-    //     return a.price - b.price
-    // })
+
     foundProds = foundProds.sort((a, b) => { //!sort alphabetically
         if (a.product_name < b.product_name) {
             return -1
@@ -40,9 +36,11 @@ export default function ProductTypePage() {
         }
         return 0
     })
+
     return (
         <div className='product__types-container'>
             <div className='types__nav'>
+
                 <Link className='product__types-links' to='/products/engine'>
                     Engine
                 </Link>
@@ -50,12 +48,15 @@ export default function ProductTypePage() {
                 <Link className='product__types-links' to='/products/exhaust'>
                     Exhaust
                 </Link>
+
                 <Link className='product__types-links' to='/products/wheels'>
                     Wheels
                 </Link>
+
                 <Link className='product__types-links' to='/products/suspension'>
                     Suspension
                 </Link>
+
                 <Link className='product__types-links' to='/products/exterior'>
                     Exterior
                 </Link>

@@ -8,6 +8,7 @@ import ProductDetails from "./components/ProductDetails";
 import ProductTypePage from "./components/ProductTypePage";
 import CartDisplay from "./components/CartDisplay";
 import MiniCart from './components/MiniCart';
+import PageNotFound from './components/PageNotFound'
 
 
 
@@ -69,7 +70,7 @@ function App({ products }) {
           </Route>
 
           <Route>
-            <h1>Page Not Found</h1>
+            <PageNotFound />
             <Footer />
           </Route>
         </Switch>
