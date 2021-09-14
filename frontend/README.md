@@ -1,76 +1,70 @@
+# Ellie
 
-# Create React App Template
+By [Andrew Moss](https://github.com/aMoss5150)
 
-A no-frills template from which to create React + Redux applications with
-[Create React App](https://github.com/facebook/create-react-app).
+Get an idea what your dream Mustang GT S550 build will cost at [Ellie](https://ellie-deploy.herokuapp.com/)
 
-```sh
-npx create-react-app my-app --template @appacademy/react-redux-v17 --use-npm
-```
 
-## Available Scripts
+## Index
 
-In the project directory, you can run:
+##  [Api Documentation](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/Api-Documentation)
+## [Database Schema](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/Database-Schema)
+##  [Front-end Routes](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/Front-End-Routes)
+## [MVP List](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/MVP-List)
+## [User Stories](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/User-Stories)
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+PERN Stack utilized for this build
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- JavaScript
+- React/Redux
+- Node
+- HTML
+- CSS
+- Express
+- Sequelize
+- PostgreSQL
 
-### `npm test`
+## Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ellie is the start of an ongoing app and tool inspired by Etsy and a love for custom car culture and what could have been helpful while making decisions in my own build. The goal: create an easy way to get pricing for your (only Mustang GT S550 at the moment) build with parts and labor estimates all in one place. 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](assets/sXc1.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Simple Minimalist Approach
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The goal for this project was to focus on what sort of functionality a consumer would find attractive. I went with a simple elegant dark theme, greys and black with orange accents. The colors as well as the matching logo serve to hint at modern luxury, trying to steer away from car sites that, "get the job done", rather than having a cohesive style. The site is a simple layout consisting of: a home page, product category pages, product details page, mini-cart, build breakdown/cart.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Mobile first design and responsiveness
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+A large focus for the appwas to implment a mobile first design, grid display was the most powerful tool in this sense. Grid was utilized at break points to allow changes to the outer level layout of components. If grid was my right hand man, then flex was the left for this project's layout. 
+## Local storage
 
-## Learn More
+My reasoning behind using JS Local Storage for the cart storage was simple. This app is going to be used to help people find prices for their selected build. With this is mind, it is unreasonable to think that someone would have thousands of parts in their build breakdown. Knowing this, local storage is implemented as simply an array of product ids, with an O(n) complexity, the cart is then built and held in the Redux store, this instead holds all product objects and their full information, keeping local client side storage to a minimum. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Mini Cart
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The mini cart viewer on the right hand side of the page was a feature that I would appreciate as a user. It allows you to see the product image of each product in your build breakdown/cart at a glance as well as click the image to go straight to the product details page. Essentially, it acts like a shortcut bar to being able to review your products at a glance. The mini cart is available from every page that is not build/breakdown page itself.
 
-### Code Splitting
+## Build Breakdown
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The build breakdown is the hub of where you can go to see your build. I decided to keep full product descriptions and conform each product to a smaller product preview, rather than just a picture and a name. The mentality is that this is not as much a cart, as it is more an informational tool allowing you to make informed decisions about your overall build on the spot. 
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Search functionality
 
-### Making a Progressive Web App
+Adding in search functionality was also vital to the app and uniquely challenging, using what I know about React, I just went ahead and built the function without using a reference, I find that it is an important exercise to try to rebuild something that is commonly used to allow yourself to run into those problems and gain some lasting knowledge, rather than just following the guided path. It also allows you better understand someone else's reasoning behind why they may have designed something a certain way and I welcome a challenge when it provokes critical thinking in this manner.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Future Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-Scraper tool for searching for existing builds that have certain parts already installed
+-Sound comparison section with blind shootouts to help decide what exhaust to use
+-Would like to expand on sound shootout section that adds volume matching to aid in perception of the tone rather than just volume
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
