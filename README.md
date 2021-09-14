@@ -19,9 +19,17 @@ PERN Stack utilized for this build
 
 - JavaScript
 - React/Redux
+- Redux Thunk
 - Node
 - HTML
 - CSS
+- cors
+- morgan
+- helmet
+- csurf
+- cookie-parser
+- bcryptjs
+- jsonwebtoken
 - Express
 - Sequelize
 - PostgreSQL
