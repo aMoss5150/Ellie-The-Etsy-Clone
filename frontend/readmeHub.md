@@ -1,17 +1,17 @@
 # Ellie
 
-_By [Andrew Moss](https://github.com/aMoss5150)
+By [Andrew Moss](https://github.com/aMoss5150)
 
-Get an idea what your dream Mustang GT S550 build will cost at [Auralfy](https://auralfy.herokuapp.com/)
+Get an idea what your dream Mustang GT S550 build will cost at [Ellie](https://ellie-deploy.herokuapp.com/)
 
 
 ## Index
 
-- [API Documentation](https://github.com/ZaviarBrown/spaceXchange/wiki/API-Routes)
-- [Database Schema](https://github.com/ZaviarBrown/spaceXchange/wiki/Database-Schema)
-- [Frontend Routes](https://github.com/ZaviarBrown/spaceXchange/wiki/Frontend-Routes)
-- [MVP Feature List](https://github.com/ZaviarBrown/spaceXchange/wiki/MVP-List)
-- [User Stories](https://github.com/ZaviarBrown/spaceXchange/wiki/User-Stories)
+##  [Api Documentation](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/Api-Documentation)
+## [Database Schema](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/Database-Schema)
+##  [Front-end Routes](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/Front-End-Routes)
+## [MVP List](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/MVP-List)
+## [User Stories](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/User-Stories)
 
 ## Technologies Used
 
@@ -41,8 +41,8 @@ The goal for this project was to focus on what sort of functionality a consumer 
 
 ## Mobile first design and responsiveness
 
-A large focus for this page was the app, grid display was the most powerful tool in this sense. Grid was utilized at break points to allow changes to the outer level layout of components. If grid was my right hand man, then flex was the left for this project. 
 
+A large focus for the appwas to implment a mobile first design, grid display was the most powerful tool in this sense. Grid was utilized at break points to allow changes to the outer level layout of components. If grid was my right hand man, then flex was the left for this project's layout. 
 ## Local storage
 
 My reasoning behind using JS Local Storage for the cart storage was simple. This app is going to be used to help people find prices for their selected build. With this is mind, it is unreasonable to think that someone would have thousands of parts in their build breakdown. Knowing this, local storage is implemented as simply an array of product ids, with an O(n) complexity, the cart is then built and held in the Redux store, this instead holds all product objects and their full information, keeping local client side storage to a minimum. 
@@ -59,4 +59,12 @@ The build breakdown is the hub of where you can go to see your build. I decided 
 ## Search functionality
 
 Adding in search functionality was also vital to the app and uniquely challenging, using what I know about React, I just went ahead and built the function without using a reference, I find that it is an important exercise to try to rebuild something that is commonly used to allow yourself to run into those problems and gain some lasting knowledge, rather than just following the guided path. It also allows you better understand someone else's reasoning behind why they may have designed something a certain way and I welcome a challenge when it provokes critical thinking in this manner.
+
+
+## Future Features
+
+-Scraper tool for searching for existing builds that have certain parts already installed
+-Sound comparison section with blind shootouts to help decide what exhaust to use
+-Would like to expand on sound shootout section that adds volume matching to aid in perception of the tone rather than just volume
+
 
