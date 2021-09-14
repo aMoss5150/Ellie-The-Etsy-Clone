@@ -1,5 +1,3 @@
-# Ellie-The-Etsy-Clone
-
 # Ellie
 
 By [Andrew Moss](https://github.com/aMoss5150)
