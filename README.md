@@ -74,7 +74,7 @@ Adding in search functionality was also vital to the app and uniquely challengin
 
 ## Future Features
 
--Scraper tool for searching for existing builds that have certain parts already installed
--Sound comparison section with blind shootouts to help decide what exhaust to use
--Would like to expand on sound shootout section that adds volume matching to aid in perception of the tone rather than just volume
+- Scraper tool for searching for existing builds that have certain parts already installed
+- Sound comparison section with blind shootouts to help decide what exhaust to use
+- Would like to expand on sound shootout section that adds volume matching to aid in perception of the tone rather than just volume
 
