@@ -19,9 +19,17 @@ PERN Stack utilized for this build
 
 - JavaScript
 - React/Redux
+- Redux Thunk
 - Node
 - HTML
 - CSS
+- cors
+- morgan
+- helmet
+- csurf
+- cookie-parser
+- bcryptjs
+- jsonwebtoken
 - Express
 - Sequelize
 - PostgreSQL
@@ -32,8 +40,6 @@ Ellie is the start of an ongoing app and tool inspired by Etsy and a love for cu
 
 
 ![](assets/sXc1.jpg)
-
-
 
 ## Simple Minimalist Approach
 
