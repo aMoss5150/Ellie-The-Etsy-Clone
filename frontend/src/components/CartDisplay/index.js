@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import DigitRoll from "digit-roll-react";
 import { getCartLS } from '../../store/cart'
 import { getProducts } from '../../store/products'
+// import Roller from '@bit/joshk.react-spinners-css.roller';
 
 import CartSummary from '../CartSummary'
 import CartItem from '../CartItem'
@@ -15,6 +16,9 @@ export default function CartDisplay() {
     const cart = useSelector(state => state.cart)
     const products = Object.values(useSelector(state => state.products))
     const { currency } = useCurrency()
+    const [part, setPart] = useState(undefined)
+    const [labor, setLabor] = useState(undefined)
+    const [total, setTotal] = useState(undefined)
     // const [allCartItems, setAllCartItems] = useState([])
 
     let allCartItems = []
@@ -27,9 +31,18 @@ export default function CartDisplay() {
 
     let format = currency === 'usd' ? usdFormat : gbpFormat
 
+    //* not currently in use, possible future re implement with a ROLLER
+    // const partTotaler = (n) => {
+    //     return (<DigitRoll num={n} length={9} divider="" delay="1" />)
+    // }
+
     useEffect(() => {
-        dispatch(getCartLS())
-        dispatch(getProducts())
+        const totaler = async (n) => {
+            await dispatch(getCartLS())
+            await dispatch(getProducts())
+
+        }
+        totaler()
     }, [dispatch])
 
     if (!cart) {
@@ -48,7 +61,6 @@ export default function CartDisplay() {
                             return el.price + acc
                         }, 0))
                     }
-                    <DigitRoll num={8889} length={9} divider="" delay="1" />
                 </div>
 
                 <div className="labor__est-total">
