@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import DigitRoll from "digit-roll-react";
 import { getCartLS } from '../../store/cart'
 import { getProducts } from '../../store/products'
 
@@ -47,6 +48,7 @@ export default function CartDisplay() {
                             return el.price + acc
                         }, 0))
                     }
+                    <DigitRoll num={8889} length={9} divider="" delay="1" />
                 </div>
 
                 <div className="labor__est-total">
