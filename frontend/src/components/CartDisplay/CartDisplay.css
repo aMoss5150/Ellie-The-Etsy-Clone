@@ -25,6 +25,7 @@
     align-items: center;
     grid-area: breakdown;
     position: fixed;
+    margin-bottom: 10px;
     right: 61px;
     /* border: 1px solid red; */
     width: 600px;
@@ -58,4 +59,8 @@
         width: 70vw;
         /* border: 1px solid black; */
     }
+}
+
+tc {
+    margin: 50px;
 }

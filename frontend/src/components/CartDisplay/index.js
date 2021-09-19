@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import DigitRoll from "digit-roll-react";
-import { getCartLS } from '../../store/cart'
-import { getProducts } from '../../store/products'
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 // import Roller from '@bit/joshk.react-spinners-css.roller';
 
+import { getCartLS } from '../../store/cart'
+import { getProducts } from '../../store/products'
 import CartSummary from '../CartSummary'
 import CartItem from '../CartItem'
 import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
@@ -54,30 +57,77 @@ export default function CartDisplay() {
     return (
         <div className="cart__page">
             <div className="cart__breakdown">YOUR BUILD BREAKDOWN
+                {!allCartItems.length && <div><Loader type="Rings" color="#00BFFF" height={80} width={80} /></div>}
+                {allCartItems.length > 0 && <>
 
-                <div className='parts__total'>
-                    Parts total: {format(
-                        allCartItems.reduce((acc, el) => {
-                            return el.price + acc
-                        }, 0))
-                    }
-                </div>
+                    <table>
+                        <thead>
+                            <tc>
+                                <th colspan="2">Parts Total</th>
+                            </tc>
+                            <tc>
+                                <th colspan="2">Labor Total</th>
+                            </tc>
+                            <tc>
+                                <th colspan="2">Build Total</th>
+                            </tc>
+                        </thead>
+                        <tbody>
+                            <tc>
+                                <td>{format(
+                                    allCartItems.reduce((acc, el) => {
+                                        return el.price + acc
+                                    }, 0))}</td>
+                            </tc>
+                            <tc>
+                                <td>{format(
+                                    allCartItems.reduce((acc, el) => {
+                                        return el.labor_estimate + acc
+                                    }, 0))}</td>
+                            </tc>
+                            <tc>
+                                <td>{format(
+                                    allCartItems.reduce((acc, el) => {
+                                        return el.price + el.labor_estimate + acc
+                                    }, 0))}</td>
+                            </tc>
+                        </tbody>
 
-                <div className="labor__est-total">
-                    Labor total estimate: {format(
-                        allCartItems.reduce((acc, el) => {
-                            return el.labor_estimate + acc
-                        }, 0))
-                    }
-                </div>
 
-                <div className="build__estimate">
-                    Build estimate: {format(
-                        allCartItems.reduce((acc, el) => {
-                            return el.price + el.labor_estimate + acc
-                        }, 0))
-                    }
-                </div>
+                        <thead>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+
+
+                    {/* 
+                    <div className='parts__total'>
+                        Parts total: {format(
+                            allCartItems.reduce((acc, el) => {
+                                return el.price + acc
+                            }, 0))
+                        }
+                    </div>
+
+                    <div className="labor__est-total">
+                        Labor total estimate: {format(
+                            allCartItems.reduce((acc, el) => {
+                                return el.labor_estimate + acc
+                            }, 0))
+                        }
+                    </div>
+
+                    <div className="build__estimate">
+                        Build estimate: {format(
+                            allCartItems.reduce((acc, el) => {
+                                return el.price + el.labor_estimate + acc
+                            }, 0))
+                        }
+                    </div> */}
+
+                </>}
 
             </div>
 
