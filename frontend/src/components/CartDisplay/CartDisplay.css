@@ -61,6 +61,13 @@
     }
 }
 
-tc {
-    margin: 50px;
+td, th {
+    margin: 5px;
+    padding: 1rem;
+    border: white solid 1px;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
 }

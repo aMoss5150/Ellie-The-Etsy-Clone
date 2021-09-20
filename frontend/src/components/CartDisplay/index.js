@@ -61,43 +61,34 @@ export default function CartDisplay() {
                 {allCartItems.length > 0 && <>
 
                     <table>
-                        <thead>
-                            <tc>
-                                <th colspan="2">Parts Total</th>
-                            </tc>
-                            <tc>
-                                <th colspan="2">Labor Total</th>
-                            </tc>
-                            <tc>
-                                <th colspan="2">Build Total</th>
-                            </tc>
-                        </thead>
-                        <tbody>
-                            <tc>
-                                <td>{format(
-                                    allCartItems.reduce((acc, el) => {
-                                        return el.price + acc
-                                    }, 0))}</td>
-                            </tc>
-                            <tc>
-                                <td>{format(
-                                    allCartItems.reduce((acc, el) => {
-                                        return el.labor_estimate + acc
-                                    }, 0))}</td>
-                            </tc>
-                            <tc>
-                                <td>{format(
-                                    allCartItems.reduce((acc, el) => {
-                                        return el.price + el.labor_estimate + acc
-                                    }, 0))}</td>
-                            </tc>
-                        </tbody>
+                        <tr>
+                            <th colspan="1">Parts Total</th>
+                            <th colspan="1">Labor Total</th>
+                            <th colspan="1">Build Total</th>
+                        </tr>
+
+                        <tr>
+
+                            <td>{format(
+                                allCartItems.reduce((acc, el) => {
+                                    return el.price + acc
+                                }, 0))}
+                            </td>
 
 
-                        <thead>
-                        </thead>
-                        <tbody>
-                        </tbody>
+                            <td>{format(
+                                allCartItems.reduce((acc, el) => {
+                                    return el.labor_estimate + acc
+                                }, 0))}
+                            </td>
+
+
+                            <td>{format(
+                                allCartItems.reduce((acc, el) => {
+                                    return el.price + el.labor_estimate + acc
+                                }, 0))}
+                            </td>
+                        </tr>
                     </table>
 
 

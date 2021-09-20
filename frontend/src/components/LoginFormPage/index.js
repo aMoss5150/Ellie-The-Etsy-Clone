@@ -25,7 +25,7 @@ function LoginFormPage() {
                 const data = await res.json();
                 if (data && data.errors) setErrors(data.errors)
             }).then(() => {
-                //ADDED DOT THEN TO CHAIN A REDIRECT TO PREVIOUS PAGE!!
+                //*ADDED DOT THEN TO CHAIN A REDIRECT TO PREVIOUS PAGE
                 if (!errors) {
                     history.goBack();
                 }
