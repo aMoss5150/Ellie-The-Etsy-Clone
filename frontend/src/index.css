@@ -15,7 +15,8 @@ body {
     width: 100%;
     background-color: #1C1C1E;
     /* font-family: Times, "Helvetica Neue", ; */
-    color: #FFFFFF
+    color: #FFFFFF;
+    overscroll-behavior-y: none;
 }
 
 /* body::-webkit-scrollbar {
