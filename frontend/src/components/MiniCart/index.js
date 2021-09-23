@@ -41,7 +41,7 @@ function MiniCart() {
             <Link to="/cart">Build</Link>
             <div className="cart__pics">
                 {allCartItems && allCartItems.map((item) => (
-                    <img onClick={() => handlePicClick(item.id)} className="cart__pic" src={item.image_url} alt="an item" />
+                    <img key={item.id} onClick={() => handlePicClick(item.id)} className="cart__pic" src={item.image_url} alt="an item" />
                 ))}
             </div>
         </div>

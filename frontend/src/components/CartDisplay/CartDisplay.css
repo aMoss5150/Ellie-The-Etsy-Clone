@@ -71,3 +71,7 @@ td, th {
 table {
     border-collapse: collapse;
 }
+
+.table-info {
+    text-decoration: underline;
+}
