@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import SearchBar from '../SearchBar';
 import { useCurrency } from '../../context/CurrencyContext'
 import { useView } from '../../context/ViewCartContext'
+import DemoButton from '../DemoButton/index'
 
 import logo1 from '../../images/mustang-burnout-logo.png'
 import './Navigation.css';
@@ -25,6 +26,7 @@ function Navigation({ isLoaded }) {
             <>
                 <NavLink className='nav__login-link' to="/login">Log In</NavLink>
                 <NavLink className='nav__signup-link' to="/signup">Sign Up</NavLink>
+                <DemoButton />
             </>
         );
     }

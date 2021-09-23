@@ -58,7 +58,7 @@ export default function SearchBar() {
                 <>
                     {/* <button onClick={() => setMatches('')}>Clear</button> */}
                     <ul className="search__matches">{matches.map((m) => (
-                        <li onClick={() => setInputVal('')}><Link to={`/all-products/${m.id}`}>{m.product_name}</Link></li>
+                        <li key={m.id} onClick={() => setInputVal('')}><Link to={`/all-products/${m.id}`}>{m.product_name}</Link></li>
                     ))}</ul>
                 </>
             }

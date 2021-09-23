@@ -62,20 +62,6 @@
     font-size: 17px;
 }
 
-.nav__signup-link {
-    position: fixed;
-    right: 14px;
-    top: 35px;
-    cursor: pointer;
-}
-
-.nav__login-link {
-    position: fixed;
-    right: 19px;
-    top: 18px;
-    cursor: pointer;
-}
-
 #profile {
     position: absolute;
     /* left: 56px; */
@@ -85,10 +71,31 @@
     /* margin-right: 55px; */
 }
 
+.nav__signup-link {
+    position: fixed;
+    right: 14px;
+    top: 45px;
+    cursor: pointer;
+}
+
+.nav__login-link {
+    position: fixed;
+    right: 19px;
+    top: 28px;
+    cursor: pointer;
+}
+
 .mini__cart-open {
     position: fixed;
     right: 17px;
-    top: 58px;
+    top: 68px;
+    cursor: pointer;
+}
+
+.demo-button {
+    position: fixed;
+    right: 19px;
+    top: 12px;
     cursor: pointer;
 }
 
