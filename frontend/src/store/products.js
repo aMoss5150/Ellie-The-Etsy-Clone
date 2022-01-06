@@ -4,10 +4,11 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 //!REFACTOR FOR TOOLKIT
 
 const initialState = {}
+const name = "products"
 
-export const getProducts = createAsyncThunk("products/getProducts", async (dispatch) => {
+export const fetchProducts = createAsyncThunk("products/fetchProducts", async (dispatch) => {
     const res = await csrfFetch('/api/products');
-    //! need to be refactored into EXTRAREDUCERS
+    //! need to be refactored into EXTRA REDUCERS
     if (res.ok) {
         const products = await res.json();
         //! do not call Dispatch HERE
@@ -15,9 +16,24 @@ export const getProducts = createAsyncThunk("products/getProducts", async (dispa
     }
 });
 
+const productsSlice = createSlice({
+    name,
+    initialState,
+    reducers: {
+        getProducts: (state, action) => {
+            try { } catch (err) {
+                console.error(`There was an error getting products: ${err}`)
+            }
+        }
 
+    }
+
+})
 
 //!END OF REFACTOR FOR TOOLKIT
+
+
+
 
 
 
