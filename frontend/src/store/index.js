@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "@reduxjs/toolkit";
 import sessionReducer from './session';
 import productsReducer from './products';
 import reviewsReducer from './reviews';
