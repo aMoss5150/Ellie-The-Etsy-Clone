@@ -1,4 +1,26 @@
 import { csrfFetch } from './csrf';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
+
+//!REFACTOR FOR TOOLKIT
+
+const initialState = {}
+
+export const getProducts = createAsyncThunk("products/getProducts", async (dispatch) => {
+    const res = await csrfFetch('/api/products');
+    //! need to be refactored into EXTRAREDUCERS
+    if (res.ok) {
+        const products = await res.json();
+        //! do not call Dispatch HERE
+        dispatch(load(products));
+    }
+});
+
+
+
+//!END OF REFACTOR FOR TOOLKIT
+
+
+
 
 //actions
 const LOAD = "products/LOAD";
@@ -43,7 +65,6 @@ const productsReducer = (state = initialState, action) => {
             return state
         }
     }
-
 }
 
 export default productsReducer;

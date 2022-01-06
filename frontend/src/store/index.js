@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
 let enhancer;
 
 
-//ALLOWS FOR REDUX LOGIN IS REDUX IS INSTALLED
+//ALLOWS FOR REDUX LOGIN if REDUX IS INSTALLED
 if (process.env.NODE_ENV === "production") {
   enhancer = applyMiddleware(thunk);
 } else {
