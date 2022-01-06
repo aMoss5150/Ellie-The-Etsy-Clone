@@ -6,25 +6,41 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 const initialState = {}
 const name = "products"
 
-export const fetchProducts = createAsyncThunk("products/fetchProducts", async (dispatch) => {
-    const res = await csrfFetch('/api/products');
-    //! need to be refactored into EXTRA REDUCERS
-    if (res.ok) {
-        const products = await res.json();
-        //! do not call Dispatch HERE
-        dispatch(load(products));
-    }
-});
+export const fetchProducts = createAsyncThunk(
+    "products/fetchProducts",
+    async () => {
+        const res = await csrfFetch('/api/products');
+
+        if (res.ok) {
+            const products = await res.json();
+            return products
+        }
+    });
 
 const productsSlice = createSlice({
     name,
     initialState,
     reducers: {
         getProducts: (state, action) => {
-            try { } catch (err) {
+            try {
+                const allProducts = {};
+                action.products.forEach(product => {
+                    allProducts[product.id] = product;
+                });
+                state = allProducts
+            } catch (err) {
                 console.error(`There was an error getting products: ${err}`)
             }
         }
+
+    },
+    extraReducers: (builder) => {
+        builder.addCase(fetchProducts.fulfilled, (state, action) => {
+            state = action.payload
+        })
+        builder.addCase(fetchProducts.rejected, (state, action) => {
+            console.error(action.payload)
+        })
 
     }
 
