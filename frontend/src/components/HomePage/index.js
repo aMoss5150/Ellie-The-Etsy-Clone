@@ -38,8 +38,7 @@ export default function HomePage() {
     })
 
     return (
-        < div className="home__page" >
-            {products.length}
+        <div className="home__page" >
 
             <div className='category__display-container'>
 
@@ -89,7 +88,7 @@ export default function HomePage() {
                 ))}
 
             </div>
-        </div >
+        </div>
     )
 
 }
