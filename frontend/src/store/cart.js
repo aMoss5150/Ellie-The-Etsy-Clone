@@ -1,8 +1,9 @@
 // import { useDispatch } from 'react-redux'
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit"
 
 //*REFACTOR FOR TOOLKIT
 
+// -----------------------SLICE------------------------------
 
 const initialState = []
 
@@ -12,15 +13,35 @@ const cartSlice = createSlice({
     name,
     initialState,
     reducers: {
+        getCartLS: (state) => {
+            try {
+                let cart = []
+                const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
 
+                if (cartLS) { // if cart exists... get it
+                    cart = JSON.parse(cartLS)
+                    state.length = 0
+                    cart.forEach(id => state.push(id))
+                    // dispatch(getCart(cart));
+                }
+                else if (!cartLS) { // if cart doesnt exist... create it
+                    let stringedCart = JSON.stringify(cart)
+                    localStorage.setItem('cart', stringedCart)
+                    // dispatch(getCart(cart))
+                }
+            } catch (err) {
+                console.error(`There was an error retrieving cart: ${err}`)
+            }
+        }
     },
     extraReducers: (builder) => {
-
     }
 })
+// ------------------------THUNKS----------------------------
 
 
-export const { getCart, addItem, removeItem, emptyCart } = cartSlice.actions
+
+export const { getCartLS, addItem, removeItem, emptyCart } = cartSlice.actions
 export default cartSlice.reducer
 
 
