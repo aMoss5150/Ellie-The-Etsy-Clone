@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
 
-import { getProducts } from '../../store/products'
+import { fetchProducts } from '../../store/products'
 import { getReviews } from '../../store/reviews'
 import { addItemLS } from '../../store/cart'
 import { useCurrency, usdFormat, gbpFormat } from '../../context/CurrencyContext'
@@ -31,6 +31,7 @@ export default function ProductDetails({ products }) {
 
     useEffect(() => {
         dispatch(getReviews())
+        dispatch(fetchProducts())
     }, [dispatch])
 
     let format = currency === 'usd' ? usdFormat : gbpFormat
