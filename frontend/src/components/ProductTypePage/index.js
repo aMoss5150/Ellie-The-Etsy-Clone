@@ -15,9 +15,9 @@ export default function ProductTypePage() {
     const dispatch = useDispatch();
     let products = useSelector(state => state.products)
 
-    useEffect(() => {
-        dispatch(getProducts())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(getProducts())
+    // }, [dispatch])
 
     if (!products) return null
     //!

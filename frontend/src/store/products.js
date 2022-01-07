@@ -41,8 +41,8 @@ const productsSlice = createSlice({
             action.payload.forEach(product => {
                 allProducts[product.id] = product;
             });
-            state = allProducts
-            // state = action.payload
+            // state = { allProducts }
+            state.products = allProducts
         })
 
         builder.addCase(fetchProducts.rejected, (state, action) => {

@@ -14,7 +14,7 @@ export default function HomePage() {
 
     // DISPATCH WHEREVER I NEED TO FIND PRODUCTS... will be slower if
     // DONE IN APP.js
-    let products = useSelector(state => state.products)
+    let products = useSelector(state => state.products.products)
 
     const handleClick = (dest) => {
         history.push(`/products/${dest}`)
@@ -38,8 +38,9 @@ export default function HomePage() {
     })
 
     return (
+        < div className="home__page" >
+            {products.length}
 
-        <div className="home__page">
             <div className='category__display-container'>
 
                 <span onClick={() => handleClick("engine")} className='display__nav__span'>
@@ -88,7 +89,7 @@ export default function HomePage() {
                 ))}
 
             </div>
-        </div>
+        </div >
     )
 
 }
