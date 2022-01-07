@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { getProducts } from '../../store/products'
+import { fetchProducts } from '../../store/products'
 import Product from '../ProductSpan'
 import './ProductTypePage.css'
 import { Link } from 'react-router-dom'
@@ -19,10 +19,16 @@ export default function ProductTypePage() {
     //     dispatch(getProducts())
     // }, [dispatch])
 
+
+    useEffect(() => {
+        dispatch(fetchProducts())
+    }, [])
+
+
     if (!products) return null
     //!
 
-    products = Object.values(products)
+    // products = Object.values(products)
     let foundProds = products.filter((product) => (
         product.product_type === productType
     ))
@@ -36,6 +42,8 @@ export default function ProductTypePage() {
         }
         return 0
     })
+
+
 
     return (
         <div className='product__types-container'>

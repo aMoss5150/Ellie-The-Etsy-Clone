@@ -11,7 +11,7 @@ export default function CartItem({ itemId }) {
     const dispatch = useDispatch();
     const history = useHistory()
     const { currency } = useCurrency()
-    const products = Object.values(useSelector(state => state.products))
+    const products = useSelector(state => state.products.products)
     const product = products.find((product) => product.id === +itemId)
     let format = currency === 'usd' ? usdFormat : gbpFormat
 
