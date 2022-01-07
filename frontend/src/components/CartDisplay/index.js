@@ -42,8 +42,6 @@ export default function CartDisplay() {
     useEffect(() => {
         const totaler = async (n) => {
             await dispatch(getCartLS())
-            await dispatch(getProducts())
-
         }
         totaler()
     }, [dispatch])

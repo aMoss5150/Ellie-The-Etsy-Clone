@@ -13,7 +13,7 @@ export default function ProductTypePage() {
     //!LOGIC BLOCK FOR CONTROLLING REFRESH    
     const { productType } = useParams()
     const dispatch = useDispatch();
-    let products = useSelector(state => state.products)
+    let products = useSelector(state => state.products.products)
 
     // useEffect(() => {
     //     dispatch(getProducts())

@@ -24,9 +24,6 @@ export default function CartItem({ itemId }) {
         dispatch(getCartLS())
     }
 
-    useEffect(() => {
-        dispatch(getProducts())
-    }, [dispatch])
 
     if (!products || !product) return null
 
