@@ -29,10 +29,10 @@ function MiniCart() {
 
     useEffect(() => {
         dispatch(getCartLS())
-        dispatch(getProducts())
+        // dispatch(getProducts())
     }, [dispatch])
 
-    if (!cartOpen) return null
+    if (!cartOpen || !products) return null
     return (
         <div className='mini__cart-div'>
             <button onClick={() => setCartOpen(false)}>

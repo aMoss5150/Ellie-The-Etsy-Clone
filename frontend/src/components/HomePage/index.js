@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useHistory, Redirect } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from '../../store/products'
+import { getProducts, fetchProducts } from '../../store/products'
 
 
 import './HomePage.css'
@@ -21,7 +21,8 @@ export default function HomePage() {
     }
 
     useEffect(() => {
-        dispatch(getProducts())
+        dispatch(fetchProducts())
+        // dispatch(getProducts())
     }, [dispatch])
 
     //LOGIC BLOCK FOR CONTROLLING REFRESH    
@@ -37,6 +38,7 @@ export default function HomePage() {
     })
 
     return (
+
         <div className="home__page">
             <div className='category__display-container'>
 
@@ -78,7 +80,7 @@ export default function HomePage() {
             </div>
 
             <div className='product__display-container'>
-                {products.map(product => (
+                {products?.map(product => (
                     product.price > 1000 && product.price < 2000 &&
                     <Product key={product.id} product={product}>
                         {product.product_name}
