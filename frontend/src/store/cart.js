@@ -15,23 +15,72 @@ const cartSlice = createSlice({
     reducers: {
         getCartLS: (state) => {
             try {
+
+                state.length = 0
                 let cart = []
                 const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
 
                 if (cartLS) { // if cart exists... get it
                     cart = JSON.parse(cartLS)
-                    state.length = 0
                     cart.forEach(id => state.push(id))
-                    // dispatch(getCart(cart));
                 }
+
                 else if (!cartLS) { // if cart doesnt exist... create it
                     let stringedCart = JSON.stringify(cart)
                     localStorage.setItem('cart', stringedCart)
-                    // dispatch(getCart(cart))
                 }
+
             } catch (err) {
                 console.error(`There was an error retrieving cart: ${err}`)
             }
+        },
+        addItemLS: (state, action) => {
+
+            try {
+
+                const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
+
+                if (cartLS) {
+                    let parsedCart = JSON.parse(cartLS)
+                    parsedCart.push(action.payload)
+                    let stringedCart = JSON.stringify(parsedCart)
+                    localStorage.setItem('cart', stringedCart)
+                    state.push(action.payload)
+
+                } else if (!cartLS) { // if cart doesnt exist... create it
+                    let cart = []
+                    cart.push(action.payload)
+                    let stringedCart = JSON.stringify(cart)
+                    localStorage.setItem('cart', stringedCart)
+                    state.length = 0
+                    state.push(action.payload)
+                }
+
+            } catch (err) {
+                console.error(`There was an error adding to cart: ${err}`)
+            }
+        },
+
+        removeItemLS: (state, action) => {
+
+            try {
+
+                const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
+
+                if (cartLS) {
+                    let parsedCart = JSON.parse(cartLS)
+                    let spliceIndex = parsedCart.indexOf(action.payload)
+                    let spliceIndexStore = state.indexOf(action.payload)
+                    parsedCart.splice(spliceIndex, 1)
+                    state.splice(spliceIndexStore, 1)
+                    let stringedCart = JSON.stringify(parsedCart)
+                    localStorage.setItem('cart', stringedCart)
+                }
+
+            } catch (err) {
+                console.error(`There was an error removing item from cart: ${err}`)
+            }
+
         }
     },
     extraReducers: (builder) => {
@@ -41,7 +90,7 @@ const cartSlice = createSlice({
 
 
 
-export const { getCartLS, addItem, removeItem, emptyCart } = cartSlice.actions
+export const { getCartLS, addItemLS, removeItemLS, emptyCart } = cartSlice.actions
 export default cartSlice.reducer
 
 
