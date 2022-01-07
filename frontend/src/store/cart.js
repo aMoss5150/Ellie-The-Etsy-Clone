@@ -14,8 +14,8 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         getCartLS: (state) => {
-            try {
 
+            try {
                 state.length = 0
                 let cart = []
                 const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
@@ -37,7 +37,6 @@ const cartSlice = createSlice({
         addItemLS: (state, action) => {
 
             try {
-
                 const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
 
                 if (cartLS) {
@@ -64,7 +63,6 @@ const cartSlice = createSlice({
         removeItemLS: (state, action) => {
 
             try {
-
                 const cartLS = localStorage.getItem('cart') ? localStorage.getItem('cart') : false
 
                 if (cartLS) {
@@ -80,17 +78,14 @@ const cartSlice = createSlice({
             } catch (err) {
                 console.error(`There was an error removing item from cart: ${err}`)
             }
-
         }
-    },
-    extraReducers: (builder) => {
     }
 })
 // ------------------------THUNKS----------------------------
 
 
 
-export const { getCartLS, addItemLS, removeItemLS, emptyCart } = cartSlice.actions
+export const { getCartLS, addItemLS, removeItemLS } = cartSlice.actions
 export default cartSlice.reducer
 
 
