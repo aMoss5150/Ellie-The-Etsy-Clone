@@ -10,10 +10,11 @@ export default function SearchBar() {
     const [prodsArr, setProdsArr] = useState([])
 
 
-    const products = useSelector(state => state.products)
+    const products = useSelector(state => state.products.products)
     const handleSearch = () => {
         let possibles = []
-        Object.values(products).forEach((product) => {
+
+        products?.forEach((product) => {
             let lengthOfSrch = inputVal.length
             let possMatch = product.product_name.split('').slice(0, lengthOfSrch).join('')
 

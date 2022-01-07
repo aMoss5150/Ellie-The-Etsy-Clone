@@ -14,7 +14,7 @@ function MiniCart() {
     const { cartOpen, setCartOpen } = useView()
 
     const cart = useSelector(state => state.cart)
-    const products = Object.values(useSelector(state => state.products))
+    const products = useSelector(state => state.products.products)
     let allCartItems = []
 
     for (let i = 0; i <= cart.length; i++) {

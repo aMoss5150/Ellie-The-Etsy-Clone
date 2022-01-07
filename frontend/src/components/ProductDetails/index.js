@@ -20,7 +20,7 @@ export default function ProductDetails({ products }) {
 
 
     //!LOGIC BLOCK FOR CONTROLLING REFRESH    
-    const selProducts = useSelector(state => state.products)
+    const selProducts = useSelector(state => state.products.products)
     let reviews = useSelector(state => state.reviews)
 
     const handleAddItem = () => {
@@ -30,7 +30,6 @@ export default function ProductDetails({ products }) {
 
 
     useEffect(() => {
-        dispatch(getProducts())
         dispatch(getReviews())
     }, [dispatch])
 

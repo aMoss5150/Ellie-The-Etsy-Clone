@@ -17,7 +17,7 @@ import './CartDisplay.css'
 export default function CartDisplay() {
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart)
-    const products = Object.values(useSelector(state => state.products))
+    const products = useSelector(state => state.products.products)
     const { currency } = useCurrency()
     const [part, setPart] = useState(undefined)
     const [labor, setLabor] = useState(undefined)

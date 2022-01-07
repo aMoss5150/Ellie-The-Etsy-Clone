@@ -39,6 +39,7 @@ const productsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchProducts.fulfilled, (state, action) => {
+            //! prior use of object
             // const allProducts = {};
             // action.payload.forEach(product => {
             //     allProducts[product.id] = product;
@@ -46,13 +47,12 @@ const productsSlice = createSlice({
             // // state = { allProducts }
             // state.products = allProducts
 
+            //* now using array
+            state.products.length = 0
 
             action.payload.forEach(product => {
                 state.products.push(product);
             });
-            // state = { allProducts }
-
-
         })
 
         builder.addCase(fetchProducts.rejected, (state, action) => {
