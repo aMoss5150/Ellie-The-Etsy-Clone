@@ -7,7 +7,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 // import Roller from '@bit/joshk.react-spinners-css.roller';
 
 import { getCartLS } from '../../store/cart'
-import { getProducts } from '../../store/products'
+import { fetchProducts } from '../../store/products'
 import CartSummary from '../CartSummary'
 import CartItem from '../CartItem'
 import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
@@ -40,10 +40,12 @@ export default function CartDisplay() {
     // }
 
     useEffect(() => {
+        dispatch(fetchProducts())
         const totaler = async (n) => {
             await dispatch(getCartLS())
         }
         totaler()
+
     }, [dispatch])
 
     if (!cart) {
