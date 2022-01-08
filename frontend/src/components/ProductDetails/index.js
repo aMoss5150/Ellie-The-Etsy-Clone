@@ -34,11 +34,8 @@ export default function ProductDetails({ products }) {
         dispatch(fetchProducts())
     }, [dispatch])
 
-    /// THIS IS WHERE THE REFERENCE IS HAPPPENING SINCE WE ARE NO LONGER USING OBJECT
-    /// IT IS OFF BY 1 because it is looking at array rather than OBJECT
     let format = currency === 'usd' ? usdFormat : gbpFormat
     let prodData = products ? products : selProducts
-    // const product = prodData[productId]
     const product = prodData.find(product => product.id === +productId)
 
     if (!product || !reviews) return null

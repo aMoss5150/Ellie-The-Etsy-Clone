@@ -11,6 +11,7 @@ import { fetchProducts } from '../../store/products'
 import CartSummary from '../CartSummary'
 import CartItem from '../CartItem'
 import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
+import { useView } from '../../context/ViewCartContext'
 
 import './CartDisplay.css'
 
@@ -19,6 +20,7 @@ export default function CartDisplay() {
     const cart = useSelector(state => state.cart)
     const products = useSelector(state => state.products.products)
     const { currency } = useCurrency()
+    const { changed } = useView()
     const [part, setPart] = useState(undefined)
     const [labor, setLabor] = useState(undefined)
     const [total, setTotal] = useState(undefined)
@@ -46,7 +48,7 @@ export default function CartDisplay() {
         }
         totaler()
 
-    }, [dispatch])
+    }, [dispatch, changed])
 
     if (!cart) {
         return (
