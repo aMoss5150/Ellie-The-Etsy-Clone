@@ -23,7 +23,7 @@ export default function CartItem({ itemId }) {
     const handleRemove = (itemId) => {
         dispatch(removeItemLS(itemId))
         dispatch(getCartLS())
-        setChanged(!changed)
+        setChanged((changed) => !changed)
     }
 
 

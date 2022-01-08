@@ -20,7 +20,7 @@ export default function CartDisplay() {
     const cart = useSelector(state => state.cart)
     const products = useSelector(state => state.products.products)
     const { currency } = useCurrency()
-    const { changed } = useView()
+    const { changed, setChanged } = useView()
     const [part, setPart] = useState(undefined)
     const [labor, setLabor] = useState(undefined)
     const [total, setTotal] = useState(undefined)
@@ -47,6 +47,7 @@ export default function CartDisplay() {
             await dispatch(getCartLS())
         }
         totaler()
+        return () => setChanged(false)
 
     }, [dispatch, changed])
 
@@ -130,11 +131,19 @@ export default function CartDisplay() {
             </div>
 
             <div className="cart__container">
-                {cartArray.map((item) => (
-                    <CartItem key={item} itemId={item} />
-                ))}
-                <CartSummary />
+                {changed === false &&
+                    <>
+
+                        {
+                            cartArray.map((item) => (
+                                <CartItem key={item} itemId={item} />
+                            ))
+                        }
+                        < CartSummary />
+                    </>
+                }
             </div>
+
 
         </div>
     )

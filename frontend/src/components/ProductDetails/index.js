@@ -25,7 +25,7 @@ export default function ProductDetails({ products }) {
 
     const handleAddItem = () => {
         dispatch(addItemLS(product.id))
-        alert(`${product.product_name} was added to your build...`)
+        // alert(`${product.product_name} was added to your build...`)
     }
 
 
