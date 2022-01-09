@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useAppDispatch, useAppSelector } from '../../hooks'
 import { Link, useHistory } from 'react-router-dom'
 import './MiniCart.css'
 import { useView } from '../../context/ViewCartContext'
@@ -13,17 +14,17 @@ function MiniCart() {
     const history = useHistory()
     const { cartOpen, setCartOpen } = useView()
 
-    const cart = useSelector(state => state.cart)
-    const products = useSelector(state => state.products.products)
-    let allCartItems = []
+    const cart = useAppSelector(state => state.cart)
+    const products = useAppSelector(state => state.products.products)
+    let allCartItems: Array<Number> = []
 
     for (let i = 0; i <= cart.length; i++) {
         let itemNum = cart[i]
-        let selected = products.find(prod => prod.id === itemNum)
+        let selected = products.find(prod => prod['id'] === itemNum)
         selected && allCartItems.push(selected)
     }
 
-    const handlePicClick = (id) => {
+    const handlePicClick = (id: Number) => {
         history.push(`/all-products/${id}`)
     }
 
@@ -41,7 +42,7 @@ function MiniCart() {
             <Link to="/cart">Build</Link>
             <div className="cart__pics">
                 {allCartItems && allCartItems.map((item) => (
-                    <img key={item.id} onClick={() => handlePicClick(item.id)} className="cart__pic" src={item.image_url} alt="an item" />
+                    <img key={item['id']} onClick={() => handlePicClick(item['id'])} className="cart__pic" src={item.image_url} alt="an item" />
                 ))}
             </div>
         </div>
