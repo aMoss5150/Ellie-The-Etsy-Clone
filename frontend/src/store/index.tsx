@@ -41,6 +41,9 @@ const store = configureStore({
 
 // const store = configureStore()
 
+// !THIS NEEDS TO BE ADDED IN ORDER FOR ROOTSTATE TO BE RECOGNIZED APP WIDE
+
+
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
