@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import DigitRoll from "digit-roll-react";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
@@ -43,7 +42,7 @@ export default function CartDisplay() {
 
     useEffect(() => {
         dispatch(fetchProducts())
-        const totaler = async (n) => {
+        const totaler = async () => {
             await dispatch(getCartLS())
         }
         totaler()
@@ -53,55 +52,63 @@ export default function CartDisplay() {
 
     if (!cart) {
         return (
-            <h1> no cart found</h1>
+            <h1>no cart found </h1>
         )
     }
     const cartArray = cart
     return (
-        <div className="cart__page">
-            <div className="cart__breakdown">YOUR BUILD BREAKDOWN
-                {!allCartItems.length && <div><Loader type="Rings" color="#00BFFF" height={80} width={80} /></div>}
-                {allCartItems.length > 0 && <>
+        <div className="cart__page" >
+            <div className="cart__breakdown" > YOUR BUILD BREAKDOWN
+                {
+                    !allCartItems.length && <div><Loader type="Rings" color="#00BFFF" height={80} width={80} /> </div>}
+                {
+                    allCartItems.length > 0 && <>
 
-                    <table>
-                        <thead>
+                        <table>
+                            <thead>
 
-                            <tr>
-                                <th colSpan="1">Parts Total</th>
-                                <th colSpan="1">Labor Total</th>
-                                <th colSpan="1">Build Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                                <tr>
+                                    <th colSpan="1" > Parts Total </th>
+                                    <th colSpan="1" > Labor Total </th>
+                                    <th colSpan="1" > Build Total </th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                            <tr>
+                                <tr>
 
-                                <td className='table-info'>{format(
-                                    allCartItems.reduce((acc, el) => {
-                                        return el.price + acc
-                                    }, 0))}
-                                </td>
-
-
-                                <td className='table-info'>{format(
-                                    allCartItems.reduce((acc, el) => {
-                                        return el.labor_estimate + acc
-                                    }, 0))}
-                                </td>
+                                    <td className='table-info' > {
+                                        format(
+                                            allCartItems.reduce((acc, el) => {
+                                                return el.price + acc
+                                            }, 0))
+                                    }
+                                    </td>
 
 
-                                <td className='table-info'>{format(
-                                    allCartItems.reduce((acc, el) => {
-                                        return el.price + el.labor_estimate + acc
-                                    }, 0))}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    <td className='table-info' > {
+                                        format(
+                                            allCartItems.reduce((acc, el) => {
+                                                return el.labor_estimate + acc
+                                            }, 0))
+                                    }
+                                    </td>
+
+
+                                    <td className='table-info' > {
+                                        format(
+                                            allCartItems.reduce((acc, el) => {
+                                                return el.price + el.labor_estimate + acc
+                                            }, 0))
+                                    }
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
 
 
-                    {/* 
+                        {/* 
                     <div className='parts__total'>
                         Parts total: {format(
                             allCartItems.reduce((acc, el) => {
@@ -126,22 +133,22 @@ export default function CartDisplay() {
                         }
                     </div> */}
 
-                </>}
+                    </>}
 
             </div>
 
-            <div className="cart__container">
-                {changed === false &&
-                    <>
+            <div className="cart__container" >
+                {/* {changed === false && */}
+                <>
 
-                        {
-                            cartArray.map((item) => (
-                                <CartItem key={item} itemId={item} />
-                            ))
-                        }
-                        < CartSummary />
-                    </>
-                }
+                    {
+                        cartArray.map((item) => (
+                            <CartItem key={item} itemId={item} />
+                        ))
+                    }
+                    <CartSummary />
+                </>
+                {/* } */}
             </div>
 
 
