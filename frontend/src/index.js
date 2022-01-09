@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider as ReduxProvider, connect } from 'react-redux';
 import './index.css';
 import App from './App';
-import configureStore from './store';
+import store from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from './store/session';
 import { getProducts } from './store/products'
@@ -13,7 +13,7 @@ import { getReviews, addReview } from './store/reviews'
 import { CurrencyProvider } from './context/CurrencyContext'
 import { ViewProvider } from './context/ViewCartContext'
 
-const store = configureStore();
+// const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
   restoreCSRF();
