@@ -4,6 +4,7 @@ import productsReducer from './products';
 import reviewsReducer from './reviews';
 import cartReducer from './cart';
 
+// no longer using this
 import thunk from "redux-thunk";
 
 

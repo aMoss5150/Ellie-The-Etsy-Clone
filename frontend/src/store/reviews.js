@@ -1,5 +1,48 @@
 import { csrfFetch } from './csrf';
 
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
+
+
+// will try using an object this time instead of an array
+// first redux toolkit then will convert to typescript
+const initialState = {
+    reviews: {}
+}
+
+const name = "reviews"
+
+const reviewsSlice = createSlice({
+    name,
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(fetchReviews.fulfilled, (state, action) => {
+
+        })
+        builder.addCase(addReview.fulfilled, (state, action) => {
+
+        })
+        builder.addCase(editReview.fulfilled, (state, action) => {
+
+        })
+        builder.addCase(deleteReview.fulfilled, (state, action) => {
+
+        })
+    }
+})
+
+
+
+
+
+
+
+
+
+
+//! OLD PREVIOUS TO TOOLKIT
+
+
 //actions
 const LOAD = "reviews/LOAD";
 const ADD = "reviews/ADD";

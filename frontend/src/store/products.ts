@@ -15,6 +15,8 @@ interface Product {
     product_type: string
     product_description: string
 }
+
+// assign slicestate type to initial state here
 const initialState: SliceState = {
     products: []
 }
