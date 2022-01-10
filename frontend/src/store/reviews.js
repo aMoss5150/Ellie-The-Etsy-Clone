@@ -15,6 +15,85 @@ const initialState = {
 
 const name = "reviews"
 
+//* ASYNC THUNKS
+
+export const fetchReviews = createAsyncThunk(
+    "reviews/fetchReviews",
+    async () => {
+
+        const res = await csrfFetch(`/api/reviews`);
+        if (res.ok) {
+            const reviews = await res.json();
+            return reviews
+        }
+
+    }
+)
+
+export const addReview = createAsyncThunk(
+    "reviews/addReview",
+    async (updateObj) => {
+
+        updateObj = JSON.stringify(updateObj)
+        const res = await csrfFetch(`/api/reviews`, {
+            method: "POST",
+            body: updateObj,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        if (res.ok) {
+            const reviews = await res.json();
+            return reviews
+        }
+
+    }
+)
+
+export const updateReview = createAsyncThunk(
+    "reviews/updateReview",
+    async (newReview) => {
+
+        newReview = JSON.stringify(newReview)
+        const res = await csrfFetch(`/api/reviews`, {
+            method: "PUT",
+            body: newReview,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        if (res.ok) {
+            const reviews = await res.json();
+            return reviews
+        }
+
+    }
+)
+
+export const deleteReview = createAsyncThunk(
+    "reviews/deleteReview",
+    async (review) => {
+
+        const { id } = review
+        review = JSON.stringify(review)
+        const res = await csrfFetch(`/api/reviews/`, {
+            method: "DELETE",
+            body: review,
+            headers: {
+                'Content-Type': "application/json"
+            }
+        })
+        if (res.ok) {
+            const reviews = await res.json();
+            return reviews
+        }
+
+    }
+)
+
+
+
+//* SLICE
 const reviewsSlice = createSlice({
     name,
     initialState,
@@ -28,7 +107,7 @@ const reviewsSlice = createSlice({
         builder.addCase(addReview.fulfilled, (state, action) => {
 
         })
-        builder.addCase(editReview.fulfilled, (state, action) => {
+        builder.addCase(updateReview.fulfilled, (state, action) => {
 
         })
         builder.addCase(deleteReview.fulfilled, (state, action) => {
