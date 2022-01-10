@@ -20,6 +20,7 @@ export default function ReviewForm({ product }) {
         }
         dispatch(addReview(newReview))
         setDescription('')
+        window.location.reload()
     }
 
     useEffect(() => {

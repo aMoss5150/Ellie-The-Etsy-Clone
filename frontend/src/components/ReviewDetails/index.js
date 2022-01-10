@@ -48,6 +48,6 @@ export default function ReviewDetails({ review }) {
             >
             <ModalEditReview review={review} />
 
-        </div >
+        </div>
     )
 }

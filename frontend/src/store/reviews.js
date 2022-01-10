@@ -69,8 +69,8 @@ export const updateReview = createAsyncThunk(
     }
 )
 
-export const deleteReview = createAsyncThunk(
-    "reviews/deleteReview",
+export const delReview = createAsyncThunk(
+    "reviews/delReview",
     async (review) => {
 
         const { id } = review
@@ -118,7 +118,7 @@ const reviewsSlice = createSlice({
 
         })
 
-        builder.addCase(deleteReview.fulfilled, (state, action) => {
+        builder.addCase(delReview.fulfilled, (state, action) => {
 
         })
 

@@ -21,7 +21,7 @@ export default function ProductDetails({ products }) {
 
     //!LOGIC BLOCK FOR CONTROLLING REFRESH    
     const selProducts = useSelector(state => state.products.products)
-    let reviews = useSelector(state => state.reviews)
+    let reviews = useSelector(state => state.reviews.reviews)
 
     const handleAddItem = () => {
         dispatch(addItemLS(product.id))
@@ -40,7 +40,6 @@ export default function ProductDetails({ products }) {
 
     if (!product || !reviews) return null
 
-    reviews = Object.values(reviews)
     reviews = reviews.filter((review) => (
         review.product_id === product.id
     ))
