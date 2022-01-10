@@ -80,6 +80,6 @@ export default function ModalEditReview({ review }) {
 
             </div>
 
-        </span >
+        </span>
     )
 }

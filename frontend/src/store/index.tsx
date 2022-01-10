@@ -22,8 +22,9 @@ const store = configureStore({
 // //ENHANCER DECLARATION
 // let enhancer;
 
+//* Redux toolkit INCLUDES thunk and logger so no need for this
 
-// //ALLOWS FOR REDUX LOGIN if REDUX IS INSTALLED
+// //ALLOWS FOR REDUX LOGGIN if REDUX IS INSTALLED
 // if (process.env.NODE_ENV === "production") {
 //   enhancer = applyMiddleware(thunk);
 // } else {
