@@ -7,7 +7,7 @@ import App from './App';
 import store from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from './store/session';
-import { getProducts } from './store/products'
+import { fetchProducts } from './store/products'
 import { getCartLS, addItemLS, removeItemLS } from './store/cart'
 import { getReviews, addReview } from './store/reviews'
 import { CurrencyProvider } from './context/CurrencyContext'
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions;
 
   //products
-  window.getProducts = getProducts
+  window.fetchProducts = fetchProducts
 
   //cart
   window.getCartLS = getCartLS

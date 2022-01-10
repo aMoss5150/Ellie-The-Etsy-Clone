@@ -3,9 +3,10 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
 //!REFACTOR FOR TOOLKIT
 //------------------------------------------------------------
+// slice type definition
 type SliceState = { products: Array<Product> }
 
-
+// Product definition for slice state
 interface Product {
     id: number
     product_name: string
@@ -129,5 +130,5 @@ const productsSlice = createSlice({
 
 //* END ORIGINAL BEFORE REFACTOR
 
-export const { getProducts } = productsSlice.actions
+// export const { getProducts } = productsSlice.actions
 export default productsSlice.reducer;
