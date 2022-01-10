@@ -3,11 +3,22 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
 //!REFACTOR FOR TOOLKIT
 //------------------------------------------------------------
+type SliceState = { products: Array<Product> }
 
-const initialState = {
+
+interface Product {
+    id: number
+    product_name: string
+    labor_estimate: number
+    image_url: string
+    product_type: string
+    product_description: string
+}
+const initialState: SliceState = {
     products: []
 }
 const name = "products"
+
 
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
@@ -50,7 +61,7 @@ const productsSlice = createSlice({
             //* now using array
             state.products.length = 0
 
-            action.payload.forEach(product => {
+            action.payload.forEach((product: Product) => {
                 state.products.push(product);
             });
         })
