@@ -5,8 +5,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
 // will try using an object this time instead of an array
 // first redux toolkit then will convert to typescript
+
 const initialState = {
-    reviews: {}
+    //!HAVE TO REFACTOR COMPONENTS TO GO A LEVEL DEEPER
+    //! MAYBE SHOULD GO AHEAD AND MAKE THIS AN ARRAY because I will
+    //! Have to do the conversion ANYWAY within components.... which is undesirable
+    reviews: []
 }
 
 const name = "reviews"
@@ -17,7 +21,9 @@ const reviewsSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(fetchReviews.fulfilled, (state, action) => {
-
+            // manipulate state wit the return of the asyncThunks created by
+            // toolkit here
+            // keep async thunks pure
         })
         builder.addCase(addReview.fulfilled, (state, action) => {
 
