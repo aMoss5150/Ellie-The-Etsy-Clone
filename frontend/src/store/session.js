@@ -1,5 +1,4 @@
 import { csrfFetch } from './csrf';
-import {getCartLS} from '../store/cart'
 
 //ACTIONS
 const SET_USER = 'session/setUser';

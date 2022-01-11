@@ -1,12 +1,25 @@
 import { csrfFetch } from './csrf';
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
+import { ObjectType } from 'typescript';
 
 
 // will try using an object this time instead of an array
 // first redux toolkit then will convert to typescript
 
-const initialState = {
+interface SliceState {
+    reviews: Array<Review>
+}
+
+interface Review {
+    id?: number
+    description?: string
+    product_id?: number
+    user_id?: number
+    username?: string
+}
+
+const initialState: SliceState = {
     //!HAVE TO REFACTOR COMPONENTS TO GO A LEVEL DEEPER
     //! MAYBE SHOULD GO AHEAD AND MAKE THIS AN ARRAY because I will
     //! Have to do the conversion ANYWAY within components.... which is undesirable
@@ -31,7 +44,7 @@ export const getReviews = createAsyncThunk(
 
 export const addReview = createAsyncThunk(
     "reviews/addReview",
-    async (updateObj) => {
+    async (updateObj: Object) => {
 
         updateObj = JSON.stringify(updateObj)
         const res = await csrfFetch(`/api/reviews`, {
@@ -51,7 +64,7 @@ export const addReview = createAsyncThunk(
 
 export const updateReview = createAsyncThunk(
     "reviews/updateReview",
-    async (newReview) => {
+    async (newReview: Object) => {
 
         newReview = JSON.stringify(newReview)
         const res = await csrfFetch(`/api/reviews`, {
@@ -71,9 +84,8 @@ export const updateReview = createAsyncThunk(
 
 export const delReview = createAsyncThunk(
     "reviews/delReview",
-    async (review) => {
+    async (review: Object) => {
 
-        const { id } = review
         review = JSON.stringify(review)
         const res = await csrfFetch(`/api/reviews/`, {
             method: "DELETE",
@@ -104,7 +116,7 @@ const reviewsSlice = createSlice({
             // keep async thunks pure
 
             state.reviews.length = 0
-            action.payload.forEach(review => {
+            action.payload.forEach((review: Review) => {
                 state.reviews.push(review)
             });
 
@@ -134,7 +146,7 @@ const reviewsSlice = createSlice({
 
 
 
-//! OLD PREVIOUS TO TOOLKIT
+//! OLD PREVIOUS prior TOOLKIT
 
 
 // //actions
@@ -164,7 +176,7 @@ const reviewsSlice = createSlice({
 //     reviewId
 // })
 
-// //!Thunk ACTION CREATORS
+// //Thunk ACTION CREATORS
 // //this will fetch all reviews to be rendered on product page
 // export const getReviews = () => async (dispatch) => {
 //     const res = await csrfFetch(`/api/reviews`);
@@ -261,4 +273,7 @@ const reviewsSlice = createSlice({
 // }
 
 // export default reviewsReducer;
+
+//! End old reducer logic
+
 export default reviewsSlice.reducer;
