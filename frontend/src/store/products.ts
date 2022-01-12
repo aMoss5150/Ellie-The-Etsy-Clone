@@ -9,6 +9,7 @@ type SliceState = { products: Array<Product> }
 // Product definition for slice state
 interface Product {
     id: number
+    price: number
     product_name: string
     labor_estimate: number
     image_url: string

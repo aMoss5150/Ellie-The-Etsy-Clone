@@ -27,6 +27,7 @@ export default function CartDisplay() {
     // const [allCartItems, setAllCartItems] = useState([])
 
     let allCartItems = []
+    let one = 1
 
     for (let i = 0; i <= cart.length; i++) {
         let itemNum = cart[i]
@@ -67,11 +68,10 @@ export default function CartDisplay() {
 
                         <table>
                             <thead>
-
                                 <tr>
-                                    <th colSpan="1" > Parts Total </th>
-                                    <th colSpan="1" > Labor Total </th>
-                                    <th colSpan="1" > Build Total </th>
+                                    <th colSpan={one} > Parts Total </th>
+                                    <th colSpan={one} > Labor Total </th>
+                                    <th colSpan={one} > Build Total </th>
                                 </tr>
                             </thead>
                             <tbody>
