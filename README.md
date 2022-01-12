@@ -13,6 +13,9 @@ Get an idea what your dream Mustang GT S550 build will cost at [Ellie](https://e
 ## [MVP List](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/MVP-List)
 ## [User Stories](https://github.com/aMoss5150/Ellie-The-Etsy-Clone/wiki/User-Stories)
 
+# Currently undergoing full refactor to Redux Toolkit and Typescript/TSX conversion
+
+
 ## Technologies Used
 
 PERN Stack utilized for this build
