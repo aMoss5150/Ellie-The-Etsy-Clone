@@ -5,6 +5,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 // import Roller from '@bit/joshk.react-spinners-css.roller';
 
+import { useAppDispatch, useAppSelector } from '../../hooks'
 import { getCartLS } from '../../store/cart'
 import { fetchProducts } from '../../store/products'
 import CartSummary from '../CartSummary'
@@ -15,9 +16,9 @@ import { useView } from '../../context/ViewCartContext'
 import './CartDisplay.css'
 
 export default function CartDisplay() {
-    const dispatch = useDispatch();
-    const cart = useSelector(state => state.cart)
-    const products = useSelector(state => state.products.products)
+    const dispatch = useAppDispatch();
+    const cart = useAppSelector(state => state.cart)
+    const products = useAppSelector(state => state.products.products)
     const { currency } = useCurrency()
     const { changed, setChanged } = useView()
     const [part, setPart] = useState(undefined)

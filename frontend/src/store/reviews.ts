@@ -13,10 +13,10 @@ interface SliceState {
 
 interface Review {
     id?: number
-    description?: string
-    product_id?: number
-    user_id?: number
-    username?: string
+    description: string
+    product_id: number
+    user_id: number
+    username: string
 }
 
 const initialState: SliceState = {
