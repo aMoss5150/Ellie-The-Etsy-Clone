@@ -1,10 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FC } from 'react'
 import { useParams, Link, Redirect, useHistory } from 'react-router-dom'
 import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
+import { Product } from '../../store/products'
 
 import './Product.css'
 
-export default function Product({ product }) {
+
+
+interface Props {
+    product: Product
+}
+
+export default function ProductSpan({ product }: Props) {
 
     const { currency } = useCurrency()
     const history = useHistory()

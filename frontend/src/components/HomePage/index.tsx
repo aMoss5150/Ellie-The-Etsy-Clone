@@ -1,28 +1,27 @@
-import { useState, useEffect } from 'react'
-import { NavLink, useHistory, Redirect } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { getProducts, fetchProducts } from '../../store/products'
+import { useEffect } from 'react'
+import { NavLink, useHistory } from 'react-router-dom'
 
-
+import { fetchProducts } from '../../store/products'
+import { useAppDispatch, useAppSelector } from '../../hooks'
 import './HomePage.css'
-import Product from '../ProductSpan'
+import ProductSpan from '../ProductSpan'
+
 
 export default function HomePage() {
 
     const history = useHistory()
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     // DISPATCH WHEREVER I NEED TO FIND PRODUCTS... will be slower if
     // DONE IN APP.js
-    let products = useSelector(state => state.products.products)
+    let products = useAppSelector(state => state.products.products)
 
-    const handleClick = (dest) => {
+    const handleClick = (dest: string) => {
         history.push(`/products/${dest}`)
     }
 
     useEffect(() => {
         dispatch(fetchProducts())
-        // dispatch(getProducts())
     }, [dispatch])
 
     //LOGIC BLOCK FOR CONTROLLING REFRESH    
@@ -82,9 +81,7 @@ export default function HomePage() {
             <div className='product__display-container'>
                 {products?.map(product => (
                     product.price > 1000 && product.price < 2000 &&
-                    <Product key={product.id} product={product}>
-                        {product.product_name}
-                    </Product>
+                    <ProductSpan key={product.id} product={product} />
                 ))}
 
             </div>
