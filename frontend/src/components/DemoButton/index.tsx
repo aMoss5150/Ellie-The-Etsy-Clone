@@ -1,10 +1,11 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../hooks'
 import { login } from '../../store/session';
 
 
 export default function DemoButton() {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const credential = "The Stig"
     const password = "passy12"
 
