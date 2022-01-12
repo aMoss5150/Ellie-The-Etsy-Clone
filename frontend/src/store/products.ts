@@ -7,7 +7,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 type SliceState = { products: Array<Product> }
 
 // Product definition for slice state
-interface Product {
+export interface Product {
     id: number
     price: number
     product_name: string

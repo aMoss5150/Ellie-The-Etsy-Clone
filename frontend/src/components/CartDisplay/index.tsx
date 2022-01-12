@@ -7,7 +7,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import { useAppDispatch, useAppSelector } from '../../hooks'
 import { getCartLS } from '../../store/cart'
-import { fetchProducts } from '../../store/products'
+import { fetchProducts, Product } from '../../store/products'
 import CartSummary from '../CartSummary'
 import CartItem from '../CartItem'
 import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
@@ -26,11 +26,11 @@ export default function CartDisplay() {
     const [total, setTotal] = useState(undefined)
     // const [allCartItems, setAllCartItems] = useState([])
 
-    let allCartItems = []
+    let allCartItems: Array<Product> = []
     let one = 1
 
     for (let i = 0; i <= cart.length; i++) {
-        let itemNum = cart[i]
+        let itemNum: number = cart[i]
         let selected = products.find(prod => prod.id === itemNum)
         selected && allCartItems.push(selected)
     }
