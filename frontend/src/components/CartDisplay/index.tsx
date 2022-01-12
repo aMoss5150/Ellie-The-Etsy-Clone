@@ -8,7 +8,6 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { useAppDispatch, useAppSelector } from '../../hooks'
 import { getCartLS } from '../../store/cart'
 import { fetchProducts, Product } from '../../store/products'
-import CartSummary from '../CartSummary'
 import CartItem from '../CartItem'
 import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
 import { useView } from '../../context/ViewCartContext'
@@ -147,7 +146,6 @@ export default function CartDisplay() {
                             <CartItem key={item} itemId={item} />
                         ))
                     }
-                    <CartSummary />
                 </>
                 {/* } */}
             </div>
