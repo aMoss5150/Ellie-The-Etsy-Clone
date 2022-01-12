@@ -2,25 +2,31 @@ import { useEffect, useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
+import { useAppDispatch, useAppSelector } from '../../hooks'
 import { useView } from '../../context/ViewCartContext'
-import { getProducts } from '../../store/products'
+import { Product } from '../../store/products'
 import { removeItemLS, getCartLS } from '../../store/cart'
 import './CartItem.css'
 
-export default function CartItem({ itemId }) {
-    const dispatch = useDispatch();
+interface Props {
+    itemId: number
+}
+
+export default function CartItem({ itemId }: Props) {
+
+    const dispatch = useAppDispatch();
     const history = useHistory()
     const { currency } = useCurrency()
     const { changed, setChanged } = useView()
-    const products = useSelector(state => state.products.products)
-    const product = products.find((product) => product.id === +itemId)
+    const products = useAppSelector(state => state.products.products)
+    const product = products.find((product: Product) => product.id === +itemId)
     let format = currency === 'usd' ? usdFormat : gbpFormat
 
-    const handleClick = (itemId) => {
+    const handleClick = (itemId: number) => {
         history.push(`/all-products/${itemId}`)
     }
 
-    const handleRemove = (itemId) => {
+    const handleRemove = (itemId: number) => {
         dispatch(removeItemLS(itemId))
         dispatch(getCartLS())
         setChanged(!changed)
