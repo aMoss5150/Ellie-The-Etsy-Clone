@@ -1,12 +1,27 @@
 import { csrfFetch } from './csrf';
 
+interface SliceState {
+    user: User | null
+}
+
+interface User {
+    email: string
+    username: string
+    password: string
+}
+
+
+
+
+
+
 //ACTIONS
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
 
 
 //INITIAL STATE
-const initialState = { user: null };
+const initialState: SliceState = { user: null };
 
 
 //ACTION CREATORS
