@@ -1,18 +1,23 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { updateReview, getReviews } from '../../store/reviews'
+import { useAppDispatch, useAppSelector } from '../../hooks'
+import { updateReview, getReviews, Review } from '../../store/reviews'
 
 import './ModalEditReview.css'
 
-export default function ModalEditReview({ review }) {
-    const dispatch = useDispatch();
+interface Props {
+    review: Review
+}
+
+export default function ModalEditReview({ review }: Props) {
+    const dispatch = useAppDispatch();
     const [newReviewDesc, setNewReviewDesc] = useState('')
     const [disabled, setDisabled] = useState(true)
     const [modalOpen, setModalOpen] = useState(false)
-    const userId = useSelector(state => state.session).user?.id
+    const userId = useAppSelector(state => state.session).user?.id
 
-    const handleReviewUpdate = (e) => {
+    const handleReviewUpdate = (e: React.SyntheticEvent<EventTarget>) => {
         e.preventDefault()
 
         let updateObj = { ...review, newReviewDes: newReviewDesc }
@@ -23,7 +28,7 @@ export default function ModalEditReview({ review }) {
         window.location.reload()
     }
 
-    const handleModalClose = (e) => {
+    const handleModalClose = (e: React.SyntheticEvent<EventTarget>) => {
         e.preventDefault()
         setModalOpen(false)
         setNewReviewDesc('')

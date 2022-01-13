@@ -11,7 +11,7 @@ interface SliceState {
     reviews: Array<Review>
 }
 
-interface Review {
+export interface Review {
     id?: number
     description: string
     product_id: number

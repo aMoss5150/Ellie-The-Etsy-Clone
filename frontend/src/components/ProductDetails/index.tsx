@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
 
-import { fetchProducts } from '../../store/products'
+import { fetchProducts, Product } from '../../store/products'
 import { getReviews } from '../../store/reviews'
 import { addItemLS } from '../../store/cart'
 import { useCurrency, usdFormat, gbpFormat } from '../../context/CurrencyContext'
 import ReviewsDisplay from '../ReviewsDisplayDiv'
 import ReviewForm from '../ReviewForm'
+
+import { useAppSelector, useAppDispatch } from '../../hooks'
 
 import './ProductDetails.css'
 
@@ -15,13 +17,13 @@ export default function ProductDetails({ products }) {
     const { currency } = useCurrency()
 
     // const [curr, setCurr] = useState('usd')
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { productId } = useParams()
 
 
     //!LOGIC BLOCK FOR CONTROLLING REFRESH    
-    const selProducts = useSelector(state => state.products.products)
-    let reviews = useSelector(state => state.reviews.reviews)
+    const selProducts = useAppSelector(state => state.products.products)
+    let reviews = useAppSelector(state => state.reviews.reviews)
 
     const handleAddItem = () => {
         dispatch(addItemLS(product.id))
@@ -35,7 +37,7 @@ export default function ProductDetails({ products }) {
     }, [dispatch])
 
     let format = currency === 'usd' ? usdFormat : gbpFormat
-    let prodData = products ? products : selProducts
+    let prodData: Array<Product> = products ? products : selProducts
     const product = prodData.find(product => product.id === +productId)
 
     if (!product || !reviews) return null
