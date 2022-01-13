@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useHistory } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../hooks'
 import './LoginForm.css';
 
 function LoginFormPage() {
     const history = useHistory()
-    const dispatch = useDispatch();
-    const sessionUser = useSelector(state => state.session.user);
+    const dispatch = useAppDispatch();
+    const sessionUser = useAppSelector(state => state.session.user);
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
@@ -16,7 +17,7 @@ function LoginFormPage() {
         <Redirect to="/" />
     );
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.SyntheticEvent<EventTarget>) => {
         e.preventDefault();
         setErrors([]);
         return dispatch(sessionActions.login({ credential, password }))

@@ -1,10 +1,8 @@
-import { useState, useEffect, FC } from 'react'
-import { useParams, Link, Redirect, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+
 import { usdFormat, gbpFormat, useCurrency } from '../../context/CurrencyContext'
 import { Product } from '../../store/products'
-
 import './Product.css'
-
 
 
 interface Props {
