@@ -1,6 +1,8 @@
 import { csrfFetch } from './csrf';
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
+//* Types
+
 type SliceState = {
     user: User | null
 }
@@ -11,8 +13,7 @@ export interface User {
     password: string
 }
 
-
-
+//* async Thunks
 
 export const restoreUser = createAsyncThunk(
     "session/restoreUser",
@@ -23,11 +24,29 @@ export const restoreUser = createAsyncThunk(
     }
 )
 
+export const loginUser = createAsyncThunk(
+    "session/loginUser",
+    async (user) => {
+        const { credential, password } = user;
+        const response = await csrfFetch('/api/session', {
+            method: 'POST',
+            body: JSON.stringify({
+                credential,
+                password,
+            }),
+        });
+        const data = await response.json();
+        return data
+    }
+)
+
+
+//* SLICE and reducer
+
 
 const initialState: SliceState = { user: null };
 
 const name = "session"
-
 
 const sessionSlice = createSlice({
     name,
@@ -36,8 +55,12 @@ const sessionSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(restoreUser.fulfilled, (state, action) => {
             state.user = action.payload
-        }
+        })
+        builder.addCase(loginUser.fulfilled, (state, action) => {
+            state.user = action.payload
+        })
 
+    }
 })
 
 
