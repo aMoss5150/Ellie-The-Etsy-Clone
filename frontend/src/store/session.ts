@@ -20,12 +20,12 @@ export const restoreUser = createAsyncThunk(
     async () => {
         const response = await csrfFetch('/api/session');
         const data = await response.json();
-        return data;
+        return data.user;
     }
 )
 
-export const loginUser = createAsyncThunk(
-    "session/loginUser",
+export const login = createAsyncThunk(
+    "session/login",
     async (user) => {
         const { credential, password } = user;
         const response = await csrfFetch('/api/session', {
@@ -36,7 +36,24 @@ export const loginUser = createAsyncThunk(
             }),
         });
         const data = await response.json();
-        return data
+        return data.user
+    }
+)
+
+export const signup = createAsyncThunk(
+    'session/signup',
+    async (user) => {
+        const { username, email, password } = user;
+        const response = await csrfFetch("/api/users", {
+            method: "POST",
+            body: JSON.stringify({
+                username,
+                email,
+                password,
+            }),
+        });
+        const data = await response.json();
+        return data.user;
     }
 )
 
@@ -56,7 +73,10 @@ const sessionSlice = createSlice({
         builder.addCase(restoreUser.fulfilled, (state, action) => {
             state.user = action.payload
         })
-        builder.addCase(loginUser.fulfilled, (state, action) => {
+        builder.addCase(login.fulfilled, (state, action) => {
+            state.user = action.payload
+        })
+        builder.addCase(signup.fulfilled, (state, action) => {
             state.user = action.payload
         })
 
