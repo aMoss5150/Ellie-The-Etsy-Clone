@@ -13,12 +13,20 @@ import { useAppSelector, useAppDispatch } from '../../hooks'
 
 import './ProductDetails.css'
 
-export default function ProductDetails({ products }) {
+interface Props {
+    products: Array<Product>
+}
+
+interface Params {
+    productId: string
+}
+
+export default function ProductDetails({ products }: Props) {
     const { currency } = useCurrency()
 
     // const [curr, setCurr] = useState('usd')
     const dispatch = useAppDispatch();
-    const { productId } = useParams()
+    const { productId }: Params = useParams()
 
 
     //!LOGIC BLOCK FOR CONTROLLING REFRESH    
@@ -26,7 +34,7 @@ export default function ProductDetails({ products }) {
     let reviews = useAppSelector(state => state.reviews.reviews)
 
     const handleAddItem = () => {
-        dispatch(addItemLS(product.id))
+        dispatch(addItemLS(+productId))
         // alert(`${product.product_name} was added to your build...`)
     }
 

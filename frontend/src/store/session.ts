@@ -7,9 +7,13 @@ type SliceState = {
     user: User | null
 }
 
+
+
 export interface User {
-    email: string
-    username: string
+    id?: number
+    email?: string
+    username?: string
+    credential?: string
     password: string
 }
 
@@ -26,7 +30,7 @@ export const restoreUser = createAsyncThunk(
 
 export const login = createAsyncThunk(
     "session/login",
-    async (user) => {
+    async (user: User) => {
         const { credential, password } = user;
         const response = await csrfFetch('/api/session', {
             method: 'POST',
@@ -42,7 +46,7 @@ export const login = createAsyncThunk(
 
 export const signup = createAsyncThunk(
     'session/signup',
-    async (user) => {
+    async (user: User) => {
         const { username, email, password } = user;
         const response = await csrfFetch("/api/users", {
             method: "POST",
@@ -54,6 +58,16 @@ export const signup = createAsyncThunk(
         });
         const data = await response.json();
         return data.user;
+    }
+)
+
+export const logout = createAsyncThunk(
+    'session/logout',
+    async () => {
+        const response = await csrfFetch('/api/session', {
+            method: 'DELETE',
+        });
+        return response;
     }
 )
 
@@ -78,6 +92,9 @@ const sessionSlice = createSlice({
         })
         builder.addCase(signup.fulfilled, (state, action) => {
             state.user = action.payload
+        })
+        builder.addCase(logout.fulfilled, (state) => {
+            state.user = null
         })
 
     }
