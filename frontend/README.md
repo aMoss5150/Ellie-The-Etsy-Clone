@@ -18,6 +18,7 @@ Get an idea what your dream Mustang GT S550 build will cost at [Ellie](https://e
 PERN Stack utilized for this build
 
 - JavaScript
+- TypeScript
 - React/Redux
 - Redux Toolkit
 - Redux Thunk

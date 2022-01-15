@@ -23,7 +23,7 @@ function App({ products }) {
 
   //! DONT useSelector PRODUCTS HERE OR IT
   //! WILL RUN EVERY TIME SOMETHING HAPPENS SLOW, 
-  //! only useSelector on pages that need products
+  //! only useSelector on pages that need products, furthest out branches
 
 
   useEffect(() => {
